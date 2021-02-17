@@ -7,9 +7,9 @@ I have done a few freelance project recently so I believe it is a good time to c
 
 ## Tech stack
 
-**`React.js`**: Core technology.
-**`Gatsby.js`**: The final project is going to be a static site. I am familiar with Gatsby so deal-breaker.
-**`GSAP`**: Main animation tool.
+1. **`React.js`**: Core technology.
+2. **`Gatsby.js`**: The final project is going to be a static site. I am familiar with Gatsby so deal-breaker.
+3. **`GSAP`**: Main animation tool.
 
 
 ## Base folders structure
