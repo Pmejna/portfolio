@@ -42,6 +42,10 @@ const GlobalStyles = createGlobalStyle`
         url(${lightSVG}) format("svg");
     }
 
+    :root {
+        --breakpoint-medium: 1365px;
+    }
+
     html {
         box-sizing: border-box;
     }

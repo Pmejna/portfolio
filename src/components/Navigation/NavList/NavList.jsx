@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import  {Link} from "gatsby";
 import logo from "../../../assets/images/logo.svg";
+import Hamburger from '../Hamburger/Hamburger';
 
-const NavWrapper = styled.header`
+const NavWrapper = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,6 +16,7 @@ const NavWrapper = styled.header`
     height: 8vh;
     padding-left: 16vw;
     padding-right: 8vw;
+
 `;
 
 const NavUl = styled.ul`
@@ -24,6 +26,10 @@ const NavUl = styled.ul`
     list-style: none;
     color: black;
     flex-basis: 50%;
+
+    @media(max-width: 1365px) {
+        display: none;
+    }
 `;
 
 const NavLi = styled.li`
@@ -41,10 +47,12 @@ const NavLogo = styled.img`
     height: auto;
     width: 90%;
     max-width: 100px;
+
+    
 `;
 
 
-const NavStatic = () => {
+const NavList = () => {
     return (
         <NavWrapper>
             <NavUl>
@@ -69,11 +77,12 @@ const NavStatic = () => {
                 </Link>
                 </NavLi>
             </NavUl>
-            <Link to="/"> 
+            <Link to="/" className="nav__logo"> 
                 <NavLogo src={logo} />
             </Link>
+            <Hamburger />
         </NavWrapper>
     )
 };
 
-export default NavStatic
+export default NavList

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TopEvent from "../../images/Group 56.svg";
+import TopEvent from "../../assets/images/Group 56.svg";
 
 const ProjectsContainer = styled.div`
     width: 30vw;

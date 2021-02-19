@@ -1,5 +1,5 @@
 import React from "react";
-import Header from '../components/Navigation/Navigation';
+import Header from '../components/Header/Header';
 import SideBar from '../components/SideBar/Sidebar';
 import GlobalStyles from '../assets/styles/GlobalStyles';
 

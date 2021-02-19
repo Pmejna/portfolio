@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import NavStatic from "../Navigation/NavStatic/NavStatic";
-
+import NavList from "../Navigation/NavList/NavList";
 
 const NavHeader = styled.header`
 
@@ -9,12 +8,12 @@ const NavHeader = styled.header`
 
 
 
-const Navigation = () => {
+const Header = () => {
     return (
     <NavHeader>
-        <NavStatic />
+        <NavList />
     </NavHeader>
     )
 };
 
-export default Navigation
+export default Header
