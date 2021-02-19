@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const HamburgerWrapper = styled.button`
     display: none;
-    width: 3rem;
+    width: 3.4rem;
     height: 2rem;
     background-color: transparent;
     border: none;
@@ -19,15 +19,15 @@ const HamburgerWrapper = styled.button`
         }
         span:nth-last-of-type(2) {
             width: 10%;
-
-            &::before {
-                right: 30%;
-            }
         }
         span:nth-last-of-type(1) {
             transform: translateY(120%);
             transition: 0.18s ease-in-out;
         }
+        span:nth-last-of-type(4) {
+            right: 10%;
+        }
+
     }
 
     span {
@@ -35,25 +35,20 @@ const HamburgerWrapper = styled.button`
         height: 0.3rem;
         background-color: #000;
         transition: 0.3s ease-in-out;
+        text-transform: uppercase;
     }
 
     span:nth-last-of-type(1) {
         height: 0.3rem;
         width: 90%;
+        transform: ${({menuIsOpen}) => menuIsOpen ? 'translateY(120%)' : 'none'};
     }
     span:nth-last-of-type(2) {
         height: 0.4rem;
-        width: 70%;
-
-        &::before {
-            content: 'menu';
-            position: absolute;
-            right: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-
-            transition: 0.3s ease-in-out;
-        }
+        width: ${({menuIsOpen}) => menuIsOpen ? 0 : '70%'}
+    }
+    span:nth-last-of-type(3) {  
+        transform: ${({menuIsOpen}) => menuIsOpen ? 'translateY(-120%)' : 'none'};
     }
 
     @media(max-width: 1365px) {
@@ -62,12 +57,20 @@ const HamburgerWrapper = styled.button`
         justify-content: space-between;
         align-items: flex-end;
     }
+    span:nth-last-of-type(4) {
+        position: absolute;
+        right: ${({menuIsOpen}) => menuIsOpen ? '5%' : '100%'};
+        top: 25%;
+        background-color: transparent;
+        color: black;
+    }
 `;
 
-const Hamburger = () => {
+const Hamburger = ({handleMenu, menuIsOpen, menuText}) => {
     return (
-        <HamburgerWrapper>
-            <span></span>
+        <HamburgerWrapper onClick={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText}>
+            <span>{menuText}</span>
+            <span menuText={menuText}></span>
             <span></span>
             <span></span>
         </HamburgerWrapper>
