@@ -63,14 +63,16 @@ const HamburgerWrapper = styled.button`
         top: 25%;
         background-color: transparent;
         color: black;
+        opacity: ${({disabled}) => disabled ? "0.2" : "1"}
+
     }
 `;
 
-const Hamburger = ({handleMenu, menuIsOpen, menuText}) => {
+const Hamburger = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
     return (
-        <HamburgerWrapper onClick={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText}>
+        <HamburgerWrapper onClick={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText} disabled={buttonDisabled}>
             <span>{menuText}</span>
-            <span menuText={menuText}></span>
+            <span></span>
             <span></span>
             <span></span>
         </HamburgerWrapper>

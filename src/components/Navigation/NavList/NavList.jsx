@@ -52,7 +52,7 @@ const NavLogo = styled.img`
 `;
 
 
-const NavList = ({handleMenu, menuIsOpen, menuText}) => {
+const NavList = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
     return (
         <NavWrapper>
             <NavUl>
@@ -80,7 +80,7 @@ const NavList = ({handleMenu, menuIsOpen, menuText}) => {
             <Link to="/" className="nav__logo"> 
                 <NavLogo src={logo} />
             </Link>
-            <Hamburger handleMenu={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText}/>
+            <Hamburger handleMenu={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText} buttonDisabled={buttonDisabled}/>
         </NavWrapper>
     )
 };

@@ -9,22 +9,49 @@ const NavHeader = styled.header`
 
 
 const Header = () => {
-    const [menuIsOpen, setMenuIsOpen] = useState(false);
-    const [menuText, setMenuText] = useState('menu');
+    const [menuState, setMenuState] = useState({
+        initial: false,
+        clicked: null,
+        text: 'menu'
+    });
+
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const handleMenu = () => {
-        setMenuIsOpen(!menuIsOpen);
-        if (menuIsOpen) {
-            setMenuText('menu');
+        disableMenuButton();
+        if (menuState.initial === false) {
+            setMenuState({
+                initial: null,
+                clicked: true,
+                menuText: 'close'
+            })
         }
-        else if (!menuIsOpen) {
-            setMenuText('close');
+        else if (menuState.clicked === true) {
+            setMenuState({
+                clicked: !menuState.clicked,
+                menuText: 'menu'
+            });
+        }
+        else if (menuState.clicked === false) {
+            setMenuState({
+                clicked: !menuState.clicked,
+                menuText: 'close'
+            });
         }
     };
 
+    // Should menu button be disabled
+
+    const disableMenuButton = () => {
+        setButtonDisabled(!buttonDisabled);
+        setTimeout(() => {
+            setButtonDisabled(false);
+        }, 1200)
+    }
+
     return (
     <NavHeader>
-        <NavList handleMenu={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText}/>
+        <NavList handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
     </NavHeader>
     )
 };
