@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import NavList from "../Navigation/NavList/NavList";
+import NavHorizontal from '../Navigation/NavHorizontal/NavHorizontal';
 
 const NavHeader = styled.header`
 
@@ -51,7 +51,7 @@ const Header = () => {
 
     return (
     <NavHeader>
-        <NavList handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
+        <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
     </NavHeader>
     )
 };

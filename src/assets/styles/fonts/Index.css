@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "IntervogueAltThin";
+    src: url(../fonts/Thin/IntervogueAlt-Thin.eot);
+    src: url(../fonts//Thin//IntervogueAlt-Thin.woff) format("woff"),
+    url(../fonts//Thin//IntervogueAlt-Thin.svg) format("svg");
+}
+@font-face {
+    font-family: "IntervogueAltMed";
+    src: url(../fonts//Med/IntervogueAlt-Med.eot);
+    src: url(../fonts//Med/IntervogueAlt-Med.woff) format("woff"),
+    url(../fonts//Med//IntervogueAlt-Med.svg) format("svg");
+}
+@font-face {
+    font-family: "IntervogueAltBold";
+    src: url(../fonts/Bold/IntervogueAlt-Bold.eot);
+    src: url(../fonts/Bold/IntervogueAlt-Bold.woff) format("woff"),
+    url(../fonts/Bold/IntervogueAlt-Bold.svg) format("svg");
+}
+@font-face {
+    font-family: "IntervogueAltLight";
+    src: url(../fonts/Light/IntervogueAlt-Light.eot);
+    src: url(../fonts/Light/IntervogueAlt-Light.woff) format("woff"),
+    url(../fonts/Light/IntervogueAlt-Light.svg) format("svg");
+}

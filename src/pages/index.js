@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import GlobalStyles from '../assets/styles/GlobalStyles';
 import {graphql} from "gatsby";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
@@ -40,6 +41,7 @@ const MainImage = styled.img`
 
 const IndexPage = ({data}) => (
   <Wrapper>
+    <GlobalStyles/>
     <TextContent>
       <MainHeader />
       <ProjectsBanner />

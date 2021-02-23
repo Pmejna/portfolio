@@ -8,7 +8,7 @@ const HeaderWrapper = styled.div`
 `;
 
 const Author = styled.p`
-font-family: "IntervogueAltThin";
+    font-family: "IntervogueAltThin";
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -22,7 +22,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.p`
-font-family: "IntervogueAltLight";
+    font-family: "IntervogueAltLight";
     margin-top: 0.4rem;
     font-size: 1.7rem;
     color: #6D6D6D;

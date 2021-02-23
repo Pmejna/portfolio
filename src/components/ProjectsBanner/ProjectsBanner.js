@@ -37,6 +37,7 @@ const Logo = styled.img`
 `;
 
 const ProjectsButton = styled.button`
+    font-family: "IntervogueAltThin";
     border: none;
     box-shadow: none;
     width: 80%;
