@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import NavHorizontal from '../Navigation/NavHorizontal/NavHorizontal';
+import NavResponsive from "../Navigation/NavResponsive/NavResponisve";
 
 const NavHeader = styled.header`
 
@@ -52,6 +53,7 @@ const Header = () => {
     return (
     <NavHeader>
         <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
+        <NavResponsive />
     </NavHeader>
     )
 };

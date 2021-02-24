@@ -10,6 +10,7 @@ const HamburgerWrapper = styled.button`
     overflow: hidden;
     position: relative;
     transition: 0.3s ease-in-out;
+    z-index: 101;
     cursor: pointer;
 
     &:hover {
