@@ -7,7 +7,8 @@ export const menuClose = (element1, element2, mainElement) => {
         ease: 'power3.inOut',
         stagger: {
             amount: 0.07
-        }
+        },
+        
     })
     gsap.to(mainElement, {
     duration: 1,
@@ -28,6 +29,7 @@ export const menuOpen = (element1, element2, mainElement) => {
     });
 
     gsap.from([element1, element2], {
+        delay: 0.1,
         duration: 0.8,
         height: 0,
         transformOrigin: 'right top',
@@ -38,3 +40,16 @@ export const menuOpen = (element1, element2, mainElement) => {
         }
     });
 };
+
+export const revealItem = (items = [...items]) => {
+    console.log(items)
+    gsap.from([...items], {
+        delay: 0.7,
+        opacity: 0,
+        y: -30,
+        ease: 'power3.inOut',
+        stagger: {
+            amount: 0.8
+        }
+    })
+}

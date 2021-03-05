@@ -45,7 +45,6 @@ const NavResponsive = ({state}) => {
 
     useEffect(() => {
         // open menu 
-        console.log(state)
         if (state.clicked === true ) {
             menuOpen(revealMenu, revealMenuBg, menu.current)
         }

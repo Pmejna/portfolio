@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import  {Link} from "gatsby";
+import {revealItem} from '../../../assets/animations/gsapAnimations';
 
 
 const NavUl = styled.ul`
@@ -41,38 +42,39 @@ const NavLi = styled.li`
 `;
 
 const NavList = React.forwardRef(({responsive, clicked}, ref) => {
-    const li1 = useRef();
-    const li2 = useRef();
-    const li3 = useRef();
-    const li4 = useRef();
+    let li1 = useRef(null);
+    let li2 = useRef(null);
+    let li3 = useRef(null);
+    let li4 = useRef(null);
 
     useEffect(() => {
         if(clicked === true) {
-
+            revealItem([li1, li2, li3, li4]);
+            console.log(true)
         }
         else if (clicked === false) {
-
+            console.log(false)
         }
-    });
+    }, [clicked]);
 
     return (
             <NavUl responsive={responsive} ref={ref}> 
-                <NavLi ref={li1} >
+                <NavLi ref={el => li1 = el} >
                     <Link to="/projects">
                         Projects
                     </Link>
                 </NavLi>
-                <NavLi ref={li2} >
+                <NavLi  ref={el => li2 = el} >
                     <Link to="/tech">
                         Tech stack
                     </Link>
                 </NavLi>
-                <NavLi ref={li3} >
+                <NavLi  ref={el => li3 = el} >
                     <Link to="/about">
                         About
                     </Link>
                 </NavLi>
-                <NavLi ref={li4} >
+                <NavLi r ref={el => li4 = el} >
                     <Link to="/contact">
                         Contact
                 </Link>
