@@ -50,10 +50,6 @@ const Header = () => {
         }, 1200)
     }
 
-    useEffect(() => {
-        
-    })
-
     return (
     <NavHeader>
         <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>

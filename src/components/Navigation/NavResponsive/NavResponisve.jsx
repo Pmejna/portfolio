@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import NavList from '../NavList/NavList';
-
+import gsap from 'gsap';
 
 const NavResponsiveWrapper = styled.nav`
     position: absolute;
@@ -26,24 +26,56 @@ const NavAnimationBackground = styled.div`
 `;
 
 const NavResponsive = ({state}) => {
-    let menu = useRef();
-    let revealMenu = useRef();
-    let revealMenuBg = useRef();
+    let menu = useRef(null);
+    let revealMenu = useRef(null);
+    let revealMenuBg = useRef(null);
+
     useEffect(() => {
         // open menu 
-        if (state.clicked === false) {
-            menu.current.style.display = 'none';      
+        console.log(state)
+        if (state.clicked === true ) {
+            gsap.to(menu.current, {
+                duration: 0,
+                css: { display: 'block' },
+            });
+
+        gsap.to([revealMenu, revealMenuBg], {
+            duration: 0,
+            opacity: 1,
+            height: '100%',
+        });
+
+        gsap.from([revealMenu, revealMenuBg], {
+            duration: 0.8,
+            height: 0,
+            transformOrigin: 'right top',
+            skewY: 4,
+            ease: 'power3.inOut',
+            stagger: {
+                amount: 0.1
+            }
+        });
         }
         // close menu
-        else if (state.clicked === true) {
-            menu.current.style.display = 'flex'
-        }
-    })
+        else if (state.clicked === false) {
+            gsap.to([revealMenu, revealMenuBg], {
+                duration: 0.8,
+                height: 0,
+                ease: 'power3.inOut',
+                stagger: {
+                    amount: 0.07
+                }
+            })
+        gsap.to(menu.current, {
+            duration: 1,
+            css: { display: 'none' },
+        })
+    }}, [state]);
 
     return (
         <NavResponsiveWrapper ref={menu}>
-            <NavAnimationBackground clicked={state.clicked} ref={revealMenuBg}/>
-            <NavList responsive={true} clicked={state.clicked} ref={revealMenu}/>
+            <NavAnimationBackground clicked={state.clicked} ref={el => (revealMenuBg = el)}/>
+            <NavList responsive={true} clicked={state.clicked} ref={el => (revealMenu = el)}/>
         </NavResponsiveWrapper>
     )
 };

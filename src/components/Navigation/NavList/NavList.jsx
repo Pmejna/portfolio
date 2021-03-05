@@ -4,6 +4,7 @@ import  {Link} from "gatsby";
 
 
 const NavUl = styled.ul`
+    box-sizing: border-box;
     display: flex;
     flex-direction: ${({responsive}) => responsive ? 'column' : 'row'};
     justify-content: ${({responsive}) => responsive ? 'space-between' : 'space-between'};
@@ -17,9 +18,10 @@ const NavUl = styled.ul`
     background-color: ${({responsive}) => responsive ? 'white' : 'transparent'};
     position: ${({responsive}) => responsive ? 'absolute' : 'relative'};
     ${({responsive}) => responsive ? 'top: 0; left: 0;' : null};
-    ${({responsive}) => responsive ? 'padding: 20vh 0 20vh 16vw' : null};
+    /* ${({responsive}) => responsive ? 'padding: 20vh 0 20vh 16vw' : null}; */
     font-family: ${({responsive}) => responsive ? '"IntervogueAltBold", sans-serif' : '"IntervogueAltLight", sans-serif'} ;
     font-size: ${({responsive}) => responsive ? '3rem' : '0.8rem'};
+    overflow: hidden;
 
 
     @media(max-width: 1365px) {
@@ -38,7 +40,7 @@ const NavLi = styled.li`
     }
 `;
 
-const NavList = ({responsive, clicked}) => {
+const NavList = React.forwardRef(({responsive, clicked}, ref) => {
     const li1 = useRef();
     const li2 = useRef();
     const li3 = useRef();
@@ -46,7 +48,7 @@ const NavList = ({responsive, clicked}) => {
 
     useEffect(() => {
         if(clicked === true) {
-            console.log(li1, li2, li3, li4)
+
         }
         else if (clicked === false) {
 
@@ -54,7 +56,7 @@ const NavList = ({responsive, clicked}) => {
     });
 
     return (
-            <NavUl responsive={responsive}>
+            <NavUl responsive={responsive} ref={ref}> 
                 <NavLi ref={li1} >
                     <Link to="/projects">
                         Projects
@@ -77,6 +79,6 @@ const NavList = ({responsive, clicked}) => {
                 </NavLi>
             </NavUl>
     )
-};
+});
 
 export default NavList
