@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import NavList from '../NavList/NavList';
 import gsap from 'gsap';
+import {menuClose, menuOpen} from '../../../assets/animations/gsapAnimations';
 
 const NavResponsiveWrapper = styled.nav`
     position: absolute;
@@ -25,57 +26,40 @@ const NavAnimationBackground = styled.div`
     left: 0;
 `;
 
+const NavListWrapper = styled.div`
+    background-color: #000;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+`;
+
 const NavResponsive = ({state}) => {
     let menu = useRef(null);
     let revealMenu = useRef(null);
     let revealMenuBg = useRef(null);
+    let navListMenu = useRef(null);
 
     useEffect(() => {
         // open menu 
         console.log(state)
         if (state.clicked === true ) {
-            gsap.to(menu.current, {
-                duration: 0,
-                css: { display: 'block' },
-            });
-
-        gsap.to([revealMenu, revealMenuBg], {
-            duration: 0,
-            opacity: 1,
-            height: '100%',
-        });
-
-        gsap.from([revealMenu, revealMenuBg], {
-            duration: 0.8,
-            height: 0,
-            transformOrigin: 'right top',
-            skewY: 4,
-            ease: 'power3.inOut',
-            stagger: {
-                amount: 0.1
-            }
-        });
+            menuOpen(revealMenu, revealMenuBg, menu.current)
         }
         // close menu
         else if (state.clicked === false) {
-            gsap.to([revealMenu, revealMenuBg], {
-                duration: 0.8,
-                height: 0,
-                ease: 'power3.inOut',
-                stagger: {
-                    amount: 0.07
-                }
-            })
-        gsap.to(menu.current, {
-            duration: 1,
-            css: { display: 'none' },
-        })
+            menuClose(revealMenu, revealMenuBg, menu.current)
     }}, [state]);
 
     return (
         <NavResponsiveWrapper ref={menu}>
             <NavAnimationBackground clicked={state.clicked} ref={el => (revealMenuBg = el)}/>
-            <NavList responsive={true} clicked={state.clicked} ref={el => (revealMenu = el)}/>
+            <NavListWrapper ref={el => (revealMenu = el)}>
+                <NavList responsive={true} clicked={state.clicked} ref={el => (navListMenu = el)}/>
+            </NavListWrapper>            
         </NavResponsiveWrapper>
     )
 };

@@ -18,7 +18,7 @@ const NavUl = styled.ul`
     background-color: ${({responsive}) => responsive ? 'white' : 'transparent'};
     position: ${({responsive}) => responsive ? 'absolute' : 'relative'};
     ${({responsive}) => responsive ? 'top: 0; left: 0;' : null};
-    /* ${({responsive}) => responsive ? 'padding: 20vh 0 20vh 16vw' : null}; */
+    ${({responsive}) => responsive ? 'padding: 20vh 0 20vh 16vw' : null};
     font-family: ${({responsive}) => responsive ? '"IntervogueAltBold", sans-serif' : '"IntervogueAltLight", sans-serif'} ;
     font-size: ${({responsive}) => responsive ? '3rem' : '0.8rem'};
     overflow: hidden;
