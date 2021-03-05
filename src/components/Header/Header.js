@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import NavHorizontal from '../Navigation/NavHorizontal/NavHorizontal';
 import NavResponsive from "../Navigation/NavResponsive/NavResponisve";
@@ -50,10 +50,14 @@ const Header = () => {
         }, 1200)
     }
 
+    useEffect(() => {
+        
+    })
+
     return (
     <NavHeader>
         <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
-        <NavResponsive />
+        <NavResponsive state={menuState}/>
     </NavHeader>
     )
 };

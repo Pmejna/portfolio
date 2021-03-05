@@ -22,6 +22,7 @@ const StyledContainer = styled.aside`
     color: black;
     padding-top: 2rem;
     padding-bottom: 4rem;
+    z-index: 102;
 
     @media(max-width: 650px) {
         display: none;

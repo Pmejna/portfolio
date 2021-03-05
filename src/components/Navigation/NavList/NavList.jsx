@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import  {Link} from "gatsby";
 
@@ -38,25 +38,39 @@ const NavLi = styled.li`
     }
 `;
 
-const NavList = ({responsive}) => {
+const NavList = ({responsive, clicked}) => {
+    const li1 = useRef();
+    const li2 = useRef();
+    const li3 = useRef();
+    const li4 = useRef();
+
+    useEffect(() => {
+        if(clicked === true) {
+            console.log(li1, li2, li3, li4)
+        }
+        else if (clicked === false) {
+
+        }
+    });
+
     return (
             <NavUl responsive={responsive}>
-                <NavLi>
+                <NavLi ref={li1} >
                     <Link to="/projects">
                         Projects
                     </Link>
                 </NavLi>
-                <NavLi>
+                <NavLi ref={li2} >
                     <Link to="/tech">
                         Tech stack
                     </Link>
                 </NavLi>
-                <NavLi>
+                <NavLi ref={li3} >
                     <Link to="/about">
                         About
                     </Link>
                 </NavLi>
-                <NavLi>
+                <NavLi ref={li4} >
                     <Link to="/contact">
                         Contact
                 </Link>

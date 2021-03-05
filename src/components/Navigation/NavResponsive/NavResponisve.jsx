@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import NavList from '../NavList/NavList';
+
 
 const NavResponsiveWrapper = styled.nav`
     position: absolute;
@@ -9,10 +10,9 @@ const NavResponsiveWrapper = styled.nav`
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: none;
     justify-content: center;
     z-index: 98;
-    padding-left: 18vw;
 `;
 
 const NavAnimationBackground = styled.div`
@@ -25,11 +25,25 @@ const NavAnimationBackground = styled.div`
     left: 0;
 `;
 
-const NavResponsive = () => {
+const NavResponsive = ({state}) => {
+    let menu = useRef();
+    let revealMenu = useRef();
+    let revealMenuBg = useRef();
+    useEffect(() => {
+        // open menu 
+        if (state.clicked === false) {
+            menu.current.style.display = 'none';      
+        }
+        // close menu
+        else if (state.clicked === true) {
+            menu.current.style.display = 'flex'
+        }
+    })
+
     return (
-        <NavResponsiveWrapper>
-            <NavAnimationBackground />
-            <NavList responsive={true}/>
+        <NavResponsiveWrapper ref={menu}>
+            <NavAnimationBackground clicked={state.clicked} ref={revealMenuBg}/>
+            <NavList responsive={true} clicked={state.clicked} ref={revealMenu}/>
         </NavResponsiveWrapper>
     )
 };

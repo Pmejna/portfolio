@@ -25,8 +25,7 @@ const NavLogo = styled.img`
     height: auto;
     width: 90%;
     max-width: 100px;
-
-    
+   
 `;
 
 
