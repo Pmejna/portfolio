@@ -26,6 +26,8 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         font-family: "IntervogueAltMed";
         font-size: 10px;
+        padding-left: 16vw;
+        padding-right: 8vw;
     }
     p {
         font-family: "IntervogueAltThin";
@@ -34,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     span {
         font-family: "IntervogueAltLight";
     }
+
 `;
 
 export default GlobalStyles

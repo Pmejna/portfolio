@@ -6,18 +6,14 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
 
-const Wrapper = styled.div`
-  max-height: 100vh;
-  max-width: 100vw;
-  width: 100vw;
+
+const HeaderWrapper = styled.div`
+  width: 100%;
   height: 100vh;
-  padding-top: 18vh;
-  padding-left: 16vw;
-  padding-right: 8vw;
+  padding-top: 16vh;
   display: flex;
   flex-direction: row;
 `;
-
 const TextContent = styled.div`
     display: flex;
     flex-direction: column;
@@ -40,16 +36,18 @@ const MainImage = styled.img`
 `;
 
 const IndexPage = ({data}) => (
-  <Wrapper>
+  <>
     <GlobalStyles/>
-    <TextContent>
-      <MainHeader />
-      <ProjectsBanner />
-    </TextContent>
-    <ImageContent>
-      <MainImage src={data.file.publicURL}/>
-    </ImageContent>
-  </Wrapper>
+    <HeaderWrapper>
+      <TextContent>
+        <MainHeader />
+        <ProjectsBanner />
+      </TextContent>
+      <ImageContent>
+        <MainImage src={data.file.publicURL}/>
+      </ImageContent>
+    </HeaderWrapper>
+</>
 )
 
 export const query = graphql`
