@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import TopEvent from "../../assets/images/Group 56.svg";
+import Arrow from '../../assets/images/Arrow.svg';
+import {Link} from 'gatsby';
+console.log(Arrow);
 
 const ProjectsContainer = styled.div`
     width: 30vw;
     height: 16vh;
-    min-width: 380px;
+    min-width: 430px;
     max-width: 500px;
     display: flex;
     flex-direction: row;
@@ -21,7 +24,7 @@ const ProjectsLogo = styled.div`
     background-color: black;
 `;
 
-const ProjectsLink = styled.a`
+const ProjectsLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +32,13 @@ const ProjectsLink = styled.a`
     flex-basis: 40%;
     background-color: #0AFCD3;
     color: black;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    :hover {
+        background-color: #000;
+        button { color: white;}
+    }
 `;
 
 const Logo = styled.img`
@@ -37,12 +47,24 @@ const Logo = styled.img`
 `;
 
 const ProjectsButton = styled.button`
-    font-family: "IntervogueAltThin";
+    position: relative;
+    font-family: "IntervogueAltMed";
+    font-size: 1.3rem;
     border: none;
     box-shadow: none;
-    width: 80%;
+    width: 100%;
     padding: 1rem;
-    color: inherit;
+    color: #000;
+    background-color: transparent;
+
+    img {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1.4rem;
+        width: auto;
+    }
 `;
 
 const ProjectsBanner = (props) => {
@@ -51,9 +73,10 @@ const ProjectsBanner = (props) => {
         <ProjectsLogo>
             <Logo src={TopEvent} />
         </ProjectsLogo>
-        <ProjectsLink>
+        <ProjectsLink to="/projects/topevent">
             <ProjectsButton>
                 Learn more
+                <img src={Arrow}></img>
             </ProjectsButton>
         </ProjectsLink>
 
