@@ -19,6 +19,10 @@ const NavWrapper = styled.nav`
     padding-right: 8vw;
     z-index: 101;
 
+    @media (max-width: 760px) {
+        padding-left: 8vw;
+        padding-right: 6vw;
+    }
 `;
 
 const NavLogo = styled.img`

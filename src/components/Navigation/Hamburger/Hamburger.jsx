@@ -12,7 +12,7 @@ const HamburgerWrapper = styled.button`
     transition: 0.3s ease-in-out;
     z-index: 101;
     cursor: pointer;
-
+    
     &:hover {
         span:nth-last-of-type(3) {
             transform: translateY(-120%);

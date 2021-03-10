@@ -9,7 +9,7 @@ import MainHeader from "../components/MainHeader/MainHeader";
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 16vh;
   display: flex;
   flex-direction: row;
@@ -19,6 +19,11 @@ const TextContent = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex-basis: 60%;
+
+    @media (max-width: 1240px) {
+    flex-basis: 50%;
+  }
+
 `;
 
 const ImageContent = styled.div`
@@ -33,6 +38,18 @@ const MainImage = styled.img`
     width: auto;
     bottom: 0;
     right: 0;
+
+    @media (max-width: 1240px) {
+    bottom: 20vh;
+    right: unset;
+    left: 0;
+    height: 70vh;
+  }
+    @media (max-width:760px) {
+    bottom: 20vh;
+    left: -31vh;
+    height: 65vh;
+  }
 `;
 
 const IndexPage = ({data}) => (

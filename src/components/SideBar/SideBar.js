@@ -24,7 +24,7 @@ const StyledContainer = styled.aside`
     padding-bottom: 4rem;
     z-index: 102;
 
-    @media(max-width: 650px) {
+    @media(max-width: 760px) {
         display: none;
     }
 `;
