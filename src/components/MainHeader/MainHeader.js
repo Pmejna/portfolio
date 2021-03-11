@@ -19,12 +19,13 @@ const HeaderWrapper = styled.div`
     }
 `;
 
-const Author = styled.p`
+const Above = styled.p`
     font-family: "IntervogueAltThin";
-    font-size: 1.3rem;
+    font-size: ${({main}) => main ? '1.3rem' : '0.8rem'};
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #6D6D6D;
+    margin-bottom: 1rem;
 
     @media (max-width: 760px) {
         font-size: 1.2rem;
@@ -37,10 +38,16 @@ const Title = styled.h1`
     color: black;
 `;
 
+const Title2 = styled.h2`
+    font-size: 4rem;
+    line-height: 3.8rem;
+    color: black;
+`;
+
 const SubTitle = styled.p`
     font-family: "IntervogueAltLight";
     margin-top: 0.4rem;
-    font-size: 1.7rem;
+    font-size: ${({main}) => main ? '1.7rem' : '1.4rem'};
     color: #6D6D6D;
 
     @media (max-width: 760px) {
@@ -49,14 +56,13 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = (props) => {
+const MainHeader = ({above, title, subTitle, main}) => {
     return (
-        <HeaderWrapper>
-            <Author>Przemyslaw Mejna</Author>
-            <Title>Great should be a new
-            standard</Title>
-            <SubTitle>
-            I believe that combining both of the above is a must for great online success. The "regular" never will be enough. 
+        <HeaderWrapper main>
+            <Above>Przemyslaw Mejna</Above>
+            {main ? <Title>{title}</Title> : <Title2>{title}</Title2>}            
+            <SubTitle main>
+                {subTitle} 
             </SubTitle>
         </HeaderWrapper>
     )

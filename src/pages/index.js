@@ -53,12 +53,23 @@ const MainImage = styled.img`
   }
 `;
 
+const headerData = {
+  author: 'Przemyslaw Mejna',
+  title: 'Great should be a new standard',
+  subTitle: `I believe that combining both of the above is a must for great online success. The 'regular' never will be enough.`
+}
+
 const IndexPage = ({data}) => (
   <>
     <GlobalStyles/>
     <HeaderWrapper>
       <TextContent>
-        <MainHeader />
+        <MainHeader 
+          above={headerData.author} 
+          title={headerData.title}
+          subTitle={headerData.subTitle} 
+          main
+        />
         <ProjectsBanner />
       </TextContent>
       <ImageContent>
