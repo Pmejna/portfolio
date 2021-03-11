@@ -40,14 +40,15 @@ const MainImage = styled.img`
     right: 0;
 
     @media (max-width: 1240px) {
-    bottom: 20vh;
+    /* bottom: 20vh;
     right: unset;
-    left: 0;
-    height: 70vh;
+    left: 0; */
+    right: -12rem;
+    height: 90vh;
   }
     @media (max-width:760px) {
     bottom: 20vh;
-    left: -31vh;
+    left: -38vh;
     height: 65vh;
   }
 `;

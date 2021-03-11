@@ -15,7 +15,7 @@ const Arrow = ({ className, hovered, color }) => (
      transform="translate(668.061 -4978.939) rotate(90)" 
      fill="none" 
      
-     stroke-width="3"
+     strokeWidth="3"
      />
   </Svg>
 );

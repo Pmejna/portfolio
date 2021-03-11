@@ -1,28 +1,31 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import TopEvent from "../../assets/images/Group 56.svg";
 import Arrow from '../../components/Icons/Arrow';
 import {Link} from 'gatsby';
 
-console.log(Arrow);
-
 const ProjectsContainer = styled.div`
     position: relative;
     width: 30vw;
     height: 16vh;
-    min-width: 380px;
+    min-width: 490px;
     max-width: 500px;
     display: flex;
     flex-direction: row;
     margin-bottom: 8vh;
 
-    @media (max-width: 760px) {
-        margin-bottom: 1rem;
+
+    @media (max-width: 1240px) {
         margin-top: 8vh;
-        flex-basis: 16%;
-        min-width: 260px;
-        width: 84vw;
+        min-width: 330px;
+        width: 35vw;
         height: 12vh;
+    }
+    @media (max-width: 760px) {
+        margin-top: 8vh;
+        min-width: 260px;
+        width:100vw;
+        height: 8vh;
     }
 `;
 
@@ -33,6 +36,10 @@ const ProjectsLogo = styled.div`
     height: 100%;
     flex-basis: 60%;
     background-color: black;
+
+    @media (max-width: 1240px) {
+        flex-basis: 84;
+    }
 `;
 
 const ProjectsLink = styled(Link)`
@@ -53,6 +60,10 @@ const ProjectsLink = styled(Link)`
             stroke: ${({color}) => color="#fff"}
         }
     }
+
+    @media (max-width: 1240px) {
+        flex-basis: 16%;
+    }
 `;
 
 const Logo = styled.img`
@@ -63,7 +74,7 @@ const Logo = styled.img`
 const ProjectsButton = styled.button`
     position: relative;
     font-family: "IntervogueAltMed";
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     border: none;
     box-shadow: none;
     width: 100%;
@@ -72,7 +83,11 @@ const ProjectsButton = styled.button`
     background-color: transparent;
     cursor: pointer;
 
-   svg {
+    @media (max-width: 1240px) {
+        font-size: 1.3rem;
+    }
+
+   svg {    
         position: absolute;
         right: 1rem;
         top: 50%;
@@ -93,6 +108,26 @@ const ProjectsBannerH2 = styled.h3`
 `;
 
 const ProjectsBanner = (props) => {
+    const useWindowSize = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth({
+                windowWidth: window.innerWidth
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return windowWidth
+    };
+
+    const size = useWindowSize();
+    console.log(size);
+
     return (
     <ProjectsContainer>
         <ProjectsBannerH2>
@@ -103,7 +138,7 @@ const ProjectsBanner = (props) => {
         </ProjectsLogo>
         <ProjectsLink to="/projects/topevent">
             <ProjectsButton>
-                Learn more
+                {size.windowWidth > 1240 ? 'Learn more' : null}
                 <Arrow color='black'/>
             </ProjectsButton>
         </ProjectsLink>
