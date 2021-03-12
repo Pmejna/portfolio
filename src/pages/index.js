@@ -5,6 +5,7 @@ import {graphql} from "gatsby";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
+import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 
 
 const HeaderWrapper = styled.div`
@@ -76,6 +77,22 @@ const IndexPage = ({data}) => (
         <MainImage src={data.file.publicURL}/>
       </ImageContent>
     </HeaderWrapper>
+    <SectionParagraph 
+      title='Lets improve your profits and branding!' 
+      above='your brand' 
+      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
+        you have a success.`} 
+      leftText={true}
+    >
+    </SectionParagraph>
+    <SectionParagraph 
+      title='Branding, webdesign, illustration? All sorted!!' 
+      above='services' 
+      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
+        you have a success.`} 
+      leftText={false}
+    >
+    </SectionParagraph>
 </>
 )
 

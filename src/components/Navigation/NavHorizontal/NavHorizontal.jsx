@@ -11,13 +11,15 @@ const NavWrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 2rem;
+    top: 0;
     left: 0;
     width: 100vw;
-    height: 8vh;
+    height: 14vh;
     padding-left: 16vw;
     padding-right: 8vw;
+    padding-top: 2rem;
     z-index: 101;
+    background-color: white;
 
     @media (max-width: 760px) {
         padding-left: 8vw;

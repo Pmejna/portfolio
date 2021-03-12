@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import MainHeader from '../MainHeader/MainHeader';
 
-const SectionParagraph = ({title, header, text}) => {
+const SectionParagraphWrapper = styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: ${({leftText}) => leftText ? 'row' : 'row-reverse'};
+    padding: 4rem 0 4rem;
+`;
+
+const SectionParagraph = ({leftText, children, ...restProps}) => {
     return (
-        <SectionParagraphWrapper>
-            <h2>{title}</h2>
-            <h3>{header}</h3>
-            <p>{text}</p>
+        <SectionParagraphWrapper leftText={leftText}>
+            <MainHeader leftText={leftText} {...restProps}/>
+            {children}
         </SectionParagraphWrapper>
     )
 };
