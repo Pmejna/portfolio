@@ -6,7 +6,7 @@ const SectionParagraphWrapper = styled.section`
     width: 100%;
     display: flex;
     flex-direction: ${({leftText}) => leftText ? 'row' : 'row-reverse'};
-    padding: 4rem 0 4rem;
+    padding: 4rem 8vw 4rem 16vw;
 `;
 
 const SectionParagraph = React.forwardRef(({leftText, children, ...restProps}, ref) => {

@@ -14,6 +14,7 @@ const HeaderWrapper = styled.div`
   min-height: 84vh;
   display: flex;
   flex-direction: row;
+  padding: 0 8vw 0 16vw;
 `;
 const TextContent = styled.div`
     display: flex;

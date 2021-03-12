@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
       line-height: 2.8rem;
     }
     p {
-        width: 80%;
+        width: ${({main}) => main ? '80%' : '100%'};
         margin-bottom: 0.4rem;
     }
     }

@@ -29,8 +29,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         margin: 0;
-        padding-top: 16vh;
-        padding: 16vh 8vw 0 16vw;
+        padding: 16vh 0 0;
         font-family: "IntervogueAltMed";
     }
     p {
