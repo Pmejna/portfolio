@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import MainHeader from '../MainHeader/MainHeader';
 
@@ -9,13 +9,21 @@ const SectionParagraphWrapper = styled.section`
     padding: 4rem 0 4rem;
 `;
 
-const SectionParagraph = ({leftText, children, ...restProps}) => {
+const SectionParagraph = React.forwardRef(({leftText, children, ...restProps}, ref) => {
+
+    let ref1 = useRef(null);
+
+    useEffect(() => {
+        console.log(ref1)
+      }, [ref1]);
+
     return (
-        <SectionParagraphWrapper leftText={leftText}>
-            <MainHeader leftText={leftText} {...restProps}/>
+        <SectionParagraphWrapper ref={ref} leftText={leftText}>
+            <MainHeader leftText={leftText} {...restProps} ref={ref1}/>
             {children}
         </SectionParagraphWrapper>
     )
-};
+}
+);
 
 export default SectionParagraph

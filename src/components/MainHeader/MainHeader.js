@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.div`
@@ -60,9 +60,9 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = ({above, title, subTitle, main, leftText}) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText}, ref) => {
     return (
-        <HeaderWrapper main={main}>
+        <HeaderWrapper main={main} ref={ref}>
             <Above leftText={leftText}>
                 {above}
             </Above>
@@ -78,6 +78,6 @@ const MainHeader = ({above, title, subTitle, main, leftText}) => {
             </SubTitle>
         </HeaderWrapper>
     )
-}
+});
 
 export default MainHeader 

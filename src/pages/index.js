@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 import GlobalStyles from '../assets/styles/GlobalStyles';
 import {graphql} from "gatsby";
+import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
@@ -10,8 +11,7 @@ import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 
 const HeaderWrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
-  padding-top: 16vh;
+  min-height: 84vh;
   display: flex;
   flex-direction: row;
 `;
@@ -60,7 +60,14 @@ const headerData = {
   subTitle: `I believe that combining both of the above is a must for great online success. The 'regular' never will be enough.`
 }
 
-const IndexPage = ({data}) => (
+
+const IndexPage = ({data}) => {
+
+  let section1Ref = useRef(null);
+  let section2Ref = useRef(null);
+
+
+  return (
   <>
     <GlobalStyles/>
     <HeaderWrapper>
@@ -70,6 +77,7 @@ const IndexPage = ({data}) => (
           title={headerData.title}
           subTitle={headerData.subTitle} 
           main
+          leftText={true}
         />
         <ProjectsBanner />
       </TextContent>
@@ -78,6 +86,7 @@ const IndexPage = ({data}) => (
       </ImageContent>
     </HeaderWrapper>
     <SectionParagraph 
+      ref={el => (section1Ref = el)}
       title='Lets improve your profits and branding!' 
       above='your brand' 
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
@@ -86,15 +95,17 @@ const IndexPage = ({data}) => (
     >
     </SectionParagraph>
     <SectionParagraph 
+      ref={section2Ref}
       title='Branding, webdesign, illustration? All sorted!!' 
-      above='services' 
+      above='your brand' 
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you have a success.`} 
       leftText={false}
     >
     </SectionParagraph>
-</>
-)
+  </>
+  ) 
+};
 
 export const query = graphql`
   {
