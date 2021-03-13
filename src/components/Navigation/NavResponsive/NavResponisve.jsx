@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import {menuClose, menuOpen} from '../../../assets/animations/gsapAnimations';
 
 const NavResponsiveWrapper = styled.nav`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;

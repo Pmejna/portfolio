@@ -44,6 +44,9 @@ const GlobalStyles = createGlobalStyle`
         text-decoration: none;
     }
 
+    section {
+        padding: 4rem 8vw 4rem 16vw;
+    }
     @media (max-width: 1240px) {
     :root {
         font-size: 16px;
@@ -52,10 +55,6 @@ const GlobalStyles = createGlobalStyle`
     @media (max-width: 760px) {
     :root {
         font-size: 12px;
-    }
-    body {
-        padding-left: 8vw;
-        padding-right: 6vw;
     }
   }
 `;

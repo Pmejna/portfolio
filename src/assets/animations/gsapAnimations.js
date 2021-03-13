@@ -1,4 +1,6 @@
 import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const menuClose = (element1, element2, mainElement) => {
     gsap.to([element1, element2], {
@@ -52,4 +54,35 @@ export const revealItem = (items = [...items]) => {
             amount: 0.8
         }
     })
-}
+};
+
+export const revealSection = (element) => {
+    console.log(element);
+    gsap.from(element, {
+        duration: 2,
+        y: '100',
+        opacity: 0,
+        ease: 'ease-in',
+        scrollTrigger: {
+            trigger: element,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            toggleActions: 'play none none none'
+        }
+    })
+};
+export const revealSection2 = (element) => {
+    console.log(element);
+    gsap.from(element, {
+        duration: 2,
+        y: '100',
+        opacity: 0,
+        ease: 'ease-in',
+        scrollTrigger: {
+            trigger: element,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            toggleActions: 'play none none none'
+        }
+    })
+};

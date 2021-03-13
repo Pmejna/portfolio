@@ -1,10 +1,11 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 750px;
+    background-color: transparent;
 
     @media (max-width: 760px) {
     max-width: 60vw;
@@ -24,8 +25,8 @@ const Above = styled.p`
     font-size: ${({main}) => main ? '1.3rem' : '0.8rem'};
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #6D6D6D;
-    margin-bottom: 1rem;
+    color: ${({black}) => black ? '#0AFCD3' : '#6D6D6D'};
+    margin-bottom: 0.3rem;
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
 
     @media (max-width: 760px) {
@@ -43,7 +44,7 @@ const Title = styled.h1`
 const Title2 = styled.h2`
     font-size: 3rem;
     line-height: 3.8rem;
-    color: black;
+    color: ${({black}) => black ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
 `;
 
@@ -51,7 +52,7 @@ const SubTitle = styled.p`
     font-family: "IntervogueAltLight";
     margin-top: 0.4rem;
     font-size: ${({main}) => main ? '1.7rem' : '1.4rem'};
-    color: #6D6D6D;
+    color: ${({black}) => black ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
 
     @media (max-width: 760px) {
@@ -60,19 +61,21 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black}, ref) => {
+
     return (
-        <HeaderWrapper main={main} ref={ref}>
-            <Above leftText={leftText}>
+        <HeaderWrapper main={main} ref={ref} >
+            <Above leftText={leftText} black={black}>
                 {above}
             </Above>
             {main ? 
                 <Title leftText={leftText}>{title}</Title> : 
-                <Title2 leftText={leftText}>{title}</Title2>
+                <Title2 leftText={leftText} black={black}>{title}</Title2>
             }            
             <SubTitle 
                 main={main} 
                 leftText={leftText}
+                black={black}
             >
                 {subTitle} 
             </SubTitle>

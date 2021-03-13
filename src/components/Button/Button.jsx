@@ -8,6 +8,8 @@ const ButtonWrapper = styled.button`
     border: none;
     display: flex;
     align-items: center;
+    font-family: 'IntervogueAltBold', sans-serif;
+    font-size: 1rem;
 `;
 
 const LinkStyled = styled(Link)`
@@ -25,7 +27,7 @@ const LinkStyled = styled(Link)`
         position: absolute;
         top: 0;
         right: 0;
-        width: 2rem;
+        width: 1.4rem;
         height: 100%;
         background-color: var(--color-main);
         img {
@@ -37,7 +39,6 @@ const LinkStyled = styled(Link)`
             height: auto;
         }
         }
-    }
 `;
 
 const Button = ({children, to }) => {

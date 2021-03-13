@@ -2,11 +2,10 @@ import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 import GlobalStyles from '../assets/styles/GlobalStyles';
 import {graphql} from "gatsby";
-import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
+import Contact from '../components/Contact/Contact';
 
 
 const HeaderWrapper = styled.div`
@@ -15,6 +14,11 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0 8vw 0 16vw;
+
+  @media (max-width: 760px) {
+        padding-left: 8vw;
+        padding-right: 6vw;
+    }
 `;
 const TextContent = styled.div`
     display: flex;
@@ -67,8 +71,7 @@ const IndexPage = ({data}) => {
   let section1Ref = useRef(null);
   let section2Ref = useRef(null);
 
-
-  return (
+   return (
   <>
     <GlobalStyles/>
     <HeaderWrapper>
@@ -96,14 +99,25 @@ const IndexPage = ({data}) => {
     >
     </SectionParagraph>
     <SectionParagraph 
-      ref={section2Ref}
+      ref={el => (section2Ref = el)}
       title='Branding, webdesign, illustration? All sorted!!' 
-      above='your brand' 
+      above='services' 
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you have a success.`} 
       leftText={false}
     >
     </SectionParagraph>
+    <SectionParagraph 
+      ref={section2Ref}
+      title='Who am I?' 
+      above='about me' 
+      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
+        you have a success.`} 
+      leftText={true}
+      black
+    >
+    </SectionParagraph>
+    <Contact/> 
   </>
   ) 
 };
