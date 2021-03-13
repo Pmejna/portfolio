@@ -40,14 +40,50 @@ const LinkStyled = styled(Link)`
         }
         }
 `;
+const FormStyled = styled.div`
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem 3rem 0.5rem 0.5rem;
+        align-items: center;
+        background-color: #000;
+        color: white;
+        cursor: pointer;
 
-const Button = ({children, to }) => {
+    div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.4rem;
+        height: 100%;
+        background-color: var(--color-main);
+        img {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 30%;
+            height: auto;
+        }
+        }
+`;
+
+const Button = ({children, to, type, value, formButton }) => {
     return (
-        <ButtonWrapper>
+        <ButtonWrapper type={type} value={value}>
+            {
+                formButton ? 
+                <FormStyled>
+                    {children}
+                    <div><img src={Arrow}></img></div>
+                </FormStyled>
+                :
             <LinkStyled to={to} target='_blank'>
-            {children}
-            <div><img src={Arrow}></img></div>
+                {children}
+                <div><img src={Arrow}></img></div>
             </LinkStyled>
+        }
         </ButtonWrapper>
     )
 };

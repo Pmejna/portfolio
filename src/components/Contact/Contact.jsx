@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import emailjs from 'emailjs-com';
 
 import Button from '../Button/Button';
 import Input from '../Input/Input';
@@ -74,6 +75,17 @@ const ButtonField = styled.div`
 `;
 
 const Contact = () => {
+    function sendEmail(e) {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_yex31g5', 'template_0mxs28h', e.target, 'user_5yt5RMKkSTewoPnI9eroa')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+      }
+      
     return (
         <ContactWrapper>
             <ContactHeader>
@@ -82,12 +94,12 @@ const Contact = () => {
             </Above>
             <Title2>Let's get in touch!</Title2>
             </ContactHeader>
-            <ContactForm>
+            <ContactForm onSubmit={sendEmail}>
                 <Input type='text' name='name' labelText='Your name'  nameOfClass='inputName' required />
                 <Input type='email' name='email' labelText='Your email' nameOfClass='inputEmail' required />
-                <Input textArea id='description' name="description" labelText='Your message' nameOfClass='inputMessage' required />
-                <ButtonField className='buttonField'>
-                    <Button>Submit</Button>
+                <Input textArea id='message' name="message" labelText='Your message' nameOfClass='inputMessage' required />
+                <ButtonField className='buttonField' formButton>
+                    <Button type='submit' value="Send">Submit</Button>
                 </ButtonField>
             </ContactForm>
         </ContactWrapper>
