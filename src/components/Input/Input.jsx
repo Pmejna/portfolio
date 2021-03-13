@@ -12,6 +12,11 @@ const Textarea = styled.div`
         border: none;
         padding: 0.4rem 1rem;
         font-size: 1rem;
+        font-family: inherit;
+
+        @media (max-width: 760px) {
+            font-size: 1.4rem;
+        }
     }
 
     &.inputMessage { 
@@ -49,8 +54,14 @@ const InputWrapper = styled.div`
         height: 100%;
         padding: 0 1rem;
         font-size: 1rem;
+        font-family: inherit;
+
         &:focus ~ label {
             bottom: 2rem;
+        }
+
+        @media (max-width: 760px) {
+            font-size: 1.4rem;
         }
     }
 
@@ -69,18 +80,18 @@ const InputWrapper = styled.div`
     }
 `;
 
-const Input = ({textArea, labelText, name, type, nameOfClass, id, required }) => {
+const Input = ({textArea, labelText, name, type, nameOfClass, id, required, placeholder }) => {
     return (
         <>
             {
                 textArea ?  
                 <Textarea className={nameOfClass}>
-                    <textarea name={name} id={id} cols="30" rows="10" required={required}>
+                    <textarea name={name} id={id} cols="30" rows="10" required={required} placeholder={placeholder}>
                     </textarea>
                     <label htmlFor={id}>{labelText}</label>
                 </Textarea> : 
                 <InputWrapper className={nameOfClass}>
-                    <input type={type} name={name} required={required}/>
+                    <input type={type} name={name} required={required} placeholder={placeholder}/>
                     <label htmlFor="" required={required}>{labelText}</label>
                 </InputWrapper>
             }

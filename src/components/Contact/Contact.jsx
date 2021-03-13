@@ -7,6 +7,10 @@ import Input from '../Input/Input';
 const ContactWrapper = styled.section`
     width: 100vw;
     padding: 0;
+
+    @media (max-width: 760px) {
+
+    }
 `;
 
 const ContactHeader = styled.div`
@@ -30,6 +34,10 @@ const ContactForm = styled.form`
     @media (max-width: 760px) {
         grid-template-columns: 100%;
         grid-template-rows: repeat(5, 40px);
+        gap: 2.4rem;
+        padding: 3rem 8vw 0 6vw;
+        font-size: 1.2rem;
+        
         .buttonField {
         grid-area: 5/1/6/2;
     }
@@ -75,9 +83,9 @@ const Contact = () => {
             <Title2>Let's get in touch!</Title2>
             </ContactHeader>
             <ContactForm>
-                <Input type='text' name='name' labelText='Your name'  nameOfClass='inputName' required/>
-                <Input type='email' name='email' labelText='Your email' nameOfClass='inputEmail' required/>
-                <Input textArea id='description' name="description" labelText='Your message' nameOfClass='inputMessage' required/>
+                <Input type='text' name='name' labelText='Your name'  nameOfClass='inputName' required />
+                <Input type='email' name='email' labelText='Your email' nameOfClass='inputEmail' required />
+                <Input textArea id='description' name="description" labelText='Your message' nameOfClass='inputMessage' required />
                 <ButtonField className='buttonField'>
                     <Button>Submit</Button>
                 </ButtonField>

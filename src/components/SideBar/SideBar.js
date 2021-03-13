@@ -6,6 +6,7 @@ import Instagram from "../../components/Icons/Instagram";
 import LinkedIn from "../../components/Icons/LinkedIn";
 import Behance from "../../components/Icons/Behance";
 import EmailIcon from "../../components/Icons/Email";
+import Github from "../Icons/Github";
 
 const StyledContainer = styled.aside`
     position: fixed;
@@ -104,14 +105,17 @@ const SideBar = () => {
                     <Logomark hovered="true" color="black"/>
                 </LogoBox>
                 <LinksBox>
-                    <LinkIcon hovered >
+                    <LinkIcon hovered href='https://www.instagram.com/przemyslawmejna/'  target="_blank">
                         <Instagram hovered="true" color="black"/>
                     </LinkIcon>
-                    <LinkIcon hovered>
+                    <LinkIcon hovered  href='https://www.linkedin.com/in/przemyslaw-mejna-635842bb/' target="_blank">
                         <LinkedIn hovered="true" color="black" />
                     </LinkIcon>
-                    <LinkIcon>
+                    <LinkIcon  href='https://www.behance.net/pmejna' target="_blank">
                         <Behance hovered="true" color="black" />
+                    </LinkIcon>
+                    <LinkIcon  href='https://github.com/Pmejna' target="_blank">
+                        <Github hovered="true" color="black" />
                     </LinkIcon>
                 </LinksBox>
                 <EmailBox>

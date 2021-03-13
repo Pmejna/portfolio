@@ -3,6 +3,7 @@ import Header from '../components/Header/Header';
 import SideBar from '../components/SideBar/SideBar';
 import '../assets/styles/fonts/Index.css';
 import GlobalStyles from '../assets/styles/GlobalStyles';
+import Footer from "../components/Footer/Footer";
 
 
 const MainLayout = ({children}) => {
@@ -12,6 +13,7 @@ const MainLayout = ({children}) => {
         <Header/>
         <SideBar/>
         {children}
+        <Footer/>
     </>
 )
 }
