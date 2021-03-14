@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import { element } from 'prop-types';
 gsap.registerPlugin(ScrollTrigger);
 
 export const menuClose = (element1, element2, mainElement) => {
@@ -56,18 +57,21 @@ export const revealItem = (items = [...items]) => {
     })
 };
 
-export const revealSection = (element) => {
-    console.log(element);
-    gsap.from(element, {
-        duration: 2,
+export const revealSection = (items = [...items]) => {
+    console.log(items);
+    gsap.from([...items], {
+        duration: 1,
         y: '100',
         opacity: 0,
         ease: 'ease-in',
         scrollTrigger: {
-            trigger: element,
+            trigger: items,
             start: 'top 80%',
             end: 'bottom 60%',
             toggleActions: 'play none none none'
+        },
+        stagger: {
+            amount: 0.4
         }
     })
 };
@@ -75,7 +79,7 @@ export const revealSection2 = (element) => {
     console.log(element);
     gsap.from(element, {
         duration: 2,
-        y: '100',
+        y: '80',
         opacity: 0,
         ease: 'ease-in',
         scrollTrigger: {

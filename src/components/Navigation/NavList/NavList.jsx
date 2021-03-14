@@ -31,6 +31,8 @@ const NavUl = styled.ul`
 `;
 
 const NavLi = styled.li`
+    padding: 0.2rem 0.4rem;
+
     a {
         font-family: inherit;
         font-size: inherit;
@@ -38,6 +40,14 @@ const NavLi = styled.li`
         text-transform: uppercase;
         letter-spacing: 0.1rem;
         color: inherit;
+        padding: inherit;
+        border: ${({responsive}) => responsive ? 'none' : '2px solid transparent'};
+    }
+
+    &:hover {
+        a {
+            border: ${({responsive}) => responsive ? 'none' : '2px solid var(--color-main)'};
+        }
     }
 `;
 
@@ -59,23 +69,23 @@ const NavList = React.forwardRef(({responsive, clicked}, ref) => {
 
     return (
             <NavUl responsive={responsive} ref={ref}> 
-                <NavLi ref={el => li1 = el} >
-                    <Link to="/projects">
+                <NavLi ref={el => li1 = el} responsive={responsive}>
+                    <Link to="/projects" >
                         Projects
                     </Link>
                 </NavLi>
-                <NavLi  ref={el => li2 = el} >
-                    <Link to="/tech">
+                <NavLi  ref={el => li2 = el} responsive={responsive}>
+                    <Link to="/tech" >
                         Tech stack
                     </Link>
                 </NavLi>
-                <NavLi  ref={el => li3 = el} >
-                    <Link to="/about">
+                <NavLi  ref={el => li3 = el} responsive={responsive}>
+                    <Link to="/about" >
                         About
                     </Link>
                 </NavLi>
-                <NavLi ref={el => li4 = el} >
-                    <Link to="/contact">
+                <NavLi ref={el => li4 = el} responsive={responsive}>
+                    <Link to="/contact" >
                         Contact
                 </Link>
                 </NavLi>

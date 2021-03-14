@@ -20,10 +20,6 @@ const SectionParagraph = React.forwardRef(({leftText, children, black, ...restPr
 
     let ref1 = useRef(null);
 
-    useEffect(() => {
-        revealSection(ref1);
-      }, [])
-
     return (
         <SectionParagraphWrapper ref={ref} leftText={leftText} black={black}>
             <MainHeader leftText={leftText} black={black} {...restProps} ref={el => (ref1 = el)}/>

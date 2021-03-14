@@ -1,5 +1,6 @@
 import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
+import {revealSection} from '../../assets/animations/gsapAnimations';
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -63,19 +64,34 @@ const SubTitle = styled.p`
 
 const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black}, ref) => {
 
+    let aboveRef = useRef(null);
+    let titleRef = useRef(null);
+    let title2Ref = useRef(null);
+    let subtitleRef = useRef(null);
+
+    useEffect(() => {
+        if (main) {
+            revealSection([aboveRef, titleRef, subtitleRef]);
+        }
+        else {
+            revealSection([aboveRef, title2Ref, subtitleRef]);
+        }
+      }, [])
+    
     return (
         <HeaderWrapper main={main} ref={ref} >
-            <Above leftText={leftText} black={black}>
+            <Above leftText={leftText} black={black} ref={el => (aboveRef = el)}>
                 {above}
             </Above>
             {main ? 
-                <Title leftText={leftText}>{title}</Title> : 
-                <Title2 leftText={leftText} black={black}>{title}</Title2>
+                <Title leftText={leftText} ref={el => (titleRef = el)}>{title}</Title> : 
+                <Title2 leftText={leftText} black={black} ref={el => (title2Ref = el)}>{title}</Title2>
             }            
             <SubTitle 
                 main={main} 
                 leftText={leftText}
                 black={black}
+                ref={el => (subtitleRef = el)}
             >
                 {subTitle} 
             </SubTitle>
