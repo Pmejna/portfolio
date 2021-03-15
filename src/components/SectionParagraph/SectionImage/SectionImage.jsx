@@ -6,7 +6,7 @@ import {revealSectionImage} from '../../../assets/animations/gsapAnimations';
 const SectionImageWrapper = styled.div`
     flex-basis: 38%;
     position: relative;
-    max-width: 400px;
+    max-width: 410px;
 
     img {
         position: absolute;

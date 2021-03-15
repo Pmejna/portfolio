@@ -77,11 +77,14 @@ export const revealSection = (items = [...items]) => {
 };
 export const revealSection2 = (items = [...items]) => {
 
-    gsap.from([...items], {
+    gsap.fromTo([...items], {
         duration: 1,
         y: '100',
         opacity: 0,
-        ease: 'ease-in',
+        ease: 'ease-in',        
+    }, {
+        opacity: 1,
+        y: 0,
         stagger: {
             amount: 0.4
         }
