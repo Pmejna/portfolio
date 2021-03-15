@@ -8,6 +8,7 @@ const HeaderWrapper = styled.div`
     max-width: 750px;
     background-color: transparent;
     flex-basis: ${({main}) => main ? 'auto' : '60%'};
+    opacity: ${({main}) => main ? '0' : '1'};
 
     @media (max-width: 760px) {
     max-width: 60vw;
@@ -69,10 +70,11 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
     let titleRef = useRef(null);
     let title2Ref = useRef(null);
     let subtitleRef = useRef(null);
+    let mainRef = useRef(null);
 
     useEffect(() => {
         if (main) {
-            revealSection2([aboveRef, titleRef, subtitleRef]);
+            revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
         }
         else {
             revealSection([aboveRef, title2Ref, subtitleRef]);
@@ -80,7 +82,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
       }, [])
     
     return (
-        <HeaderWrapper main={main} ref={ref} >
+        <HeaderWrapper main={main} ref={el => (mainRef = el)} >
             <Above leftText={leftText} black={black} ref={el => (aboveRef = el)}>
                 {above}
             </Above>
