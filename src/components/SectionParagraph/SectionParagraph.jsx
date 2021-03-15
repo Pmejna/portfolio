@@ -8,9 +8,16 @@ const SectionParagraphWrapper = styled.section`
     display: flex;
     flex-direction: ${({leftText}) => leftText ? 'row' : 'row-reverse'};
     background-color: ${({black}) => black ? '#000' : '#fff'};
+    flex-shrink: 0;
+    
+    /* img {
+        width: 37%;
+        height: 37%;
+    } */
     
 
     @media (max-width: 760px) {
+        flex-direction: column;
         padding-left: 8vw;
         padding-right: 6vw;
     }

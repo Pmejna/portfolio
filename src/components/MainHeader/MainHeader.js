@@ -1,12 +1,13 @@
 import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
-import {revealSection} from '../../assets/animations/gsapAnimations';
+import {revealSection, revealSection2} from '../../assets/animations/gsapAnimations';
 
 const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 750px;
     background-color: transparent;
+    flex-basis: ${({main}) => main ? 'auto' : '60%'};
 
     @media (max-width: 760px) {
     max-width: 60vw;
@@ -71,7 +72,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
 
     useEffect(() => {
         if (main) {
-            revealSection([aboveRef, titleRef, subtitleRef]);
+            revealSection2([aboveRef, titleRef, subtitleRef]);
         }
         else {
             revealSection([aboveRef, title2Ref, subtitleRef]);

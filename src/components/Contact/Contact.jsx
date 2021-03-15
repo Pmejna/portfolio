@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 
 import Button from '../Button/Button';
 import Input from '../Input/Input';
+import Rectangle from '../Icons/Rectangle';
 
 const ContactWrapper = styled.section`
     width: 100vw;
@@ -16,6 +17,10 @@ const ContactWrapper = styled.section`
 
 const ContactHeader = styled.div`
     padding: 4rem 8vw 0 16vw;
+
+    @media (max-width: 760px) {
+        padding: 3rem 8vw 0 6vw;
+    }
 `;
 const ContactForm = styled.form`
     display: grid;
@@ -24,6 +29,7 @@ const ContactForm = styled.form`
     gap: 1.6rem;
     padding: 4rem 8vw 4rem 16vw;
     background-color: #F5F5F5;
+    position: relative;
 
     .buttonField {
         grid-area: 3/2/4/3;
@@ -74,6 +80,43 @@ const ButtonField = styled.div`
     }
 `;
 
+const Rectangle1 = styled(Rectangle)`
+    position: absolute;
+    top: -5rem;
+    right: 8vw;
+    transform: scale(0.75);
+
+    @media (max-width: 760px) {
+        top: -4rem;
+        right: 6vw;
+        transform: scale(0.37);
+    }
+`;
+const Rectangle2 = styled(Rectangle)`
+    position: absolute;
+    top:-0.6rem;
+    right: 12vw;
+    transform: scale(1.05);
+
+    @media (max-width: 760px) {
+        top: -1.7rem;
+        right: 3vw;
+        transform: scale(0.55);
+    }
+`;
+const Rectangle3 = styled(Rectangle)`
+    position: absolute;
+    top: -4.2rem;
+    right: 20vw;
+    transform: scale(0.75);
+    
+    @media (max-width: 760px) {
+        top: -4.2rem;
+        right: 0vw;
+        transform: scale(0.37);
+    }
+`;
+
 const Contact = () => {
     function sendEmail(e) {
         e.preventDefault();
@@ -101,6 +144,9 @@ const Contact = () => {
                 <ButtonField className='buttonField' formButton>
                     <Button type='submit' value="Send">Submit</Button>
                 </ButtonField>
+                <Rectangle1 color='#0AFCD3'/>
+                <Rectangle2 color='#0AFCD3'/>
+                <Rectangle3 color='#0AFCD3'/>
             </ContactForm>
         </ContactWrapper>
     )

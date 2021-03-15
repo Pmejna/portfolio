@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 16vh 0 0;
         font-family: "IntervogueAltMed";
+        scroll-behavior: smooth;
     }
     p {
         font-family: "IntervogueAltThin";
