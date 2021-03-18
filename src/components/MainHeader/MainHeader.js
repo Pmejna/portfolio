@@ -64,7 +64,7 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black, className}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -82,7 +82,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
       }, [])
     
     return (
-        <HeaderWrapper main={main} ref={el => (mainRef = el)} >
+        <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className}>
             <Above leftText={leftText} black={black} ref={el => (aboveRef = el)}>
                 {above}
             </Above>

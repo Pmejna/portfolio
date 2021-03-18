@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import TopEvent from "../../assets/images/Group 56.svg";
+import TopEvent from "../../assets/images/TopEventLogo.svg";
 import Arrow from '../../components/Icons/Arrow';
 import {Link} from 'gatsby';
 
@@ -138,7 +138,7 @@ const ProjectsBanner = (props) => {
         </ProjectsLogo>
         <ProjectsLink to="/projects/topevent">
             <ProjectsButton>
-                {size.windowWidth > 1240 ? 'Learn more' : null}
+                {size.windowWidth > 1400 ? 'Learn more' : null}
                 <Arrow color='black'/>
             </ProjectsButton>
         </ProjectsLink>
