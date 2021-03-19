@@ -9,7 +9,7 @@ import Footer from "../components/Footer/Footer";
 const MainLayout = ({children}) => {
     return (    
     <>
-        <GlobalStyles/>
+        <GlobalStyles />
         <Header/>
         <SideBar/>
         {children}

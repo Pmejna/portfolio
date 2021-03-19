@@ -1,4 +1,6 @@
 import {createGlobalStyle} from "styled-components";
+import up from '../images/Up2.svg';
+import down from '../images/Down2.svg';
 
 const GlobalStyles = createGlobalStyle`
     :root {
@@ -7,7 +9,58 @@ const GlobalStyles = createGlobalStyle`
         font-family: "IntervogueAltLight";
         font-size: 20px;
     }
+    ::-webkit-scrollbar {
+        width: 1.4rem;
+        background-color: #F9F9F9;
+    }
+    /* the scrollbar. */
+    ::-webkit-scrollbar-button {
 
+    }
+    /* the buttons on the scrollbar (arrows pointing upwards and downwards). */
+    ::-webkit-scrollbar-thumb {
+        background-color: #0AFCD3;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00E8D0;
+    }
+    ::-webkit-scrollbar-button {
+        /* background: #000; */
+    }
+    /* the draggable scrolling handle. */
+    ::-webkit-scrollbar-track {
+
+    }
+    /* the track (progress bar) of the scrollbar. */
+    ::-webkit-scrollbar-track-piece {
+
+    }
+    /* the track (progress bar) NOT covered by the handle. */
+    ::-webkit-scrollbar-corner {
+
+    } 
+    /* the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet. */
+    ::-webkit-resizer {
+
+    }
+    /* the draggable resizing handle that appears at the bottom corner of some elements. */
+
+    /* ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        height: 2rem;
+        width: 16px;
+        background-position: center 4px;
+        background-image: url(${down});
+        background-position: 50% 0.5rem;
+        background-size: 1rem;
+        background-repeat: no-repeat;
+    } */
+    /* ::-webkit-scrollbar-button:single-button:vertical:increment {
+        height: 12px;
+        width: 16px;
+        background-position: center 4px;
+        background-image: url(${up});
+    } */
+    
     html {
         box-sizing: border-box;
     }
@@ -47,6 +100,7 @@ const GlobalStyles = createGlobalStyle`
 
     section {
         padding: 4rem 8vw 4rem 16vw;
+        margin-bottom: 2rem;
     }
     @media (max-width: 1240px) {
     :root {

@@ -1,6 +1,7 @@
 import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 import {revealSection, revealSection2} from '../../assets/animations/gsapAnimations';
+import Button from "../Button/Button";
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -9,6 +10,10 @@ const HeaderWrapper = styled.div`
     background-color: transparent;
     flex-basis: ${({main}) => main ? 'auto' : '60%'};
     opacity: ${({main}) => main ? '0' : '1'};
+
+    button {
+        max-width: 180px;
+    }
 
     @media (max-width: 760px) {
     max-width: 60vw;
@@ -57,6 +62,7 @@ const SubTitle = styled.p`
     font-size: ${({main}) => main ? '1.7rem' : '1.4rem'};
     color: ${({black}) => black ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
+    margin-bottom: 1.2rem;
 
     @media (max-width: 760px) {
         margin-top: 2rem;
@@ -64,16 +70,21 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black, className}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black, className, button}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
     let title2Ref = useRef(null);
     let subtitleRef = useRef(null);
     let mainRef = useRef(null);
+    let buttonRef = useRef(null);
 
     useEffect(() => {
-        if (main) {
+        if (button) {
+            revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
+            console.log(buttonRef);
+        }
+        else if (main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
         }
         else {
@@ -98,6 +109,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
             >
                 {subTitle} 
             </SubTitle>
+            {button ? <Button to='https://topevent.pl' ref={el => (buttonRef = el)}>Live project</Button> : null}
         </HeaderWrapper>
     )
 });

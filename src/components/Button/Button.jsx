@@ -10,6 +10,11 @@ const ButtonWrapper = styled.button`
     align-items: center;
     font-family: 'IntervogueAltBold', sans-serif;
     font-size: 1rem;
+
+    @media (max-width: 760px) {
+        min-height: 40px;
+        font-size: 2rem;
+    }
 `;
 
 const LinkStyled = styled(Link)`
@@ -69,9 +74,9 @@ const FormStyled = styled.div`
         }
 `;
 
-const Button = ({children, to, type, value, formButton }) => {
+const Button = ({children, to, type, value, formButton }, ref) => {
     return (
-        <ButtonWrapper type={type} value={value}>
+        <ButtonWrapper type={type} value={value} ref={ref}>
             {
                 formButton ? 
                 <FormStyled>
@@ -88,4 +93,4 @@ const Button = ({children, to, type, value, formButton }) => {
     )
 };
 
-export default Button
+export default  React.forwardRef(Button);

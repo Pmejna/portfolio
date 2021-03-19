@@ -28,6 +28,12 @@ const NavUl = styled.ul`
     @media(max-width: 1365px) {
         display: ${({responsive}) => responsive ? 'flex' : 'none'}
     }
+
+    @media (max-width: 760px) {
+        ${({responsive}) => responsive ? 'padding: 20vh 0 20vh 6vw' : null};
+    }
+
+
 `;
 
 const NavLi = styled.li`

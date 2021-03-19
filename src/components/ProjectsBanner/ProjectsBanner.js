@@ -57,11 +57,11 @@ const ProjectsLink = styled(Link)`
         background-color: #000;
         button { color: white;}
         svg {
-            stroke: ${({color}) => color="#fff"}
+            stroke: ${({color}) => color="#0AFCD3"}
         }
     }
 
-    @media (max-width: 1240px) {
+    @media (max-width: 1399px) {
         flex-basis: 16%;
     }
 `;
