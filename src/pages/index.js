@@ -117,7 +117,8 @@ const IndexPage = ({data}) => {
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you got a success.`} 
       leftText={true}
-      black
+      background='#000'
+      textColor='#fff'
     >
     </SectionParagraph>
     <Contact/> 

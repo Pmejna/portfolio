@@ -7,7 +7,7 @@ const SectionParagraphWrapper = styled.section`
     width: 100%;
     display: flex;
     flex-direction: ${({leftText}) => leftText ? 'row' : 'row-reverse'};
-    background-color: ${({black}) => black ? '#000' : '#fff'};
+    background-color: ${({background}) => background ? background : '#fff'};
     flex-shrink: 0;
     
     /* img {
@@ -23,13 +23,13 @@ const SectionParagraphWrapper = styled.section`
     }
 `;
 
-const SectionParagraph = React.forwardRef(({leftText, children, black, ...restProps}, ref) => {
+const SectionParagraph = React.forwardRef(({leftText, children, background, textColor, ...restProps}, ref) => {
 
     let ref1 = useRef(null);
 
     return (
-        <SectionParagraphWrapper ref={ref} leftText={leftText} black={black}>
-            <MainHeader leftText={leftText} black={black} {...restProps} ref={el => (ref1 = el)}/>
+        <SectionParagraphWrapper ref={ref} leftText={leftText} background={background}>
+            <MainHeader leftText={leftText} background={background} {...restProps} ref={el => (ref1 = el)} textColor={textColor}/>
             {children}
         </SectionParagraphWrapper>
     )

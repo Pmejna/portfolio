@@ -6,9 +6,9 @@ import Button from "../Button/Button";
 const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 750px;
+    max-width: ${({maxWidth}) => maxWidth ? maxWidth : '750px'};
     background-color: transparent;
-    flex-basis: ${({main}) => main ? 'auto' : '60%'};
+    flex-basis: ${({main, maxWidth}) => main || maxWidth ? 'auto' : '60%'};
     opacity: ${({main}) => main ? '0' : '1'};
 
     button {
@@ -16,7 +16,7 @@ const HeaderWrapper = styled.div`
     }
 
     @media (max-width: 760px) {
-    max-width: 60vw;
+    max-width: ${({main}) => main ? '60vw' : '100vw'};
     h1 {
       font-size: 2.8rem;
       line-height: 2.8rem;
@@ -33,12 +33,13 @@ const Above = styled.p`
     font-size: ${({main}) => main ? '1.3rem' : '0.8rem'};
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: ${({black}) => black ? '#0AFCD3' : '#6D6D6D'};
+    color: ${({background}) => background ? '#0AFCD3' : '#6D6D6D'};
     margin-bottom: 0.3rem;
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
 
     @media (max-width: 760px) {
         font-size: 1.2rem;
+        text-align: left;
     }
 `;
 
@@ -47,30 +48,39 @@ const Title = styled.h1`
     line-height: 3.8rem;
     color: black;
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
+
+    @media (max-width: 760px) {
+        text-align: left;
+    }
 `;
 
 const Title2 = styled.h2`
-    font-size: 3rem;
-    line-height: 3.8rem;
-    color: ${({black}) => black ? '#fff' : '#000'};
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    color: ${({textColor}) => textColor ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
+
+    @media (max-width: 760px) {
+        text-align: left;
+    }
 `;
 
 const SubTitle = styled.p`
     font-family: "IntervogueAltLight";
     margin-top: 0.4rem;
-    font-size: ${({main}) => main ? '1.7rem' : '1.4rem'};
-    color: ${({black}) => black ? '#fff' : '#000'};
+    font-size: ${({main}) => main ? '1.7rem' : '1.2rem'};
+    color: ${({textColor}) => textColor ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
     margin-bottom: 1.2rem;
 
     @media (max-width: 760px) {
         margin-top: 2rem;
         font-size: 1.5rem;
+        text-align: left;
     }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, black, className, button}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -80,6 +90,10 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
     let buttonRef = useRef(null);
 
     useEffect(() => {
+        if (button && main) {
+            revealSection2([mainRef, aboveRef, titleRef, subtitleRef, buttonRef]);
+            console.log(buttonRef);
+        }
         if (button) {
             revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
             console.log(buttonRef);
@@ -93,23 +107,24 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, bl
       }, [])
     
     return (
-        <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className}>
-            <Above leftText={leftText} black={black} ref={el => (aboveRef = el)}>
+        <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className} maxWidth={maxWidth}>
+            <Above leftText={leftText} background={background} ref={el => (aboveRef = el)}>
                 {above}
             </Above>
             {main ? 
-                <Title leftText={leftText} ref={el => (titleRef = el)}>{title}</Title> : 
-                <Title2 leftText={leftText} black={black} ref={el => (title2Ref = el)}>{title}</Title2>
+                <Title leftText={leftText} ref={el => (titleRef = el)} textColor={textColor}>{title}</Title> : 
+                <Title2 leftText={leftText} background={background} ref={el => (title2Ref = el)} textColor={textColor}>{title}</Title2>
             }            
             <SubTitle 
                 main={main} 
                 leftText={leftText}
-                black={black}
+                background={background}
                 ref={el => (subtitleRef = el)}
+                textColor={textColor}
             >
                 {subTitle} 
             </SubTitle>
-            {button ? <Button to='https://topevent.pl' ref={el => (buttonRef = el)}>Live project</Button> : null}
+            {button ? <Button to={buttonTo} ref={el => (buttonRef = el)}>Live project</Button> : null}
         </HeaderWrapper>
     )
 });

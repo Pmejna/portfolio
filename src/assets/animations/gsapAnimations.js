@@ -110,3 +110,20 @@ export const revealSectionImage = (items = [...items]) => {
         }
     })
 };
+
+export const sectionImageAnimation = (image, direction) => {
+
+    gsap.from(image, {
+        delay: 0.4,
+        duration: 1,
+        x: direction,
+        opacity: 0,
+        ease: 'power3.inOut',        
+        scrollTrigger: {
+            trigger: image,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            toggleActions: 'play none none none'
+        },
+    })
+};
