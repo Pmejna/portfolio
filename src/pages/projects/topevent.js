@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../../components/Button/Button';
 import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
@@ -9,6 +8,7 @@ import SectionPresentation from '../../components/SectionPresentation/SectionPre
 import challangeSectionImage from '../../assets/images/TopEventChallange.png';
 import processSectionImage from '../../assets/images/TopEventProcess.png';
 import websitePresentationImage from '../../assets/images/TopEventPresentation.png';
+import Contact from '../../components/Contact/Contact';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -35,7 +35,7 @@ const TopEventPage = () => {
 
     const challangeSection = {
         above: `challange`,
-        title: `Creating simple and effective design`,
+        title: `Creating simple and effective logo`,
         subTitle: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut `,
         imgSrc: {challangeSectionImage}
     }
@@ -99,6 +99,7 @@ const TopEventPage = () => {
             text2='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
             text3='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
         />
+        <Contact />
         </>
     )
 };

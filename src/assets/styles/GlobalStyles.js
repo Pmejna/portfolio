@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: 20px;
     }
     ::-webkit-scrollbar {
-        width: 1.4rem;
+        width: 1.2rem;
         background-color: #F9F9F9;
     }
     /* the scrollbar. */

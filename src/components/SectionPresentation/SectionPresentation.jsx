@@ -62,16 +62,24 @@ const SectionPresentation = ({imageSrc, text1, text2, text3, alt}) => {
     return (
         <PresentationWrapper>
             <figure>
-                <img src={imageSrc} alt={alt}/>   
+                <img src={imageSrc} alt={alt}/>  
+                {
+                    text1 && 
                 <PresentationText1>
                     {text1}
                 </PresentationText1>
+                } 
+                {   text2 && 
                 <PresentationText2>
                     {text2}
                 </PresentationText2>
+                }
+                {   text3 &&
                 <PresentationText3>
                     {text3}
                 </PresentationText3>             
+                }
+                
             </figure>
         </PresentationWrapper>
     )
