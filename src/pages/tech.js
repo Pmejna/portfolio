@@ -56,7 +56,7 @@ const TechPage = () => (
         <MainHeaderProjects
           above='tech stack'
           title='Technology I use'
-          subTitle={`I am in love with technology. As a developer, designer and illustrator I have a wide range of skills.`}
+          subTitle={`I am in love with technology. I expand my skills (ponad) frontend field. I love the possibilities which offer you backend. The possibilities given by C# environment seems endless. Apart programming I design, animate and illustrate. That's why Adobe CC is my second nature.`}
           leftText={true}
           className='mainHeaderProjects'
         />

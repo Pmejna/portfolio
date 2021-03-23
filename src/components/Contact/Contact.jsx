@@ -130,7 +130,7 @@ const Contact = () => {
       }
       
     return (
-        <ContactWrapper>
+        <ContactWrapper id='contact'>
             <ContactHeader>
             <Above >
                 Contact 

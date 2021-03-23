@@ -91,7 +91,7 @@ const NavList = React.forwardRef(({responsive, clicked}, ref) => {
                     </Link>
                 </NavLi>
                 <NavLi ref={el => li4 = el} responsive={responsive}>
-                    <Link to="/contact" >
+                    <Link to="#contact" >
                         Contact
                 </Link>
                 </NavLi>

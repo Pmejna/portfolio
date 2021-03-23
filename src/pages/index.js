@@ -6,7 +6,7 @@ import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 import SectionImage from '../components/SectionParagraph/SectionImage/SectionImage';
-import Contact from '../components/Contact/Contact';
+
 
 
 const HeaderWrapper = styled.div`
@@ -121,7 +121,6 @@ const IndexPage = ({data}) => {
       textColor='#fff'
     >
     </SectionParagraph>
-    <Contact/> 
   </>
   ) 
 };
