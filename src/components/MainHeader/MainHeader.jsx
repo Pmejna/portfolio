@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
 import {revealSection, revealSection2} from '../../assets/animations/gsapAnimations';
 import Button from "../Button/Button";
+import ImageBoxAnimated from '../ImageBoxAnimated/ImageBoxAnimated';
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -80,7 +81,11 @@ const SubTitle = styled.p`
     }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo}, ref) => {
+const HeaderText = styled.div`
+
+`;
+
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imageSrc}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -108,23 +113,28 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
     
     return (
         <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className} maxWidth={maxWidth}>
-            <Above leftText={leftText} background={background} ref={el => (aboveRef = el)}>
-                {above}
-            </Above>
-            {main ? 
-                <Title leftText={leftText} ref={el => (titleRef = el)} textColor={textColor}>{title}</Title> : 
-                <Title2 leftText={leftText} background={background} ref={el => (title2Ref = el)} textColor={textColor}>{title}</Title2>
+            <HeaderText>
+                <Above leftText={leftText} background={background} ref={el => (aboveRef = el)}>
+                    {above}
+                </Above>
+                {main ? 
+                    <Title leftText={leftText} ref={el => (titleRef = el)} textColor={textColor}>{title}</Title> : 
+                    <Title2 leftText={leftText} background={background} ref={el => (title2Ref = el)} textColor={textColor}>{title}</Title2>
+                }            
+                <SubTitle 
+                    main={main} 
+                    leftText={leftText}
+                    background={background}
+                    ref={el => (subtitleRef = el)}
+                    textColor={textColor}
+                >
+                    {subTitle} 
+                </SubTitle>
+                {button ? <Button to={buttonTo} ref={el => (buttonRef = el)}>Live project</Button> : null}
+            </HeaderText>
+            {
+                imageSrc ? <ImageBoxAnimated /> : null
             }            
-            <SubTitle 
-                main={main} 
-                leftText={leftText}
-                background={background}
-                ref={el => (subtitleRef = el)}
-                textColor={textColor}
-            >
-                {subTitle} 
-            </SubTitle>
-            {button ? <Button to={buttonTo} ref={el => (buttonRef = el)}>Live project</Button> : null}
         </HeaderWrapper>
     )
 });

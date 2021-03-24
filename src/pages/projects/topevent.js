@@ -4,11 +4,14 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
+import Contact from '../../components/Contact/Contact';
+import ImageBoxAnimated from '../../components/ImageBoxAnimated/ImageBoxAnimated';
 
 import challangeSectionImage from '../../assets/images/TopEventChallange.png';
 import processSectionImage from '../../assets/images/TopEventProcess.png';
 import websitePresentationImage from '../../assets/images/TopEventPresentation.png';
-import Contact from '../../components/Contact/Contact';
+import topEventLogo from '../../assets/images/TopEventSygnet.png';
+
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -20,6 +23,7 @@ const HeaderWrapper = styled.div`
   @media (max-width: 760px) {
         padding-left: 8vw;
         padding-right: 6vw;
+        flex-direction: column;
     }
 `;
 
@@ -63,6 +67,7 @@ const TopEventPage = () => {
                     button
                     buttonTo='https://topevent.pl'
                     maxWidth='40vw'
+                    imageSrc={topEventLogo}
                     // main
                 />
             </HeaderText>

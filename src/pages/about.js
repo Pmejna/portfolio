@@ -56,7 +56,7 @@ const AboutPage = () => (
         <MainHeaderProjects
           above='about'
           title='I am inspired by code logic, design simplicity and beauty of illustration'
-          subTitle={`You will find here a bit more information about me. Appriciate your time to learn a bit more about who you might work with. One of my future goals is to (zalozyc) game developement studio.`}
+          subTitle={`Appriciate your time to learn a bit more about who you might work with. One of my future goals is to (zalozyc) game developement studio.`}
           leftText={true}
           className='mainHeaderProjects'
         />

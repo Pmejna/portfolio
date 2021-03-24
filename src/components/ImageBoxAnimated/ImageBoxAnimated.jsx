@@ -34,66 +34,66 @@ const ImageWrapper = styled.div`
 
 const Rectangle1 = styled(Rectangle)`
     position: absolute;
-    top: 2rem;
-    right: -2rem;
-    transform: scale(1.8);
+    top: 1rem;
+    right: -7rem;
+    transform: scale(0.8);
     z-index: 3;
 `;
 
 const Rectangle2 = styled(Rectangle)`
     position: absolute;
-    top: 3rem;
-    left: 3.4rem;
+    top: 12rem;
+    right: -7.4rem;
     transform: scale(0.6);
     z-index: 3;
 `;
 const Rectangle3 = styled(Rectangle)`
     position: absolute;
-    top: 13.4rem;
-    left: 14rem;
-    transform: scale(1.9);
+    top: 8rem;
+    right: -4rem;
+    transform: scale(0.8);
     z-index: 3;
 `;
 
 const Rectangle4 = styled(Rectangle)`
     position: absolute;
-    top: 12rem;
-    left: 9rem;
-    transform: scale(5);
+    top: 18rem;
+    left: 16rem;
+    transform: scale(1);
     z-index: 1;
 `;
 const Rectangle5 = styled(Rectangle)`
     position: absolute;
     top: 5rem;
-    left: 2rem;
-    transform: scale(5);
+    left: 2.3rem;
+    transform: scale(1);
     z-index: 1;
 `;
 const Rectangle6 = styled(Rectangle)`
     position: absolute;
-    top: 16.4rem;
+    top: -1.2rem;
     left: -2rem;
     transform: scale(0.5);
     z-index: 1;
 `;
 const Rectangle7 = styled(Rectangle)`
     position: absolute;
-    top: 1.2rem;
-    left: 11rem;
+    top: -0.8rem;
+    left: 17rem;
     transform: scale(1.2);
     z-index: 1;
 `;
 const Rectangle8 = styled(Rectangle)`
     position: absolute;
-    top: 8.4rem;
-    left: -5rem;
-    transform: scale(0.6);
+    bottom: 11.4rem;
+    left: -1rem;
+    transform: scale(1.2);
     z-index: 1;
 `;
 const Rectangle9 = styled(Rectangle)`
     position: absolute;
-    top: -0.6rem;
-    left: 9rem;
+    top: -0.2rem;
+    left: 7rem;
     transform: scale(0.6);
     z-index: 1;
 `;
@@ -116,7 +116,7 @@ const ImageBoxAnimated = ({src, variant2, imgLeft}) => {
         }
 
         else {
-            revealSectionImage([imageRef, rect1Ref, rect2Ref, rect3Ref]);
+            revealSectionImage([imageRef, rect1Ref, rect2Ref, rect3Ref, rect4Ref, rect5Ref, rect6Ref, rect7Ref, rect8Ref, rect9Ref]);
         }
      }, [])
    
