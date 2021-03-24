@@ -10,6 +10,8 @@ const ButtonWrapper = styled.button`
     align-items: center;
     font-family: 'IntervogueAltBold', sans-serif;
     font-size: 1rem;
+    grid-area: ${({gridArea}) => gridArea ? gridArea : null};
+    max-width: 200px;
 
     @media (max-width: 760px) {
         min-height: 40px;
@@ -74,9 +76,9 @@ const FormStyled = styled.div`
         }
 `;
 
-const Button = ({children, to, type, value, formButton }, ref) => {
+const Button = ({children, to, type, value, formButton, gridArea}, ref) => {
     return (
-        <ButtonWrapper type={type} value={value} ref={ref}>
+        <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea}>
             {
                 formButton ? 
                 <FormStyled>

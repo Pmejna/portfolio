@@ -97,6 +97,7 @@ const IndexPage = ({data}) => {
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you have a success.`} 
       leftText={true}
+      maxWidth='45vw'
     >
       <SectionImage src={data.brandImg.publicURL}/>
     </SectionParagraph>
@@ -107,6 +108,7 @@ const IndexPage = ({data}) => {
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you have a success.`} 
       leftText={false}
+      maxWidth='45vw'
     >
       <SectionImage src={data.servicesImg.publicURL} variant2 imgLeft/>
     </SectionParagraph>
@@ -117,6 +119,7 @@ const IndexPage = ({data}) => {
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you got a success.`} 
       leftText={true}
+      maxWidth='45vw'
       background='#000'
       textColor='#fff'
     >

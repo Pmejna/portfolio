@@ -5,12 +5,12 @@ import Button from "../Button/Button";
 import ImageBoxAnimated from '../ImageBoxAnimated/ImageBoxAnimated';
 
 const HeaderWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-width: ${({maxWidth}) => maxWidth ? maxWidth : '750px'};
+    width: ${({main}) => main ? 'auto' : '100vw'};
+    max-width: ${({maxWidth}) => maxWidth ? maxWidth : '100vw'};
     background-color: transparent;
-    flex-basis: ${({main, maxWidth}) => main || maxWidth ? 'auto' : '60%'};
+    flex-basis: ${({main, maxWidth}) => main || maxWidth ? 'auto' : '100vw'};
     opacity: ${({main}) => main ? '0' : '1'};
+    padding: ${({leftText}) => leftText ? '0 3rem 0 0' : '0 0 0 3rem'}
 
     button {
         max-width: 180px;
@@ -49,6 +49,7 @@ const Title = styled.h1`
     line-height: 3.8rem;
     color: black;
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
+    grid-area: 2 / 1 / 3 / 2;
 
     @media (max-width: 760px) {
         text-align: left;
@@ -60,6 +61,7 @@ const Title2 = styled.h2`
     line-height: 3.2rem;
     color: ${({textColor}) => textColor ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
+    grid-area: 2 / 1 / 3 / 2;
 
     @media (max-width: 760px) {
         text-align: left;
@@ -73,6 +75,7 @@ const SubTitle = styled.p`
     color: ${({textColor}) => textColor ? '#fff' : '#000'};
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
     margin-bottom: 1.2rem;
+    grid-area: ${({main}) => main ? '' : '4 / 1 / 8 / 2'};
 
     @media (max-width: 760px) {
         margin-top: 2rem;
@@ -82,10 +85,15 @@ const SubTitle = styled.p`
 `;
 
 const HeaderText = styled.div`
+    width: 100%;
+    /* max-width: 40vw; */
 
+    display: ${({section}) => section ? 'block' : 'grid'};
+    grid-template-columns: ${({main}) => main ? '1fr' : '1fr 1fr'};
+    grid-template-rows: 1.3rem repeat(9, auto);
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imageSrc}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imageSrc, section}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -112,8 +120,8 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
       }, [])
     
     return (
-        <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className} maxWidth={maxWidth}>
-            <HeaderText>
+        <HeaderWrapper main={main} ref={el => (mainRef = el)} className={className} maxWidth={maxWidth} leftText={leftText}>
+            <HeaderText section={section} main={main}>
                 <Above leftText={leftText} background={background} ref={el => (aboveRef = el)}>
                     {above}
                 </Above>
@@ -130,11 +138,12 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
                 >
                     {subTitle} 
                 </SubTitle>
-                {button ? <Button to={buttonTo} ref={el => (buttonRef = el)}>Live project</Button> : null}
+                {button ? <Button to={buttonTo} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>Live project</Button> : null}
+                {
+                imageSrc ? <ImageBoxAnimated src={imageSrc} /> : null
+                }           
             </HeaderText>
-            {
-                imageSrc ? <ImageBoxAnimated /> : null
-            }            
+             
         </HeaderWrapper>
     )
 });

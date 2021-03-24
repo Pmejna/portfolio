@@ -57,7 +57,6 @@ const TopEventPage = () => {
     return (
         <>
         <HeaderWrapper>
-            <HeaderText>
                 <MainHeader 
                     above='project'
                     title='Top Event'
@@ -66,11 +65,10 @@ const TopEventPage = () => {
                     leftText={true}
                     button
                     buttonTo='https://topevent.pl'
-                    maxWidth='40vw'
+                    // maxWidth='100'
                     imageSrc={topEventLogo}
                     // main
                 />
-            </HeaderText>
         </HeaderWrapper>
         <ProjectSummary responsibilities={summary.responsibilities} brief={summary.brief}/>
         <SectionDefault 

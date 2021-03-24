@@ -21,15 +21,9 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainHeaderProjects = styled(MainHeader)`
-  &.mainHeaderProjects {
-    flex-basis: 40%;
-    max-width: 40vw;
-  }
+
 `;
 
-const SideImage = styled.div`
-  flex-basis: 60%;
-`;
 
 const ProjectCardsWrapper = styled.div`
   padding: 0 8vw 0 16vw;
@@ -60,9 +54,6 @@ const ProjectsPage = () => {
           leftText={true}
           className='mainHeaderProjects'
         />
-        <SideImage>
-
-        </SideImage>
       </HeaderWrapper>
       <ProjectCardsWrapper>
         <ProjectsCard 

@@ -17,14 +17,6 @@ const HeaderWrapper = styled.div`
 `;
 
 const MainHeaderProjects = styled(MainHeader)`
-  &.mainHeaderProjects {
-    flex-basis: 40%;
-    max-width: 40vw;
-  }
-`;
-
-const SideImage = styled.div`
-  flex-basis: 60%;
 `;
 
 const SkillsContainer = styled.section`
@@ -105,7 +97,6 @@ const TechPage = () => (
           leftText={true}
           className='mainHeaderProjects'
         />
-        <SideImage></SideImage>
     </HeaderWrapper>
     <SkillsContainer>
           <SkillsList>

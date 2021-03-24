@@ -10,10 +10,12 @@ const SectionWrapper = styled(MainSlide)`
     flex-direction: ${({leftText}) => leftText ? 'row' : 'row-reverse'};
     background-color: ${({background}) => background ? background : '#fff'};
     flex-shrink: 0;
+    gap: 3rem;
     margin-top: 2rem;
 
     figure {
         overflow: hidden;
+        flex-basis: 90%;
     }
 
     img {
@@ -42,7 +44,7 @@ const SectionDefault = ({imgSrc, imgAlt, image, leftText, background, maxWidth, 
     }, [])
     return (
         <SectionWrapper leftText={leftText} background={background}>
-            <MainHeader leftText={leftText} background={background} maxWidth={maxWidth} {...otherProps}/>
+            <MainHeader leftText={leftText} background={background} maxWidth={maxWidth} {...otherProps} section/>
             {
                 image ? <figure ref={el => imgRef=el}>
                             <img src={imgSrc} alt={imgAlt}/>

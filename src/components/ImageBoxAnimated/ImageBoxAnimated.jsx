@@ -4,7 +4,7 @@ import Rectangle from '../Icons/Rectangle';
 import {revealSectionImage} from '../../assets/animations/gsapAnimations';
 
 const ImageWrapper = styled.div`
-    flex-basis: 38%;
+    flex-basis: 50%;
     position: relative;
     max-width: 410px;
 

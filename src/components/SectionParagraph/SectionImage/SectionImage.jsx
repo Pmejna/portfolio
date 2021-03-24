@@ -10,8 +10,8 @@ const SectionImageWrapper = styled.div`
 
     img {
         position: absolute;
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
         top: 0;
         left: ${({imgLeft}) => imgLeft ? '-2rem' : '3rem'};
         z-index: 2;
