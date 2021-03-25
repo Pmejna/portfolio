@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
 import MainHeader from '../components/MainHeader/MainHeader';
+import {revealCards} from '../assets/animations/gsapAnimations';
 
 import topEventLogo from '../assets/images/TopEventLogoBlack.svg'; 
 import elPadoLogo from '../assets/images/ElPadoLogo.svg'; 
@@ -31,7 +32,7 @@ const ProjectCardsWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 300px;
   gap: 2rem;
-  margin-top: 8vh;
+  margin-top: 3vh;
   margin-bottom: 16vh;
 
   @media (max-width: 760px) {
@@ -43,6 +44,16 @@ const ProjectCardsWrapper = styled.div`
 `;
 
 const ProjectsPage = () => {
+  let card1 = useRef(null);
+  let card2 = useRef(null);
+  let card3 = useRef(null);
+
+  const consoleLog = () => {console.log(card1)};
+  useEffect(() => {
+    revealCards([card1, card2, card3]);
+    console.log(card1)
+  });
+
   return (
     <>
       <HeaderWrapper>
@@ -53,6 +64,7 @@ const ProjectsPage = () => {
           energetic branding. On the top of that we built together an unusual website reflecting brand strengths.`}
           leftText={true}
           className='mainHeaderProjects'
+         
         />
       </HeaderWrapper>
       <ProjectCardsWrapper>
@@ -62,6 +74,7 @@ const ProjectsPage = () => {
           image={topEventLogo}
           feature1='Web developement'
           feature2='Brand design'
+          ref={element => (card1 = element)}
            />
         <ProjectsCard 
           to='/projects/elpado' 
@@ -69,6 +82,7 @@ const ProjectsPage = () => {
           image={elPadoLogo}
           feature1='Brand design'
           feature2=''
+          ref={element => (card2 = element)}
            />
         <ProjectsCard 
           to='/projects/oprawamuzyczna' 
@@ -76,6 +90,7 @@ const ProjectsPage = () => {
           image={oprawaMuzycznaLogo}
           feature1='Web developement'
           feature2='Brand design'
+          ref={element => (card3 = element)}
            />
       </ProjectCardsWrapper>
     </>

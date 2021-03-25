@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
 import rect from '../../assets/images/Rect.svg';
@@ -13,6 +13,7 @@ const ProjectsCardWrapper = styled.div`
     max-width: 300px;
     padding-bottom: 2rem;
     transition: 0.3s ease-in-out;
+    opacity: 0;
 
     &:hover {
         transform: scale(1.16);
@@ -71,9 +72,9 @@ const ProjectsCardList = styled.ul`
     }
 `;
 
-const ProjectsCard = ({to, btnText, image, feature1, feature2 }) => {
+const ProjectsCard = ({to, btnText, image, feature1, feature2 }, ref) => {
     return (
-        <ProjectsCardWrapper>
+        <ProjectsCardWrapper ref={ref}>
             <ProjectsCardLogo src={image}/>
             <ProjectsCardList>
                 <li>{feature1}</li>
@@ -84,4 +85,4 @@ const ProjectsCard = ({to, btnText, image, feature1, feature2 }) => {
     )
 };
 
-export default ProjectsCard
+export default  forwardRef(ProjectsCard);

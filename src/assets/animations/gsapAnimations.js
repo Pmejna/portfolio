@@ -127,3 +127,33 @@ export const sectionImageAnimation = (image, direction) => {
         },
     })
 };
+
+export const revealCards = (items, image) => gsap.delayedCall(5, revealCard(items));
+
+export const revealCard = (items = [...items]) => {
+    gsap.fromTo([...items], {
+        y: 120,
+        skewX: 7,
+        skewY: 7,
+        opacity: 0
+    },
+        {
+        duration: 1,
+        opacity: 1,
+        y: -0,
+        skewX: 0,
+        skewY: 0,
+        ease: 'power3.inOut',
+        stagger: {
+            amount: 0.8
+        },
+        scrollTrigger: {
+            trigger: items,
+            start: 'top 80%',
+            end: 'bottom 60%',
+            toggleActions: 'play none none none'
+        },
+        clearProps: "transform"
+    }
+    );
+};

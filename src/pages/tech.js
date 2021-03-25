@@ -103,7 +103,7 @@ const TechPage = () => (
               <SkillsItem>Javascript</SkillsItem>
               <SkillsItem>React</SkillsItem>
               <SkillsItem>GatsbyJS</SkillsItem>
-              <SkillsItem>HTML</SkillsItem>
+              <SkillsItem>GSAP Animation</SkillsItem>
               <SkillsItem>CSS/SCSS</SkillsItem>
               <SkillsItem>Typescript</SkillsItem>
               <SkillsItem>sql</SkillsItem>
