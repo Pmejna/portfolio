@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
-
+import techStack from '../assets/images/TechStack.svg';
 const HeaderWrapper = styled.div`
   width: 100%;
   min-height: 46vh;
@@ -96,6 +96,7 @@ const TechPage = () => (
           subTitle={`I expand my skills over frontend field. I love the possibilities which backend offers. The possibilities given by C# environment seems endless. Apart programming I design, animate and illustrate. That's why Adobe CC is my second nature.`}
           leftText={true}
           className='mainHeaderProjects'
+          imageSrc={techStack}
         />
     </HeaderWrapper>
     <SkillsContainer>

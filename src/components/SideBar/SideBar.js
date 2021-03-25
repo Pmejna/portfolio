@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "gatsby";
+import {Link} from "gatsby";
 import Logomark from "../../components/Icons/Logomark";
 import Instagram from "../../components/Icons/Instagram";
 import LinkedIn from "../../components/Icons/LinkedIn";
@@ -102,7 +102,9 @@ const SideBar = () => {
         <>
             <StyledContainer>
                 <LogoBox>
-                    <Logomark hovered="true" color="black"/>
+                    <Link to='/'>
+                        <Logomark hovered="true" color="black"/>
+                    </Link>                  
                 </LogoBox>
                 <LinksBox>
                     <LinkIcon hovered href='https://www.instagram.com/przemyslawmejna/'  target="_blank">

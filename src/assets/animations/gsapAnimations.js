@@ -135,7 +135,8 @@ export const revealCard = (items = [...items]) => {
         y: 120,
         skewX: 7,
         skewY: 7,
-        opacity: 0
+        opacity: 0,
+        ease: 'power3.inOut',
     },
         {
         duration: 1,
@@ -145,7 +146,7 @@ export const revealCard = (items = [...items]) => {
         skewY: 0,
         ease: 'power3.inOut',
         stagger: {
-            amount: 0.8
+            amount: 0.4
         },
         scrollTrigger: {
             trigger: items,
