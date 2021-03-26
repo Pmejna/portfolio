@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import  {Link} from "gatsby";
 import NavList from '../NavList/NavList';
@@ -11,8 +11,6 @@ const NavWrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 14vh;
     padding-left: 16vw;
@@ -20,6 +18,16 @@ const NavWrapper = styled.nav`
     padding-top: 2rem;
     z-index: 101;
     background-color: white;
+    top: -14vh;
+    left: 0;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+
+    &.active {
+        top: 0;
+        opacity: 1;
+    }
+    
 
     @media (max-width: 760px) {
         padding-left: 8vw;
@@ -36,8 +44,33 @@ const NavLogo = styled.img`
 
 
 const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
+    let navHorizontal = useRef(null);
+
+    useEffect(() => {
+        let prevScroll = window.pageYOffset;
+        const checkScroll = () => {
+            setTimeout(() => {
+                let currentScroll = window.pageYOffset;
+                if (navHorizontal != null && !menuIsOpen) {
+                    if (prevScroll < currentScroll) {
+                        navHorizontal.classList.remove('active');
+                        console.log('swipe down');
+                        prevScroll = currentScroll;
+                    }
+                    else if (prevScroll > currentScroll) {
+                        console.log('swipe up');
+                        prevScroll = currentScroll;
+                        navHorizontal.classList.add('active');
+                    }
+                }                
+            }, 200);
+            
+        };
+        window.addEventListener('scroll', checkScroll);
+    });
+
     return (
-        <NavWrapper>
+        <NavWrapper ref={el => navHorizontal = el} className='active'>
             <NavList />
             <Link to="/" className="nav__logo"> 
                 <NavLogo src={logo} />
