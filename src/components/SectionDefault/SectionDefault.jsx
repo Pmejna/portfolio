@@ -19,7 +19,7 @@ const SectionWrapper = styled(MainSlide)`
     }
 
     img {
-
+        width: 100%;
     }
 
     @media (max-width: 760px) {

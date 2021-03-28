@@ -17,7 +17,8 @@ const HeaderWrapper = styled.div`
     }
 
     @media (max-width: 760px) {
-    max-width: ${({main}) => main ? '60vw' : '100vw'};
+    max-width: ${({main}) => main ? '60vw' : '87vw'};
+    flex-basis: auto;
     h1 {
       font-size: 2.8rem;
       line-height: 2.8rem;
@@ -93,7 +94,7 @@ const HeaderText = styled.div`
     grid-template-rows: 1.3rem repeat(9, auto);
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imageSrc, section}, ref) => {
+const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imgSrc, section}, ref) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -140,7 +141,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
                 </SubTitle>
                 {button ? <Button to={buttonTo} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>Live project</Button> : null}
                 {
-                imageSrc ? <ImageBoxAnimated src={imageSrc} /> : null
+                imgSrc ? <ImageBoxAnimated src={imgSrc} /> : null
                 }           
             </HeaderText>
              

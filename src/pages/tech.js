@@ -27,19 +27,33 @@ const SkillsContainer = styled.section`
   margin-top: 5rem;
   padding: 2rem 8vw 2rem 16vw;
 
-  @media (max-width: 1240px) {}
+  @media (max-width: 1240px) {
     padding-top: 3rem;
+  }
+  @media (max-width: 760px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 `;
 
 const SkillsList = styled.ul`
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   width: 60%;
   height: 100%;
   list-style: none;
+  grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 760px) {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1rem 8vw;
+  }
 `;
 
 const SkillsItem = styled.li`
@@ -62,6 +76,15 @@ const SkillsOther = styled.div`
   padding-top: 2rem;
   text-transform: uppercase;
 
+  @media (max-width: 760px) {
+    position: static;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 16rem;
+    align-items: flex-start;
+    padding: 2rem 8vw;
+  }
+
   h2 {
     margin-bottom: 2rem;
   }
@@ -73,6 +96,11 @@ const SkillsOther = styled.div`
     margin-bottom: 0.6rem;
     font-family: 'IntervogueAltLight', sans-serif;
 
+    @media (max-width: 760px) {
+      padding-left: 1.4rem;
+      font-size: 1.5rem;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -82,6 +110,11 @@ const SkillsOther = styled.div`
       width: 0.7rem;
       height: 0.7rem;
       background-color: #000;
+
+      @media (max-width: 760px) {
+        left: -0.2rem;
+
+    }
     }
   }
 `;
@@ -96,7 +129,7 @@ const TechPage = () => (
           subTitle={`I expand my skills over frontend field. I love the possibilities which backend offers. The possibilities given by C# environment seems endless. Apart programming I design, animate and illustrate. That's why Adobe CC is my second nature.`}
           leftText={true}
           className='mainHeaderProjects'
-          imageSrc={techStack}
+          imgSrc={techStack}
         />
     </HeaderWrapper>
     <SkillsContainer>

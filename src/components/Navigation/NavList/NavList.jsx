@@ -12,7 +12,7 @@ const NavUl = styled.ul`
     align-items: ${({responsive}) => responsive ? 'flex-start' : 'auto'};
     list-style: none;
     color: black;
-    flex-basis: 50%;
+    flex-basis: 65%;
     width: ${({responsive}) => responsive ? '100%' : 'auto'};
     height: ${({responsive}) => responsive ? '100%' : 'auto'};
     z-index: 100;
@@ -83,6 +83,11 @@ const NavList = React.forwardRef(({responsive, clicked}, ref) => {
                 <NavLi  ref={el => li2 = el} responsive={responsive}>
                     <Link to="/tech" >
                         Tech stack
+                    </Link>
+                </NavLi>
+                <NavLi  ref={el => li3 = el} responsive={responsive}>
+                    <Link to="/approach" >
+                        Approach
                     </Link>
                 </NavLi>
                 <NavLi  ref={el => li3 = el} responsive={responsive}>

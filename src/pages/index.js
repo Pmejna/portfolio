@@ -103,7 +103,7 @@ const IndexPage = ({data}) => {
     </SectionParagraph>
     <SectionParagraph 
       ref={el => (section2Ref = el)}
-      title='Branding, webdesign, illustration? All sorted!!' 
+      title='Branding, webdesign, illustration? All sorted!' 
       above='services' 
       subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
         you have a success.`} 

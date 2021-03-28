@@ -6,9 +6,10 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 
-import challangeSectionImage from '../../assets/images/TopEventChallange.png';
-import processSectionImage from '../../assets/images/TopEventProcess.png';
-import websitePresentationImage from '../../assets/images/TopEventPresentation.png';
+import challangeSectionImage from '../../assets/images/Oprawa muzyczna.jpg';
+import processSectionImage from '../../assets/images/OprawaMobile.png';
+import websitePresentationImage from '../../assets/images/OprawaPresentation.png';
+import oprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaLogo.svg';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -49,13 +50,12 @@ const processSection = {
 }
 const websiteSection = {
     above: `website`,
-    title: `Light website`,
+    title: `Fast and reliable`,
     subTitle: `The website developement was focused on speed and simplicity. I used brand colours to match the theme. Recieved the video from the client as well as the photos. I used in place of lacking photos Adobe Stock ones.`,
 }
 return (
     <>
     <HeaderWrapper>
-        <HeaderText>
             <MainHeader 
                 above='project'
                 title='Oprawa Muzyczna Wesel'
@@ -63,10 +63,10 @@ return (
                 leftText={true}
                 button
                 buttonTo='https://topevent.pl'
-                maxWidth='40vw'
+                imgSrc={oprawaMuzycznaLogo}
+                // maxWidth='40vw'
                 // main
             />
-        </HeaderText>
     </HeaderWrapper>
     <ProjectSummary responsibilities={summary.responsibilities} brief={summary.brief}/>
     <SectionDefault 

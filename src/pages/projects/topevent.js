@@ -66,7 +66,7 @@ const TopEventPage = () => {
                     button
                     buttonTo='https://topevent.pl'
                     // maxWidth='100'
-                    imageSrc={topEventLogo}
+                    imgSrc={topEventLogo}
                     // main
                 />
         </HeaderWrapper>
@@ -102,7 +102,6 @@ const TopEventPage = () => {
             text2='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
             text3='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
         />
-        <Contact />
         </>
     )
 };

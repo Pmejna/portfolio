@@ -7,12 +7,13 @@ const ImageWrapper = styled.div`
     flex-basis: 50%;
     position: relative;
     max-width: 410px;
+    grid-area: ${({gridArea}) => gridArea ? gridArea : null};
 
     img {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 0;
+        top: 1rem;
         left: ${({imgLeft}) => imgLeft ? '-2rem' : '3rem'};
         z-index: 2;
     }
@@ -98,7 +99,7 @@ const Rectangle9 = styled(Rectangle)`
     z-index: 1;
 `;
 
-const ImageBoxAnimated = ({src, variant2, imgLeft}) => {
+const ImageBoxAnimated = ({src, variant2, imgLeft, gridArea}) => {
     let imageRef = useRef(null);
     let rect1Ref = useRef(null);
     let rect2Ref = useRef(null);

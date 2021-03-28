@@ -3,12 +3,18 @@ import styled from 'styled-components';
 import MainSlide from '../MainSlide/MainSlide';
 
 const PresentationWrapper = styled(MainSlide)`
-    justify-content: center;
+    justify-content: ${({justImage}) => justImage ? 'flex-start' : 'center'};
     align-items: center;
 
 
     figure {
         position: relative;
+        overflow: ${({justImage}) => justImage ? 'hidden' : 'visible'};
+        max-height: ${({justImage}) => justImage ? '300px' : null};
+
+        img {
+            max-width: 820px;
+        }
     }
 
     p {
@@ -58,10 +64,10 @@ const PresentationText3 = styled.p`
     max-width: 310px;
 `;
 
-const SectionPresentation = ({imageSrc, text1, text2, text3, alt}) => {
+const SectionPresentation = ({imageSrc, text1, text2, text3, alt, justImage}) => {
     return (
-        <PresentationWrapper>
-            <figure>
+        <PresentationWrapper justImage={justImage}>
+            <figure justImage={justImage}>
                 <img src={imageSrc} alt={alt}/>  
                 {
                     text1 && 

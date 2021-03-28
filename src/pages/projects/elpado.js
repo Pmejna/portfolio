@@ -6,9 +6,10 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 
-import challangeSectionImage from '../../assets/images/TopEventChallange.png';
-import processSectionImage from '../../assets/images/TopEventProcess.png';
+import challangeSectionImage from '../../assets/images/ElPado2.png';
+import elPadoLogo from '../../assets/images/ElPadoLogo.svg';
 import stylescapes from '../../assets/images/StylescapeElPado.png';
+import businessCard from '../../assets/images/Wizytowki.jpg';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -23,11 +24,6 @@ const HeaderWrapper = styled.div`
     }
 `;
 
-const HeaderText = styled.div`
-
-`;
-
-
 const ElPadoPage = () => {    
     
     const summary = {
@@ -39,13 +35,11 @@ const challangeSection = {
     above: `challange`,
     title: `Create brand which attract customers`,
     subTitle: `The challange seemed quite typical: create a professional branding which will help business to grow. To stand out from the croud we decided to pick the ElPado company name, modern typography and symbols. The other challange was to make a branding recognizable as an electric services. `,
-    imgSrc: {challangeSectionImage}
 }
 const processSection = {
     above: `process`,
     title: `Stylescapes as a design direction`,
     subTitle: `I started brand design process from sketches. From these I created three brand options. Each of them represented different energy and style. I presented all of them using stylescapes. These can roughly tell you what iconography might be used, how images might acompany the colours and typography. I created as well a home-page like mockups to give an idea how eventual future website might look in particular style`,
-    imgSrc: {processSectionImage}
 }
 const websiteSection = {
     above: `materials`,
@@ -55,16 +49,14 @@ const websiteSection = {
 return (
     <>
     <HeaderWrapper>
-        <HeaderText>
             <MainHeader 
                 above='project'
                 title='ElPado'
                 subTitle={`Family business run by my highscool friend needed a "bang" and a modern touch. Enjoyed every bit of it`}
                 leftText={true}
-                maxWidth='40vw'
+                imgSrc={elPadoLogo}
                 // main
             />
-        </HeaderText>
     </HeaderWrapper>
     <ProjectSummary responsibilities={summary.responsibilities} brief={summary.brief}/>
     <SectionDefault 
@@ -93,7 +85,8 @@ return (
         maxWidth='1800px'
     />
     <SectionPresentation
-        imageSrc={stylescapes}
+        justImage
+        imageSrc={businessCard}
     />
     </>)
 };
