@@ -54,6 +54,7 @@ const Title = styled.h1`
 
     @media (max-width: 760px) {
         text-align: left;
+        grid-area: 2 / 1 / 3  / 2;
     }
 `;
 
@@ -66,6 +67,7 @@ const Title2 = styled.h2`
 
     @media (max-width: 760px) {
         text-align: left;
+        grid-area: 2 / 1 / 3 / 2;
     }
 `;
 
@@ -82,6 +84,7 @@ const SubTitle = styled.p`
         margin-top: 2rem;
         font-size: 1.5rem;
         text-align: left;
+        grid-area: ${({main}) => main ? '4 / 1 /6 / 2' : '10 / 1 / 14 /2'} ;
     }
 `;
 
@@ -92,6 +95,11 @@ const HeaderText = styled.div`
     display: ${({section}) => section ? 'block' : 'grid'};
     grid-template-columns: ${({main}) => main ? '1fr' : '1fr 1fr'};
     grid-template-rows: 1.3rem repeat(9, auto);
+
+    @media (max-width: 760px) {
+        grid-template-columns: ${({main}) => main ? '1fr' : '1fr'};;
+        grid-template-rows: 1.4rem 2rem repeat(11, 3rem);
+    }
 `;
 
 const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imgSrc, section}, ref) => {

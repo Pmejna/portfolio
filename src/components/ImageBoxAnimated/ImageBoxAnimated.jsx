@@ -23,6 +23,7 @@ const ImageWrapper = styled.div`
         flex-direction:
         row;
         justify-content: flex-start;
+        grid-area: ${({gridArea}) => gridArea ? gridArea : '5 / 1 / 9 / 2'};
         img {
             position: relative;
             display: block;
@@ -39,6 +40,9 @@ const Rectangle1 = styled(Rectangle)`
     right: -7rem;
     transform: scale(0.8);
     z-index: 3;
+     @media (max-width: 760px) {
+         
+    }
 `;
 
 const Rectangle2 = styled(Rectangle)`
@@ -47,6 +51,9 @@ const Rectangle2 = styled(Rectangle)`
     right: -7.4rem;
     transform: scale(0.6);
     z-index: 3;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle3 = styled(Rectangle)`
     position: absolute;
@@ -54,6 +61,9 @@ const Rectangle3 = styled(Rectangle)`
     right: -4rem;
     transform: scale(0.8);
     z-index: 3;
+     @media (max-width: 760px) {
+         
+    }
 `;
 
 const Rectangle4 = styled(Rectangle)`
@@ -62,6 +72,9 @@ const Rectangle4 = styled(Rectangle)`
     left: 16rem;
     transform: scale(1);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle5 = styled(Rectangle)`
     position: absolute;
@@ -69,6 +82,9 @@ const Rectangle5 = styled(Rectangle)`
     left: 2.3rem;
     transform: scale(1);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle6 = styled(Rectangle)`
     position: absolute;
@@ -76,6 +92,9 @@ const Rectangle6 = styled(Rectangle)`
     left: -2rem;
     transform: scale(0.5);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle7 = styled(Rectangle)`
     position: absolute;
@@ -83,6 +102,9 @@ const Rectangle7 = styled(Rectangle)`
     left: 17rem;
     transform: scale(1.2);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle8 = styled(Rectangle)`
     position: absolute;
@@ -90,6 +112,9 @@ const Rectangle8 = styled(Rectangle)`
     left: -1rem;
     transform: scale(1.2);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 const Rectangle9 = styled(Rectangle)`
     position: absolute;
@@ -97,6 +122,9 @@ const Rectangle9 = styled(Rectangle)`
     left: 7rem;
     transform: scale(0.6);
     z-index: 1;
+     @media (max-width: 760px) {
+         
+    }
 `;
 
 const ImageBoxAnimated = ({src, variant2, imgLeft, gridArea}) => {

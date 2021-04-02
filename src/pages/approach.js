@@ -57,7 +57,12 @@ const ApproachList = styled.ul`
 `;
 
 const ApproachListItem = styled.li`
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
 
+  margin-bottom: 1.2rem;
 `;
 
 const ApproachEnd = styled.p`
@@ -115,14 +120,14 @@ const ApproachPage = () => (
           </p>
         </ApproachListItem>
         <ApproachListItem>
-          <h3>Testing and bug fixing. Deploying</h3>
+          <h3>5. Testing and bug fixing. Deploying</h3>
           <p>To ensure that everything works well there is a need of testing. This starts usually in stage 4 while developing. More complex projects 
             needs more complex testing. After that the next part of the process is bug fixing. Up to 4 weeks from website/project being deployed I ensured
             all bugs are fixed if needed and all of that free of charge. 
           </p>
         </ApproachListItem>
         <ApproachListItem>
-          <h3>Maintaining your project</h3>
+          <h3>6. Maintaining your project</h3>
           <p>This is optional: I can manage maintaining your project. If there are needed updates regular checks or audits they can be provided.</p>
         </ApproachListItem>
       </ApproachList>
