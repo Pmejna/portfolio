@@ -20,11 +20,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `gatsby-mejna-design`,
+        short_name: `mejna`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0AFCD3`,
+        theme_color: `#0AFCD3`,
         display: `minimal-ui`,
         icon: 'src/assets/images/Icon.png',
       },

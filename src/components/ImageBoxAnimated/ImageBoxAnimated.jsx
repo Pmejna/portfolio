@@ -16,6 +16,7 @@ const ImageWrapper = styled.div`
         top: 1rem;
         left: ${({imgLeft}) => imgLeft ? '-2rem' : '3rem'};
         z-index: 2;
+        max-width: 78vw;
     }
 
     @media (max-width: 760px) {
@@ -24,7 +25,7 @@ const ImageWrapper = styled.div`
         row;
         justify-content: flex-start;
         grid-area: ${({gridArea}) => gridArea ? gridArea : '5 / 1 / 9 / 2'};
-        max-width: 350px;
+        max-width: 78vw;
         img {
             position: relative;
             display: block;

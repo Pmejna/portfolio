@@ -57,7 +57,7 @@ const Title = styled.h1`
 
     @media (max-width: 760px) {
         text-align: left;
-        grid-area: 2 / 1 / 3  / 2;
+        grid-area: ${({main}) => main ? '3 / 1 / 5 / 2' : '2 / 1 / 3 / 2'};
     }
 `;
 
@@ -87,7 +87,7 @@ const SubTitle = styled.p`
         margin-top: 2rem;
         font-size: 1.5rem;
         text-align: left;
-        grid-area: ${({main}) => main ? '4 / 1 /6 / 2' : '10 / 1 / 14 /2'} ;
+        grid-area: ${({main}) => main ? '6 / 1 /8 / 2' : '10 / 1 / 14 /2'} ;
     }
 `;
 
@@ -101,7 +101,8 @@ const HeaderText = styled.div`
 
     @media (max-width: 760px) {
         grid-template-columns: ${({main}) => main ? '1fr' : '1fr'};;
-        grid-template-rows: 1.4rem 2rem repeat(13, 3rem);
+        grid-template-rows: 1.4rem 2rem repeat(12, 3rem);
+        width: 78vw;
     }
 `;
 
@@ -138,7 +139,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
                     {above}
                 </Above>
                 {main ? 
-                    <Title leftText={leftText} ref={el => (titleRef = el)} textColor={textColor}>{title}</Title> : 
+                    <Title leftText={leftText} ref={el => (titleRef = el)} textColor={textColor} main>{title}</Title> : 
                     <Title2 leftText={leftText} background={background} ref={el => (title2Ref = el)} textColor={textColor}>{title}</Title2>
                 }            
                 <SubTitle 
