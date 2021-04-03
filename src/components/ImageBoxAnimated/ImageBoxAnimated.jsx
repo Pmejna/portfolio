@@ -24,11 +24,13 @@ const ImageWrapper = styled.div`
         row;
         justify-content: flex-start;
         grid-area: ${({gridArea}) => gridArea ? gridArea : '5 / 1 / 9 / 2'};
+        max-width: 350px;
         img {
             position: relative;
             display: block;
             left: unset;
-            width: 80%;
+            height: 100%;
+            width:auto;
     }
         }
         
@@ -62,7 +64,7 @@ const Rectangle3 = styled(Rectangle)`
     transform: scale(0.8);
     z-index: 3;
      @media (max-width: 760px) {
-         
+         right: 2rem;
     }
 `;
 
@@ -73,7 +75,8 @@ const Rectangle4 = styled(Rectangle)`
     transform: scale(1);
     z-index: 1;
      @media (max-width: 760px) {
-         
+         top: 5rem;
+         left: 13rem;
     }
 `;
 const Rectangle5 = styled(Rectangle)`
@@ -93,7 +96,8 @@ const Rectangle6 = styled(Rectangle)`
     transform: scale(0.5);
     z-index: 1;
      @media (max-width: 760px) {
-         
+        top: -1.2rem;
+        left: 1rem;
     }
 `;
 const Rectangle7 = styled(Rectangle)`
@@ -113,7 +117,10 @@ const Rectangle8 = styled(Rectangle)`
     transform: scale(1.2);
     z-index: 1;
      @media (max-width: 760px) {
-         
+        transform: scale(0.6);
+        left: unset;
+        right: 3rem;
+        bottom: 7.4rem;
     }
 `;
 const Rectangle9 = styled(Rectangle)`
@@ -123,7 +130,8 @@ const Rectangle9 = styled(Rectangle)`
     transform: scale(0.6);
     z-index: 1;
      @media (max-width: 760px) {
-         
+         top: unset;
+         bottom: -2.6rem;
     }
 `;
 

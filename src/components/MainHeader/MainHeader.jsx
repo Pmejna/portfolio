@@ -27,6 +27,9 @@ const HeaderWrapper = styled.div`
         width: ${({main}) => main ? '80%' : '100%'};
         margin-bottom: 0.4rem;
     }
+    button {
+        grid-area: 14 / 1 / 15 / 2;
+    }
     }
 `;
 
@@ -98,7 +101,7 @@ const HeaderText = styled.div`
 
     @media (max-width: 760px) {
         grid-template-columns: ${({main}) => main ? '1fr' : '1fr'};;
-        grid-template-rows: 1.4rem 2rem repeat(11, 3rem);
+        grid-template-rows: 1.4rem 2rem repeat(13, 3rem);
     }
 `;
 
@@ -149,7 +152,7 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
                 </SubTitle>
                 {button ? <Button to={buttonTo} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>Live project</Button> : null}
                 {
-                imgSrc ? <ImageBoxAnimated src={imgSrc} /> : null
+                imgSrc ? <ImageBoxAnimated src={imgSrc} mainHeader/> : null
                 }           
             </HeaderText>
              
