@@ -43,7 +43,7 @@ const NavLogo = styled.img`
 `;
 
 
-const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
+const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled, logoClicked}) => {
     let navHorizontal = useRef(null);
 
     useEffect(() => {
@@ -54,11 +54,9 @@ const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
                 if (navHorizontal != null && !menuIsOpen) {
                     if (prevScroll < currentScroll) {
                         navHorizontal.classList.remove('active');
-                        console.log('swipe down');
                         prevScroll = currentScroll;
                     }
                     else if (prevScroll > currentScroll) {
-                        console.log('swipe up');
                         prevScroll = currentScroll;
                         navHorizontal.classList.add('active');
                     }
@@ -72,7 +70,7 @@ const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled}) => {
     return (
         <NavWrapper ref={el => navHorizontal = el} className='active'>
             <NavList />
-            <Link to="/" className="nav__logo"> 
+            <Link to="/" className="nav__logo" onClick={logoClicked}> 
                 <NavLogo src={logo} />
             </Link>
             <Hamburger handleMenu={handleMenu} menuIsOpen={menuIsOpen} menuText={menuText} buttonDisabled={buttonDisabled}/>

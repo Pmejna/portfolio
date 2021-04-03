@@ -57,12 +57,13 @@ const NavLi = styled.li`
     }
 `;
 
-const NavList = React.forwardRef(({responsive, clicked}, ref) => {
+const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
     let li1 = useRef(null);
     let li2 = useRef(null);
     let li3 = useRef(null);
     let li4 = useRef(null);
 
+  
     useEffect(() => {
         if(clicked === true) {
             revealItem([li1, li2, li3, li4]);
@@ -76,27 +77,27 @@ const NavList = React.forwardRef(({responsive, clicked}, ref) => {
     return (
             <NavUl responsive={responsive} ref={ref}> 
                 <NavLi ref={el => li1 = el} responsive={responsive}>
-                    <Link to="/projects" >
+                    <Link to="/projects" onClick={linkClicked}>
                         Projects
                     </Link>
                 </NavLi>
                 <NavLi  ref={el => li2 = el} responsive={responsive}>
-                    <Link to="/tech" >
+                    <Link to="/tech" onClick={linkClicked}>
                         Tech stack
                     </Link>
                 </NavLi>
                 <NavLi  ref={el => li3 = el} responsive={responsive}>
-                    <Link to="/approach" >
+                    <Link to="/approach" onClick={linkClicked}>
                         Approach
                     </Link>
                 </NavLi>
-                <NavLi  ref={el => li3 = el} responsive={responsive}>
-                    <Link to="/about" >
+                <NavLi  ref={el => li3 = el} responsive={responsive} >
+                    <Link to="/about" onClick={linkClicked}>
                         About
                     </Link>
                 </NavLi>
                 <NavLi ref={el => li4 = el} responsive={responsive}>
-                    <Link to="#contact" >
+                    <Link to="#contact" onClick={linkClicked}>
                         Contact
                 </Link>
                 </NavLi>

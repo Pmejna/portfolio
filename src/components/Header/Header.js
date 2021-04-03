@@ -41,6 +41,11 @@ const Header = () => {
         }
     };
 
+    const handleMenuClick = () => {
+        setMenuState({clicked: false, menuText: "Menu"});
+        console.log("click on link");
+    };
+
     // Should menu button be disabled
 
     const disableMenuButton = () => {
@@ -52,8 +57,8 @@ const Header = () => {
 
     return (
     <NavHeader>
-        <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled}/>
-        <NavResponsive state={menuState}/>
+        <NavHorizontal handleMenu={handleMenu} menuIsOpen={menuState.clicked} menuText={menuState.menuText || 'menu'} buttonDisabled={buttonDisabled} logoClicked={handleMenuClick}/>
+        <NavResponsive state={menuState} linkClicked={handleMenuClick}/>
     </NavHeader>
     )
 };

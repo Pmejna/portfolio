@@ -46,7 +46,7 @@ const NavListWrapper = styled.div`
     overflow: hidden;
 `;
 
-const NavResponsive = ({state}) => {
+const NavResponsive = ({state, linkClicked}) => {
     let menu = useRef(null);
     let revealMenu = useRef(null);
     let revealMenuBg = useRef(null);
@@ -54,21 +54,24 @@ const NavResponsive = ({state}) => {
     let navListMenu = useRef(null);
 
     useEffect(() => {
-        // open menu 
-        if (state.clicked === true ) {
-            menuOpen(revealMenuBg2, revealMenuBg, revealMenu, menu.current)
+                // close menu
+        if (state.clicked === false) {
+            menuClose(revealMenu, revealMenuBg, revealMenuBg2, menu.current);
+            console.log(state);
         }
-        // close menu
-        else if (state.clicked === false) {
-            menuClose(revealMenu, revealMenuBg, revealMenuBg2, menu.current)
-    }}, [state]);
+        // open menu 
+        else if (state.clicked === true ) {
+            menuOpen(revealMenuBg2, revealMenuBg, revealMenu, menu.current);
+            console.log(state);
+        }
+        }, [state]);
 
     return (
         <NavResponsiveWrapper ref={menu}>
             <NavAnimationBackground clicked={state.clicked} ref={el => (revealMenuBg = el)} color='#000'/>
             <NavAnimationBackground2 clicked={state.clicked} ref={el => (revealMenuBg2 = el)} color='#0AFCD3'/>
             <NavListWrapper ref={el => (revealMenu = el)}>
-                <NavList responsive={true} clicked={state.clicked} ref={el => (navListMenu = el)}/>
+                <NavList responsive={true} clicked={state.clicked} ref={el => (navListMenu = el) } linkClicked={linkClicked}/>
             </NavListWrapper>            
         </NavResponsiveWrapper>
     )
