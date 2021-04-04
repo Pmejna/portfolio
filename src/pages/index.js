@@ -94,8 +94,8 @@ const IndexPage = ({data}) => {
       ref={el => (section1Ref = el)}
       title='Lets improve your profits and brand recognition!' 
       above='your brand' 
-      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
-        you have a success.`} 
+      subTitle={`What was good enough few years ago might be outdated now. My solution is simple: be original, be truly yourself. If we add this to a great product, branding and web presence: 
+      you have a success. Great design is timeless.`} 
       leftText={true}
       maxWidth='45vw'
     >
@@ -105,8 +105,8 @@ const IndexPage = ({data}) => {
       ref={el => (section2Ref = el)}
       title='Branding, webdesign, illustration? All sorted!' 
       above='services' 
-      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
-        you have a success.`} 
+      subTitle={`I am skilled in illustration, design and front end web technologies. I love solving problems and creating solutions. Being multiskilled
+      gives me not only broad range of skills but what is most important completely different view and approach to design, UI/UX, or developement process.`} 
       leftText={false}
       maxWidth='45vw'
     >
@@ -116,8 +116,8 @@ const IndexPage = ({data}) => {
       ref={section2Ref}
       title='Who am I?' 
       above='about me' 
-      subTitle={`What was good enough few years ago is outdated now. My solution is simple: be original, be great, be you. If we mix this with a great product, branding and web presence: 
-        you got a success.`} 
+      subTitle={`In short: I am self-taught designer/developer. I am addicted to learning new skills.  
+      I am currently based in Norhamptonshire UK. Been working as a freelancer since 2017. `} 
       leftText={true}
       maxWidth='45vw'
       background='#000'
