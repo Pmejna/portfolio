@@ -10,6 +10,9 @@ import challangeSectionImage from '../../assets/images/ElPado2.png';
 import elPadoLogo from '../../assets/images/ElPadoLogo.svg';
 import stylescapes from '../../assets/images/StylescapeElPado.png';
 import businessCard from '../../assets/images/Wizytowki.jpg';
+import TopEventLogo from '../../assets/images/TopEventLogo.svg';
+import OprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaWhite.svg';
+import OtherProjects from '../../components/OtherProjects/OtherProjects';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -88,6 +91,7 @@ return (
         justImage
         imageSrc={businessCard}
     />
+    <OtherProjects logo1={TopEventLogo} logo2={OprawaMuzycznaLogo} project1="topevent" project2="oprawamuzyczna"/>
     </>)
 };
 

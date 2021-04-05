@@ -5,11 +5,14 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
+import OtherProjects from '../../components/OtherProjects/OtherProjects';
 
 import challangeSectionImage from '../../assets/images/Oprawa muzyczna.jpg';
 import processSectionImage from '../../assets/images/OprawaMobile.png';
 import websitePresentationImage from '../../assets/images/OprawaPresentation.png';
 import oprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaLogo.svg';
+import TopEventLogo from '../../assets/images/TopEventLogo.svg';
+import ElPadoLogo from '../../assets/images/ElPadoWhite.svg';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -100,6 +103,7 @@ return (
         text2='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
         text3='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
     />
+    <OtherProjects logo1={TopEventLogo} logo2={ElPadoLogo} project1="topevent" project2="elpado" above/>
     </>)
 };
 

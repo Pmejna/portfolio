@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import TopEvent from "../../assets/images/TopEventLogo.svg";
 import Arrow from '../../components/Icons/Arrow';
 import {Link} from 'gatsby';
 
@@ -25,7 +24,7 @@ const ProjectsContainer = styled.div`
         margin-top: 8vh;
         min-width: 260px;
         width:100vw;
-        height: 8vh;
+        height: ${({other}) => other ? '10rem' : '8vh'};
     }
 `;
 
@@ -39,6 +38,10 @@ const ProjectsLogo = styled.div`
 
     @media (max-width: 1240px) {
         flex-basis: 84;
+    }
+    @media (max-width: 760px) {
+        height: auto;
+        padding: 1rem;
     }
 `;
 
@@ -107,7 +110,7 @@ const ProjectsBannerH2 = styled.h3`
     color: #6D6D6D;
 `;
 
-const ProjectsBanner = (props) => {
+const ProjectsBanner = ({logoSrc, project, above, other}) => {
     const useWindowSize = () => {
     const [windowWidth, setWindowWidth] = useState(0);
     
@@ -129,14 +132,14 @@ const ProjectsBanner = (props) => {
     console.log(size);
 
     return (
-    <ProjectsContainer>
+    <ProjectsContainer other={other}>
         <ProjectsBannerH2>
-            Latest projects
+            {above ? above : "Latest projects"}
         </ProjectsBannerH2>
         <ProjectsLogo>
-            <Logo src={TopEvent} />
+            <Logo src={logoSrc} />
         </ProjectsLogo>
-        <ProjectsLink to="/projects/topevent">
+        <ProjectsLink to={`/projects/${project}`}>
             <ProjectsButton>
                 {size.windowWidth > 1400 ? 'Learn more' : null}
                 <Arrow color='black'/>

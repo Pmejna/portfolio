@@ -101,7 +101,7 @@ const HeaderText = styled.div`
 
     @media (max-width: 760px) {
         grid-template-columns: ${({main}) => main ? '1fr' : '1fr'};;
-        grid-template-rows: 1.4rem 2rem repeat(12, 3rem);
+        grid-template-rows: 1.4rem 2rem repeat(13, 3rem);
         width: 78vw;
     }
 `;

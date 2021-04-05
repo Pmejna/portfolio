@@ -6,6 +6,7 @@ import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 import SectionImage from '../components/SectionParagraph/SectionImage/SectionImage';
+import TopEvent from "../assets/images/TopEventLogo.svg";
 
 
 
@@ -84,7 +85,7 @@ const IndexPage = ({data}) => {
           main
           leftText={true}
         />
-        <ProjectsBanner />
+        <ProjectsBanner logoSrc={TopEvent} project="topevent"/>
       </TextContent>
       <ImageContent>
         <MainImage src={data.file.publicURL}/>
