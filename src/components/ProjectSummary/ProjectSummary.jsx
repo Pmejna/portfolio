@@ -13,12 +13,20 @@ const ProjectSummaryWrapper = styled.div`
     @media (max-width: 760px) {
             padding-left: 8vw;
             padding-right: 6vw;
+
+            h3 {
+            font-size: 1.6rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
         }
         
 `;
 
 const ProjectResponsibilities = styled.div`
     margin-bottom: 2rem;
+
 `;
 
 const ProjectBrief = styled.div`

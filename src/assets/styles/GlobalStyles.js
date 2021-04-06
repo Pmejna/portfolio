@@ -111,6 +111,12 @@ const GlobalStyles = createGlobalStyle`
     :root {
         font-size: 12px;
     }
+    section {
+        padding: 2rem 8vw 2rem 6vw;
+    }
+    section p {
+        font-size: 1.5rem;
+    }
   }
 `;
 

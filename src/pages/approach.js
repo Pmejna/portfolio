@@ -22,30 +22,10 @@ const MainHeaderProjects = styled(MainHeader)`
   }
 `;
 
-const SkillsContainer = styled.section`
-  width: 100vw;
-  background-color: #000;
-  min-height: 30vh;
-  position: relative;
-  margin-top: 5rem;
-`;
-
-const SkillsList = styled.ul`
-
-`;
-
-const SkillsOther = styled.div`
-  position: absolute;
-  right: 8vw;
-  bottom: 0;
-  width: 26vw;
-  max-width: 400px;
-  min-height: 36vh;
-  background-color: var(--color-main);
-`;
-
 const ApproachWrapper = styled.section`
-
+  @media (max-width: 760px) {
+        padding: 2rem 8vw 2rem 6vw;
+    }
 `;
 
 const ApproachHeadline = styled.article`
@@ -63,10 +43,18 @@ const ApproachListItem = styled.li`
   }
 
   margin-bottom: 1.2rem;
+
+  @media (max-width: 760px) {
+        
+        p, h3 {
+          margin-bottom: 2rem;
+        }
+    }
 `;
 
 const ApproachEnd = styled.p`
-
+    font-family: 'Intervogue-alt-bold', sans-serif;
+    font-size: 2rem;
 `;
 
 const ApproachPage = () => (
