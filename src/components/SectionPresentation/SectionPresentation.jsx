@@ -46,6 +46,31 @@ const PresentationWrapper = styled(MainSlide)`
         }
     }
     }
+
+    @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+        figure {
+            img {
+            max-width: 75vw;
+        }
+        }
+        p {
+        position: static;
+        max-width: 80vw;
+        padding: 1rem 0;
+        font-size: 1.4rem;
+
+        ::before {
+            content: '';
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: var(--color-main);
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+    }
+    }
 `;
 
 const PresentationText1 = styled.p`

@@ -31,6 +31,29 @@ const SectionWrapper = styled(MainSlide)`
         max-height: 40vh;
     }   
     }
+
+    @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+        flex-direction: column;
+        figure {
+            height: 100%;
+            width: auto;
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+`;
+
+const MainHeaderStyled = styled(MainHeader)`
+    @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+        width: auto;
+        flex-basis: unset;
+    }
 `;
 
 const SectionDefault = ({imgSrc, imgAlt, image, leftText, background, maxWidth, ...otherProps}) => {
@@ -44,7 +67,7 @@ const SectionDefault = ({imgSrc, imgAlt, image, leftText, background, maxWidth, 
     }, [])
     return (
         <SectionWrapper leftText={leftText} background={background}>
-            <MainHeader leftText={leftText} background={background} maxWidth={maxWidth} {...otherProps} section/>
+            <MainHeaderStyled leftText={leftText} background={background} maxWidth={maxWidth} {...otherProps} section/>
             {
                 image ? <figure ref={el => imgRef=el}>
                             <img src={imgSrc} alt={imgAlt}/>

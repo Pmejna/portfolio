@@ -21,6 +21,11 @@ const HeaderWrapper = styled.div`
   flex-direction: row;
   padding: 0 8vw 0 16vw;
 
+  @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+        min-height: 38vh;
+    }  
   @media (max-width: 760px) {
         padding-left: 8vw;
         padding-right: 6vw;

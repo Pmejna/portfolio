@@ -32,6 +32,12 @@ const TextContent = styled.div`
     flex-basis: 50%;
   }
 
+  @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+      max-height: 60vh;      
+    }
+
 `;
 
 const ImageContent = styled.div`
@@ -54,6 +60,13 @@ const MainImage = styled.img`
     right: -12rem;
     height: 90vh;
   }
+
+  @media screen
+    and (max-width: 1024px)
+    and (orientation: portrait) {
+      left: -12vw;
+    }
+
     @media (max-width:760px) {
     bottom: 20vh;
     left: -38vh;
