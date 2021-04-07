@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import  {Link} from "gatsby";
-import {revealItem} from '../../../assets/animations/gsapAnimations';
+import {revealItem, mouseOverAnimation, mouseOutAnimation} from '../../../assets/animations/gsapAnimations';
 
 
 const NavUl = styled.ul`
@@ -48,6 +48,7 @@ const NavLi = styled.li`
         color: inherit;
         padding: inherit;
         border: ${({responsive}) => responsive ? 'none' : '2px solid transparent'};
+        display: block;
     }
 
     &:hover {
@@ -62,11 +63,12 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
     let li2 = useRef(null);
     let li3 = useRef(null);
     let li4 = useRef(null);
+    let li5 = useRef(null);
 
   
     useEffect(() => {
         if(clicked === true) {
-            revealItem([li1, li2, li3, li4]);
+            revealItem([li1, li2, li3, li4, li5]);
             console.log(true)
         }
         else if (clicked === false) {
@@ -74,32 +76,75 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
         }
     }, [clicked]);
 
+    const handleHover = (e) => {
+        console.log(e.target);
+        mouseOverAnimation(e.target);
+    }
+
+    const handleOut = (e) => {
+        mouseOutAnimation(e.target);
+    }
+
     return (
             <NavUl responsive={responsive} ref={ref}> 
                 <NavLi ref={el => li1 = el} responsive={responsive}>
-                    <Link to="/projects" onClick={linkClicked}>
-                        Projects
-                    </Link>
+                    {responsive ? 
+                        <Link to="/projects" onClick={linkClicked}  onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)} >
+                            Projects
+                        </Link>
+                    :
+                        <Link to="/projects">
+                            Projects
+                        </Link>
+                    }
+                    
                 </NavLi>
                 <NavLi  ref={el => li2 = el} responsive={responsive}>
-                    <Link to="/tech" onClick={linkClicked}>
+                    {responsive ? 
+                        <Link to="/tech" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
                         Tech stack
-                    </Link>
+                        </Link>
+                    :
+                        <Link to="/tech">
+                        Tech stack
+                        </Link>
+                    }
                 </NavLi>
                 <NavLi  ref={el => li3 = el} responsive={responsive}>
-                    <Link to="/approach" onClick={linkClicked}>
+                    {responsive ? 
+                        <Link to="/approach" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
                         Approach
-                    </Link>
+                        </Link>
+                    :
+                        <Link to="/approach" >
+                        Approach
+                        </Link>
+                    }
+                    
                 </NavLi>
-                <NavLi  ref={el => li3 = el} responsive={responsive} >
-                    <Link to="/about" onClick={linkClicked}>
+                <NavLi  ref={el => li4 = el} responsive={responsive}>
+                    {responsive ? 
+                        <Link to="/about" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
                         About
-                    </Link>
+                        </Link>
+                    :
+                        <Link to="/about">
+                        About
+                        </Link>
+                    }
+                    
                 </NavLi>
-                <NavLi ref={el => li4 = el} responsive={responsive}>
-                    <Link to="#contact" onClick={linkClicked}>
+                <NavLi ref={el => li5 = el} responsive={responsive}>
+                    {responsive ? 
+                        <Link to="#contact" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
                         Contact
-                </Link>
+                        </Link>
+                    :
+                        <Link to="#contact">
+                        Contact
+                        </Link>
+                    }
+                    
                 </NavLi>
             </NavUl>
     )

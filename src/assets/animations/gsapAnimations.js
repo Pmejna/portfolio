@@ -158,3 +158,17 @@ export const revealCard = (items = [...items]) => {
     }
     );
 };
+
+export const mouseOverAnimation = (item) => gsap.to(item, {
+    duration: 0.3,
+    y: -4,
+    skewX: -5,
+    ease: 'Power3.inOut'
+});
+
+export const mouseOutAnimation = (item) => gsap.to(item, {
+    duration: 0.3,
+    y: 4,
+    skewX: 0,
+    ease: 'Power3.inOut'
+});
