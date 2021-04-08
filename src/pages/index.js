@@ -38,6 +38,7 @@ const TextContent = styled.div`
       max-height: 60vh;      
     }
 
+
 `;
 
 const ImageContent = styled.div`
@@ -95,7 +96,7 @@ const IndexPage = ({data}) => {
           above={headerData.author} 
           title={headerData.title}
           subTitle={headerData.subTitle} 
-          main
+          main={true}
           leftText={true}
         />
         <ProjectsBanner logoSrc={TopEvent} project="topevent"/>

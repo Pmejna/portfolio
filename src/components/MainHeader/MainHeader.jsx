@@ -19,6 +19,7 @@ const HeaderWrapper = styled.div`
     @media (max-width: 760px) {
     max-width: ${({main}) => main ? '60vw' : '87vw'};
     flex-basis: auto;
+    height: ${({main}) => main ? '60vh' : 'auto'};
     h1 {
       font-size: 2.8rem;
       line-height: 2.8rem;
@@ -102,7 +103,8 @@ const HeaderText = styled.div`
     @media (max-width: 760px) {
         grid-template-columns: ${({main}) => main ? '1fr' : '1fr'};;
         grid-template-rows: 1.4rem 2rem repeat(13, 3rem);
-        width: 78vw;
+        width: 68vw;
+        max-width: 68vw;
     }
 `;
 
