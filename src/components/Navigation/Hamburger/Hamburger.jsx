@@ -19,7 +19,7 @@ const HamburgerWrapper = styled.button`
             transition: 0.18s ease-in-out;
         }
         span:nth-last-of-type(2) {
-            width: 10%;
+            transform: translateX(100%)
         }
         span:nth-last-of-type(1) {
             transform: translateY(120%);
@@ -47,8 +47,8 @@ const HamburgerWrapper = styled.button`
     }
     span:nth-last-of-type(2) {
         height: 0.4rem;
-        min-width: ${({menuIsOpen}) => menuIsOpen ? 0 : '40px'};
         width: ${({menuIsOpen}) => menuIsOpen ? 0 : '70%'};
+        transform: ${({menuIsOpen}) => menuIsOpen ? 'translateX(100%)' : 'none'}; 
     }
     span:nth-last-of-type(3) {  
         transform: ${({menuIsOpen}) => menuIsOpen ? 'translateY(-120%)' : 'none'};
