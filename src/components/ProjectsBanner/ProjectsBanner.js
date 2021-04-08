@@ -8,6 +8,7 @@ const ProjectsContainer = styled.div`
     width: 30vw;
     height: 16vh;
     min-width: 490px;
+    min-height: 50px;
     max-width: 500px;
     display: flex;
     flex-direction: row;

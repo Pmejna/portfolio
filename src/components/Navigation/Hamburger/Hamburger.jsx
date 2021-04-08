@@ -33,6 +33,7 @@ const HamburgerWrapper = styled.button`
 
     span {
         width: 100%;
+        min-width: 40px;
         height: 0.3rem;
         background-color: #000;
         transition: 0.3s ease-in-out;
