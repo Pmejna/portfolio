@@ -52,7 +52,7 @@ const NavHorizontal = ({handleMenu, menuIsOpen, menuText, buttonDisabled, logoCl
             setTimeout(() => {
                 let currentScroll = window.pageYOffset;
                 if (navHorizontal != null && !menuIsOpen) {
-                    if (prevScroll < currentScroll) {
+                    if (prevScroll < currentScroll && currentScroll > 50) {
                         navHorizontal.classList.remove('active');
                         prevScroll = currentScroll;
                     }
