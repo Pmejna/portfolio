@@ -47,8 +47,8 @@ const HamburgerWrapper = styled.button`
     }
     span:nth-last-of-type(2) {
         height: 0.4rem;
-        min-width: ${({menuIsOpen}) => menuIsOpen ? 0 : '40px'}
-        width: ${({menuIsOpen}) => menuIsOpen ? 0 : '70%'}
+        min-width: ${({menuIsOpen}) => menuIsOpen ? 0 : '40px'};
+        width: ${({menuIsOpen}) => menuIsOpen ? 0 : '70%'};
     }
     span:nth-last-of-type(3) {  
         transform: ${({menuIsOpen}) => menuIsOpen ? 'translateY(-120%)' : 'none'};
