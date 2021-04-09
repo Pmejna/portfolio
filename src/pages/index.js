@@ -121,7 +121,7 @@ const IndexPage = ({data}) => {
       title='Branding, webdesign, illustration? All sorted!' 
       above='services' 
       subTitle={`I am skilled in illustration, design and front end web technologies. I love solving problems and creating solutions. Being multiskilled
-      gives me not only broad range of skills but what is most important completely different view and approach to design, UI/UX, or developement process.`} 
+      gives me not only broad range of skills but what is the most important: completely different view and approach to design, UI/UX, or developement process.`} 
       leftText={false}
       maxWidth='45vw'
     >

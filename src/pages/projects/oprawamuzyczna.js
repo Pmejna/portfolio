@@ -42,25 +42,27 @@ const OprawaMuzycznaPage = () => {
     
     const summary = {
     responsibilities: `branding, website redesign, website developement`,
-    brief: `I received all data needed for branding, the client had as well pretty clear vision about website layout. Website needed to be light, fresh and airy.`
+    brief: `I received all data needed for branding, the client had a pretty clear vision about website layout. Website needed to be light and fresh.`
 };
 
 const challangeSection = {
     above: `challange`,
     title: `Creating unique wedding industry branding`,
-    subTitle: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut `,
+    subTitle: `I was focused on bright branding with a lot of white space. Established brand colours reflected the wedding industry and company feel.`,
     imgSrc: {challangeSectionImage}
 }
 const processSection = {
     above: `process`,
     title: `Focusing on the website`,
-    subTitle: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut `,
+    subTitle: `Website needed to be fast and SEO friendly. I choosed GatsbyJS as the main tech. This technology was not only SEO friendly but on the top of that
+    with use of GraphQL and light image conversion fast and flexible. Building website using components helped with quick fixes.`,
     imgSrc: {processSectionImage}
 }
 const websiteSection = {
     above: `website`,
     title: `Fast and reliable`,
-    subTitle: `The website developement was focused on speed and simplicity. I used brand colours to match the theme. Recieved the video from the client as well as the photos. I used in place of lacking photos Adobe Stock ones.`,
+    subTitle: `The website developement was focused on speed and simplicity. I used brand colours to match the theme. Recieved the video from the client as well as the photos. I used in place of lacking photos Adobe Stock ones.
+    Website will be in the process of testing soon and after implementation of SEO will go live.`,
 }
 return (
     <>
@@ -68,10 +70,10 @@ return (
             <MainHeader 
                 above='project'
                 title='Oprawa Muzyczna Wesel'
-                subTitle={`Work for a Warsaw based wedding's music company. Brand design needed to reflect modern feel and be easily connected to the industry`}
+                subTitle={`Work for a Warsaw based wedding's music company. Brand design needed to reflect modern feel and be easily connected to the industry. Webpage is stil Work in Progress`}
                 leftText={true}
                 button
-                buttonTo='https://topevent.pl'
+                buttonTo='https://dazzling-mccarthy-78f0ae.netlify.app/'
                 imgSrc={oprawaMuzycznaLogo}
                 // maxWidth='40vw'
                 // main

@@ -47,7 +47,7 @@ const TopEventPage = () => {
         above: `challange`,
         title: `Creating simple and effective logo`,
         subTitle: `Simple is not equal easy. During the process I made tons of logo sketches. I connected few concepts in one. Mountain at the bottom as a 
-        mountain "top/peak", pillars of light on left and right as ones during big events lighting up the night sky, and diamond/gem on the top. Simultanously I been working
+        mountain "top/peak", pillars of light on left and right as ones during a big events lighting up the night sky, and diamond/gem on the top. Simultanously I been working
         on typography for the title `,
         imgSrc: {challangeSectionImage}
     }
