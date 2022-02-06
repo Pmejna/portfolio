@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Pmejna portfolio`,
+    defaultTitle: `Pmejna portfolio`,
     description: `Przemyslaw Mejna web developer portfolio`,
     author: `pmejna@gmail.com`,
+    url: `https://www.mejna.co.uk/`,
+    image:`${__dirname}/src/assets/images/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

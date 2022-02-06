@@ -7,6 +7,7 @@ import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 import SectionImage from '../components/SectionParagraph/SectionImage/SectionImage';
 import TopEvent from "../assets/images/TopEventLogo.svg";
+import SEO from "../components/seo";
 
 
 
@@ -90,6 +91,7 @@ const IndexPage = ({data}) => {
    return (
   <>
     <GlobalStyles/>
+    <SEO />
     <HeaderWrapper>
       <TextContent>
         <MainHeader 
