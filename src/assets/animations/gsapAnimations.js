@@ -45,7 +45,6 @@ export const menuOpen = (element1, element2, element3, mainElement) => {
 };
 
 export const revealItem = (items = [...items]) => {
-    console.log(items)
     gsap.from([...items], {
         delay: 0.7,
         opacity: 0,

@@ -87,7 +87,6 @@ const IndexPage = ({data}) => {
 
   let section1Ref = useRef(null);
   let section2Ref = useRef(null);
-  console.log(data);
    return (
   <>
     <GlobalStyles/>

@@ -48,10 +48,8 @@ const ProjectsPage = () => {
   let card2 = useRef(null);
   let card3 = useRef(null);
 
-  const consoleLog = () => {console.log(card1)};
   useEffect(() => {
     revealCards([card1, card2, card3]);
-    console.log(card1)
   });
 
   return (
