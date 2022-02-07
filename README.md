@@ -3,7 +3,7 @@
   Portfolio website
 </h1>
 
-I have done a few freelance project recently so I believe it is a good time to create my own.
+I finished a few freelance project recently so finally I took care of my own Portfolio Website.
 
 ## Tech stack
 

@@ -130,7 +130,6 @@ const ProjectsBanner = ({logoSrc, project, above, other}) => {
     };
 
     const size = useWindowSize();
-    console.log(size);
 
     return (
     <ProjectsContainer other={other}>

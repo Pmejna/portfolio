@@ -43,7 +43,6 @@ const Header = () => {
 
     const handleMenuClick = () => {
         setMenuState({clicked: false, menuText: "Menu"});
-        console.log("click on link");
     };
 
     // Should menu button be disabled

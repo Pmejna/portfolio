@@ -120,11 +120,9 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
     useEffect(() => {
         if (button && main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef, buttonRef]);
-            console.log(buttonRef);
         }
         if (button) {
             revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
-            console.log(buttonRef);
         }
         else if (main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
