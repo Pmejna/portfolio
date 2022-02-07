@@ -1,6 +1,9 @@
-import React from 'react';
+import  React from 'react';
+import {useRef, useState, useEffect} from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha';
 
 import Button from '../Button/Button';
 import Input from '../Input/Input';
@@ -118,15 +121,49 @@ const Rectangle3 = styled(Rectangle)`
 `;
 
 const Contact = () => {
-    function sendEmail(e) {
+
+    const [reCaptchPublicKey, setReCaptchPublicKey] = useState()
+    let reCaptchaRef = useRef(null);
+
+    // useEffect(async () => {
+    //     const result = await fetch(
+    //     `${process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY}/users`
+    //     ).then(res => res.json())
+    //     setReCaptchPublicKey(result.reCaptchPublicKey)
+    // })
+
+
+
+    const sendEmail = async (e) => {
+        
+        // handleSentMessage
+
         e.preventDefault();
-    
+        // console.log(reCaptchaRef.current)
+        // let token = await reCaptchaRef.current.executeAsync()
+        // console.log(token)
+        // reCaptchaRef.current.reset();
+
+        // console.log(token, "token");
+
+        // fetch('/submit', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Accept': 'application/json, text/plain, */*',
+        //       'Content-type': 'application/json'
+        //     },
+        //     body: token
+        //   })
+        //   .then(res => res.json())
+        //   .then(data => {
+        //     // setNotification(data.msg) //--> dynamically set your notification state via the server
+        //   })
         emailjs.sendForm('service_yex31g5', 'template_0mxs28h', e.target, 'user_5yt5RMKkSTewoPnI9eroa')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
-          });
+          });   
       }
       
     return (
@@ -142,8 +179,19 @@ const Contact = () => {
                 <Input type='email' name='email' labelText='Your email' nameOfClass='inputEmail' required />
                 <Input textArea id='message' name="message" labelText='Your message' nameOfClass='inputMessage' required />
                 <ButtonField className='buttonField' formButton>
-                    <Button type='submit' value="Send">Submit</Button>
+                    <Button 
+                        type='submit'
+                        value="Send"
+                        data-sitekey="reCAPTCHA_site_key" 
+                        data-callback='sendEmail'
+                        data-action='submit'
+                        >Submit</Button>
                 </ButtonField>
+                {/* <ReCAPTCHA
+                    sitekey={"6LfXGV8eAAAAAE_FdoMHJg_-aCRX0w-Ugc5flARZ"}
+                    size="invisible"
+                    ref={reCaptchaRef}
+                /> */}
                 <Rectangle1 color='#0AFCD3'/>
                 <Rectangle2 color='#0AFCD3'/>
                 <Rectangle3 color='#0AFCD3'/>

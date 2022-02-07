@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     defaultTitle: `Pmejna portfolio`,
@@ -8,6 +12,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-recaptcha`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,6 +20,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-custom`,
+    //   options: {
+    //     reCaptchPublic: process.env.PUBLIC_RECAPTCHA_SITE_KEY,
+    //     reCaptchPrivate: process.env.RECAPTCHA_SECRET_KEY,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
