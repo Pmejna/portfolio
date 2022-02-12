@@ -57,12 +57,10 @@ const NavResponsive = ({state, linkClicked}) => {
                 // close menu
         if (state.clicked === false) {
             menuClose(revealMenu, revealMenuBg, revealMenuBg2, menu.current);
-            console.log(state);
         }
         // open menu 
         else if (state.clicked === true ) {
             menuOpen(revealMenuBg2, revealMenuBg, revealMenu, menu.current);
-            console.log(state);
         }
         }, [state]);
 

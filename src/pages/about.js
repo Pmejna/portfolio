@@ -2,6 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
+import SEO from '../components/Seo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -47,6 +48,7 @@ const SkillsOther = styled.div`
 
 const AboutPage = () => (
   <>
+    <SEO title="Who is Przemyslaw Mejna"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='about'
@@ -55,7 +57,6 @@ const AboutPage = () => (
           leftText={true}
           className='mainHeaderProjects'
         />
-
     </HeaderWrapper>
   </>
 )

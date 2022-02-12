@@ -2,7 +2,10 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
+import SEO from '../components/Seo';
 import techStack from '../assets/images/TechStack.svg';
+
+
 const HeaderWrapper = styled.div`
   width: 100%;
   min-height: 46vh;
@@ -122,6 +125,7 @@ const SkillsOther = styled.div`
 
 const TechPage = () => (
   <>
+    <SEO title="Tech Stack and tools used - Przemyslaw Mejna"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='tech stack'
