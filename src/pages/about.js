@@ -1,8 +1,8 @@
 import React from "react"
 import styled from 'styled-components';
+import HelmetSeo from "../components/Helmet/HelmetSeo";
 
 import MainHeader from '../components/MainHeader/MainHeader';
-import SEO from '../components/SEO/Seo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -48,7 +48,7 @@ const SkillsOther = styled.div`
 
 const AboutPage = () => (
   <>
-    <SEO title="Who is Przemyslaw Mejna"/>
+    <HelmetSeo title="Who is Przemyslaw Mejna"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='about'

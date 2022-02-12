@@ -7,7 +7,7 @@ import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 import SectionImage from '../components/SectionParagraph/SectionImage/SectionImage';
 import TopEvent from "../assets/images/TopEventLogo.svg";
-import SEO from "../components/SEO/Seo";
+import HelmetSeo from "../components/Helmet/HelmetSeo";
 
 
 
@@ -89,7 +89,7 @@ const IndexPage = ({data}) => {
   let section2Ref = useRef(null);
    return (
   <>
-    <SEO title="Web and Software Developement with Design in mind"/>
+    <HelmetSeo title="Web and Software Developement with Design in mind"/>
     <HeaderWrapper>
       <TextContent>
         <MainHeader 

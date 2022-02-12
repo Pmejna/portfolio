@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet";
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title, image, author }) {
+function HelmetSeo({ description, lang, meta, title, image, author }) {
   const pathname = useLocation();
   const data = useStaticQuery(graphql`
-    query SEO {
+    query HelmetSeo {
       site {
         siteMetadata {
           defaultTitle: title
@@ -81,18 +81,18 @@ function SEO({ description, lang, meta, title, image, author }) {
   )
 }
 
-SEO.defaultProps = {
+HelmetSeo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
   image: null
 }
 
-SEO.propTypes = {
+HelmetSeo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default HelmetSeo

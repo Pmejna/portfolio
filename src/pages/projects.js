@@ -2,12 +2,12 @@ import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
 import MainHeader from '../components/MainHeader/MainHeader';
 import {revealCards} from '../assets/animations/gsapAnimations';
-import SEO from '../components/SEO/Seo';
 
 import topEventLogo from '../assets/images/TopEventLogoBlack.svg'; 
 import elPadoLogo from '../assets/images/ElPadoLogo.svg'; 
 import oprawaMuzycznaLogo from '../assets/images/OprawaMuzycznaLogo.svg'; 
 import ProjectsCard from "../components/ProjectsCard/ProjectsCard";
+import HelmetSeo from "../components/Helmet/HelmetSeo";
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -55,7 +55,7 @@ const ProjectsPage = () => {
 
   return (
     <>
-      <SEO title="Przemyslaw Mejna - Web Developement and Design Portfolio Projects"/>
+      <HelmetSeo title="Przemyslaw Mejna - Web Developement and Design Portfolio Projects"/>
       <HeaderWrapper>
         <MainHeaderProjects 
           above='project'

@@ -6,7 +6,6 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import SEO from '../../components/SEO/Seo';
 
 import challangeSectionImage from '../../assets/images/Oprawa muzyczna.jpg';
 import processSectionImage from '../../assets/images/OprawaMobile.png';
@@ -14,6 +13,7 @@ import websitePresentationImage from '../../assets/images/OprawaPresentation.png
 import oprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaLogo.svg';
 import TopEventLogo from '../../assets/images/TopEventLogo.svg';
 import ElPadoLogo from '../../assets/images/ElPadoWhite.svg';
+import HelmetSeo from '../../components/Helmet/HelmetSeo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -67,7 +67,7 @@ const websiteSection = {
 }
 return (
     <>
-    <SEO title="Oprawa Muzyczna Wesel Project"/>
+    <HelmetSeo title="Oprawa Muzyczna Wesel Project"/>
     <HeaderWrapper>
             <MainHeader 
                 above='project'

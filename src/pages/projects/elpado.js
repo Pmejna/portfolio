@@ -5,7 +5,6 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
-import SEO from '../../components/SEO/Seo';
 
 
 import challangeSectionImage from '../../assets/images/ElPado2.png';
@@ -15,6 +14,7 @@ import businessCard from '../../assets/images/Wizytowki.jpg';
 import TopEventLogo from '../../assets/images/TopEventLogo.svg';
 import OprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaWhite.svg';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
+import HelmetSeo from '../../components/Helmet/HelmetSeo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -59,7 +59,7 @@ const websiteSection = {
 }
 return (
     <>
-    <SEO title="ElPado Project"/>
+    <HelmetSeo title="ElPado Project"/>
     <HeaderWrapper>
             <MainHeader 
                 above='project'
