@@ -5,7 +5,7 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
-import SEO from '../../components/Seo';
+import SEO from '../../components/SEO/SEO';
 
 
 import challangeSectionImage from '../../assets/images/ElPado2.png';
@@ -59,7 +59,7 @@ const websiteSection = {
 }
 return (
     <>
-    <SEO />
+    <SEO title="ElPado Project"/>
     <HeaderWrapper>
             <MainHeader 
                 above='project'

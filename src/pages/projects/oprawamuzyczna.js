@@ -6,7 +6,7 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import SEO from '../../components/Seo';
+import SEO from '../../components/SEO/SEO';
 
 import challangeSectionImage from '../../assets/images/Oprawa muzyczna.jpg';
 import processSectionImage from '../../assets/images/OprawaMobile.png';
@@ -67,7 +67,7 @@ const websiteSection = {
 }
 return (
     <>
-    <SEO />
+    <SEO title="Oprawa Muzyczna Wesel Project"/>
     <HeaderWrapper>
             <MainHeader 
                 above='project'

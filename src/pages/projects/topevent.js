@@ -5,7 +5,7 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import SEO from '../../components/Seo';
+import SEO from '../../components/SEO/SEO';
 
 import challangeSectionImage from '../../assets/images/TopEventChallange.png';
 import processSectionImage from '../../assets/images/TopEventProcess.png';
@@ -70,7 +70,7 @@ const TopEventPage = () => {
     }
     return (
         <>
-        <SEO />
+        <SEO title="TopEvent project"/>
         <HeaderWrapper>
                 <MainHeader 
                     above='project'

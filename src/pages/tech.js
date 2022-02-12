@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
-import SEO from '../components/Seo';
+import SEO from '../components/SEO/SEO';
 import techStack from '../assets/images/TechStack.svg';
 
 

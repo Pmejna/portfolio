@@ -5,7 +5,6 @@ import Contact from '../components/Contact/Contact';
 import '../assets/styles/fonts/Index.css';
 import GlobalStyles from '../assets/styles/GlobalStyles';
 import Footer from "../components/Footer/Footer";
-import SEO from "../components/Seo";
 
 
 const MainLayout = ({children}) => {
