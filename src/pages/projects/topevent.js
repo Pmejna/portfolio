@@ -5,7 +5,6 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import SEO from '../../components/Seo';
 
 import challangeSectionImage from '../../assets/images/TopEventChallange.png';
 import processSectionImage from '../../assets/images/TopEventProcess.png';
@@ -13,6 +12,7 @@ import websitePresentationImage from '../../assets/images/TopEventPresentation.p
 import topEventLogo from '../../assets/images/TopEventSygnet.png';
 import ElPadoLogo from '../../assets/images/ElPadoWhite.svg';
 import OprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaWhite.svg';
+import HelmetSeo from '../../components/Helmet/HelmetSeo';
 
 
 const HeaderWrapper = styled.div`
@@ -70,7 +70,7 @@ const TopEventPage = () => {
     }
     return (
         <>
-        <SEO />
+        <HelmetSeo title="TopEvent project"/>
         <HeaderWrapper>
                 <MainHeader 
                     above='project'

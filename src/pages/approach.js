@@ -1,8 +1,8 @@
 import React from "react"
 import styled from 'styled-components';
+import HelmetSeo from "../components/Helmet/HelmetSeo";
 
 import MainHeader from '../components/MainHeader/MainHeader';
-import SEO from '../components/Seo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -60,7 +60,7 @@ const ApproachEnd = styled.p`
 
 const ApproachPage = () => (
   <>
-    <SEO title="Practical Software Developement with Attractive Design in mind"/>
+    <HelmetSeo title="Practical Software Developement with Attractive Design in mind"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='approach'
