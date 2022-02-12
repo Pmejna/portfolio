@@ -5,7 +5,7 @@ import MainHeader from '../../components/MainHeader/MainHeader';
 import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
-import SEO from '../../components/SEO/SEO';
+import SEO from '../../components/SEO/Seo';
 
 
 import challangeSectionImage from '../../assets/images/ElPado2.png';

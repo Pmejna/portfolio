@@ -2,7 +2,7 @@ import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
 import MainHeader from '../components/MainHeader/MainHeader';
 import {revealCards} from '../assets/animations/gsapAnimations';
-import SEO from '../components/SEO/SEO';
+import SEO from '../components/SEO/Seo';
 
 import topEventLogo from '../assets/images/TopEventLogoBlack.svg'; 
 import elPadoLogo from '../assets/images/ElPadoLogo.svg'; 

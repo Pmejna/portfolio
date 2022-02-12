@@ -6,7 +6,7 @@ import ProjectSummary from '../../components/ProjectSummary/ProjectSummary';
 import SectionDefault from '../../components/SectionDefault/SectionDefault';
 import SectionPresentation from '../../components/SectionPresentation/SectionPresentation';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
-import SEO from '../../components/SEO/SEO';
+import SEO from '../../components/SEO/Seo';
 
 import challangeSectionImage from '../../assets/images/Oprawa muzyczna.jpg';
 import processSectionImage from '../../assets/images/OprawaMobile.png';

@@ -2,7 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
-import SEO from '../components/SEO/SEO';
+import SEO from '../components/SEO/Seo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
