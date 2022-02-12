@@ -48,7 +48,7 @@ const SkillsOther = styled.div`
 
 const AboutPage = () => (
   <>
-    <HelmetSeo title="Who is Przemyslaw Mejna"/>
+    <HelmetSeo title="About Przemyslaw Mejna"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='about'
