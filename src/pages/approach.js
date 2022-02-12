@@ -2,6 +2,7 @@ import React from "react"
 import styled from 'styled-components';
 
 import MainHeader from '../components/MainHeader/MainHeader';
+import SEO from '../components/Seo';
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -59,6 +60,7 @@ const ApproachEnd = styled.p`
 
 const ApproachPage = () => (
   <>
+    <SEO title="Practical Software Developement with Attractive Design in mind"/>
     <HeaderWrapper>
         <MainHeaderProjects
           above='approach'
@@ -69,10 +71,6 @@ const ApproachPage = () => (
         />
     </HeaderWrapper>
     <ApproachWrapper>
-      <ApproachHeadline>
-        <h2></h2>
-        <p></p>
-      </ApproachHeadline>
       <ApproachList>
         <ApproachListItem>
           <h3>1. Figuring out needs of your business or initiative</h3>

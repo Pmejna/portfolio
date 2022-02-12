@@ -69,15 +69,12 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
     useEffect(() => {
         if(clicked === true) {
             revealItem([li1, li2, li3, li4, li5]);
-            console.log(true)
         }
         else if (clicked === false) {
-            console.log(false)
         }
     }, [clicked]);
 
     const handleHover = (e) => {
-        console.log(e.target);
         mouseOverAnimation(e.target);
     }
 

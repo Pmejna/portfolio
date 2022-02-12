@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
 import MainHeader from '../components/MainHeader/MainHeader';
 import {revealCards} from '../assets/animations/gsapAnimations';
+import SEO from '../components/Seo';
 
 import topEventLogo from '../assets/images/TopEventLogoBlack.svg'; 
 import elPadoLogo from '../assets/images/ElPadoLogo.svg'; 
@@ -54,6 +55,7 @@ const ProjectsPage = () => {
 
   return (
     <>
+      <SEO title="Przemyslaw Mejna - Web Developement and Design Portfolio Projects"/>
       <HeaderWrapper>
         <MainHeaderProjects 
           above='project'
@@ -67,7 +69,7 @@ const ProjectsPage = () => {
       </HeaderWrapper>
       <ProjectCardsWrapper>
         <ProjectsCard 
-          to='/projects/topevent' 
+          to='/projects/topevent/' 
           btnText='Learn more'
           image={topEventLogo}
           feature1='Web developement'
@@ -75,7 +77,7 @@ const ProjectsPage = () => {
           ref={element => (card1 = element)}
            />
         <ProjectsCard 
-          to='/projects/elpado' 
+          to='/projects/elpado/' 
           btnText='Learn more'
           image={elPadoLogo}
           feature1='Brand design'
@@ -83,7 +85,7 @@ const ProjectsPage = () => {
           ref={element => (card2 = element)}
            />
         <ProjectsCard 
-          to='/projects/oprawamuzyczna' 
+          to='/projects/oprawamuzyczna/' 
           btnText='Learn more'
           image={oprawaMuzycznaLogo}
           feature1='Web developement'

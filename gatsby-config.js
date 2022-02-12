@@ -4,11 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    defaultTitle: `Pmejna portfolio`,
+    title: `Pmejna portfolio`,
     description: `Przemyslaw Mejna web developer portfolio`,
     author: `pmejna@gmail.com`,
     url: `https://www.mejna.co.uk/`,
-    image:`${__dirname}/src/assets/images/`
+    image:`${__dirname}/src/assets/images/seo-image.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
