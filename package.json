@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.25.0",
     "babel-plugin-styled-components": "^2.0.2",
     "body-parser": "^1.19.1",
     "dotenv": "^16.0.0",
@@ -23,11 +24,12 @@
     "gatsby-source-filesystem": "^4.6.0",
     "gatsby-transformer-sharp": "^4.6.0",
     "gsap": "^3.6.0",
+    "netlify-lambda": "^2.0.15",
     "npm-check-updates": "^12.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-google-recaptcha": "^2.1.0",
+    "react-google-recaptcha-v3": "^1.9.7",
     "react-helmet": "^6.1.0",
     "request": "^2.88.2",
     "smooth-scrollbar": "^8.5.3",
@@ -47,7 +49,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build build"
   },
   "repository": {
     "type": "git",

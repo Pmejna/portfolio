@@ -20,13 +20,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-custom`,
-    //   options: {
-    //     reCaptchPublic: process.env.PUBLIC_RECAPTCHA_SITE_KEY,
-    //     reCaptchPrivate: process.env.RECAPTCHA_SECRET_KEY,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-custom-api`,
+      options: {
+        reCaptchPublic: process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY,
+        reCaptchPrivate: process.env.RECAPTCHA_SECRET_KEY,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
