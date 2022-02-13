@@ -1,6 +1,5 @@
 import React, {useRef, useEffect} from "react";
 import styled from "styled-components";
-import GlobalStyles from '../assets/styles/GlobalStyles';
 import {graphql} from "gatsby";
 import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";

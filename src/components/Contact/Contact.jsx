@@ -1,9 +1,8 @@
 import  React from 'react';
-import {useRef, useState, useEffect} from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { useGoogleReCaptcha } from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import Button from '../Button/Button';
 import Input from '../Input/Input';
@@ -122,48 +121,55 @@ const Rectangle3 = styled(Rectangle)`
 
 const Contact = () => {
 
-    const [reCaptchPublicKey, setReCaptchPublicKey] = useState()
-    let reCaptchaRef = useRef(null);
-
-    // useEffect(async () => {
-    //     const result = await fetch(
-    //     `${process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY}/users`
-    //     ).then(res => res.json())
-    //     setReCaptchPublicKey(result.reCaptchPublicKey)
-    // })
-
-
+    const [reCaptchPublicKey, setReCaptchPublicKey] = useState();
+    const [errorDisp, setErrorDisp] = useState('none');
+    const [confirmDisp, setConfirmDisp] = useState('none');
+    const [btnDisabled, setBtnDisabled] = useState(false);
+    
+    const {executeRecaptcha} = useGoogleReCaptcha();
 
     const sendEmail = async (e) => {
-        
-        // handleSentMessage
-
         e.preventDefault();
-        // console.log(reCaptchaRef.current)
-        // let token = await reCaptchaRef.current.executeAsync()
-        // console.log(token)
-        // reCaptchaRef.current.reset();
+        setBtnDisabled(true)
+        
+        if (!executeRecaptcha) {
+            return
+        }
+        
+        let target = e.target;
+        const captchaResult = await executeRecaptcha('contact');
+        setReCaptchPublicKey(captchaResult);
+        // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
+        async function postDataToCaptcha(url=`${process.env.GATSBY_FUNCTION_URL}`) {
+            const response = await fetch(url, {
+                method: 'POST',
+                cache: 'no-cache', 
+                credentials: 'same-origin', 
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                referrerPolicy: 'no-referrer',
+                body: reCaptchPublicKey 
+              }).then((response) => response.json())
+                .then(data => {
+                    if(data.success == true) {
+                        emailjs.sendForm('service_yex31g5', 'template_0mxs28h', target, 'user_5yt5RMKkSTewoPnI9eroa')
+                        .then((result) => {
+                            setErrorDisp('none')
+                            setConfirmDisp('block')
+                        }, (error) => {
+                            console.log(error);
+                        });   
+                    } else {
+                        setConfirmDisp('none')
+                        setErrorDisp('block')
+                    }
+                    setBtnDisabled(false)
+                })
+        }
+        postDataToCaptcha();
 
-        // console.log(token, "token");
 
-        // fetch('/submit', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Accept': 'application/json, text/plain, */*',
-        //       'Content-type': 'application/json'
-        //     },
-        //     body: token
-        //   })
-        //   .then(res => res.json())
-        //   .then(data => {
-        //     // setNotification(data.msg) //--> dynamically set your notification state via the server
-        //   })
-        emailjs.sendForm('service_yex31g5', 'template_0mxs28h', e.target, 'user_5yt5RMKkSTewoPnI9eroa')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });   
       }
       
     return (
@@ -182,19 +188,22 @@ const Contact = () => {
                     <Button 
                         type='submit'
                         value="Send"
-                        data-sitekey="reCAPTCHA_site_key" 
+                        data-sitekey={process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY} 
                         data-callback='sendEmail'
                         data-action='submit'
-                        >Submit</Button>
+                        disabled={btnDisabled}
+                    >Submit
+                    </Button>   
                 </ButtonField>
-                {/* <ReCAPTCHA
-                    sitekey={"6LfXGV8eAAAAAE_FdoMHJg_-aCRX0w-Ugc5flARZ"}
-                    size="invisible"
-                    ref={reCaptchaRef}
-                /> */}
                 <Rectangle1 color='#0AFCD3'/>
                 <Rectangle2 color='#0AFCD3'/>
                 <Rectangle3 color='#0AFCD3'/>
+                {
+                    <>
+                        <p style={{display: confirmDisp, textAlign: 'left', color: "green"}}>Thank you. Your email has been send.</p>
+                        <p style={{display: errorDisp, textAlign: 'left', color: "red"}}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
+                    </>
+                }
             </ContactForm>
         </ContactWrapper>
     )
