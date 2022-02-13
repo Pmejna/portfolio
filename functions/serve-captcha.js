@@ -1,9 +1,9 @@
 const axios = require('axios');
+require('dotenv').config();
 
 exports.handler = function(event, context, callback) {
     const {RECAPTCHA_SECRET_KEY} = process.env;
     const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${event.body}`;
-    console.log(verificationUrl);
 
     const send = (body, message) => {
         callback(null, {
@@ -16,12 +16,10 @@ exports.handler = function(event, context, callback) {
         });
     }
 
-    let response = "";
     const verifyCaptcha = () => {
         axios.post(verificationUrl)
         .then((res, data) => {
             const success = res.data.success;
-            console.log(res.data)
           if (!success) {
             send(res.data, "Sending failed. Robots aren't allowed here.");
           } else {
