@@ -26,6 +26,7 @@ module.exports = {
         reCaptchPublic: process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY,
         reCaptchPrivate: process.env.RECAPTCHA_SECRET_KEY,
         functionUrl: process.env.GATSBY_FUNCTION_URL_DEV,
+        functionUrlLive: process.env.GATSBY_FUNCTION_URL,
       },
     },
     `gatsby-transformer-sharp`,
