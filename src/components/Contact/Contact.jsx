@@ -140,7 +140,7 @@ const Contact = () => {
         const captchaResult = await executeRecaptcha('contact');
         setReCaptchPublicKey(captchaResult);
         // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
-        async function postDataToCaptcha(url=`${process.env.GATSBY_FUNCTION_URL}`) {
+        async function postDataToCaptcha(url=`.netlify/functions/serve-captcha`) {
             const response = await fetch(url, {
                 method: 'POST',
                 cache: 'no-cache', 
