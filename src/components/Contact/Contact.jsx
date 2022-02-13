@@ -157,30 +157,21 @@ const Contact = () => {
         const captchaResult = await executeRecaptcha('contact');
         setReCaptchPublicKey(captchaResult);
         console.log(captchaResult);
-        // console.log(reCaptchaRef.current)
-        // let token = await reCaptchaRef.current.executeAsync()
-        // console.log(token)
-        // reCaptchaRef.current.reset();
         let score = 0;
         let success = false;
-        async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
+        // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
+        async function postDataToCaptcha(url=".netlify/functions/serve-captcha") {
             const response = await fetch(url, {
                 method: 'POST',
-                // mode: 'no-cors', 
                 cache: 'no-cache', 
                 credentials: 'same-origin', 
                 headers: {
                   'Content-Type': 'application/json'
-                  // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                // redirect: 'follow',
                 referrerPolicy: 'no-referrer',
                 body: reCaptchPublicKey 
               }).then((response) => response.json())
                 .then(data => {
-                    // score = data.score;
-                    // success = data.success;
-                //   setNotification(data.msg) //--> dynamically set your notification state via the server
                     if(data.success == true) {
                         emailjs.sendForm('service_yex31g5', 'template_0mxs28h', target, 'user_5yt5RMKkSTewoPnI9eroa')
                         .then((result) => {
