@@ -1,8 +1,7 @@
 import  React from 'react';
-import {useRef, useState, useEffect} from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import Button from '../Button/Button';
@@ -122,45 +121,26 @@ const Rectangle3 = styled(Rectangle)`
 
 const Contact = () => {
 
-    const [reCaptchPublicKey, setReCaptchPublicKey] = useState()
-    const [errorDisp, setErrorDisp] = useState('none')
-    const [confirmDisp, setConfirmDisp] = useState('none')
+    const [reCaptchPublicKey, setReCaptchPublicKey] = useState();
+    const [errorDisp, setErrorDisp] = useState('none');
+    const [confirmDisp, setConfirmDisp] = useState('none');
+    const [btnDisabled, setBtnDisabled] = useState(false);
+    
     const {executeRecaptcha} = useGoogleReCaptcha();
-    let errorEl = useRef(null);
-    let confirmEl = useRef(null);
-
-
-    // useEffect(() => {
-    //     console.log()
-    //     async function result() {
-    //         await fetch(
-    //     `${process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY}/users`
-    //     ).then(res => res.json())
-    //     };
-    //     result();
-    //     setReCaptchPublicKey(result.reCaptchPublicKey)
-    // })
-
-
 
     const sendEmail = async (e) => {
-        
-        let target = e.target;
-        // handleSentMessage
-
         e.preventDefault();
-
+        setBtnDisabled(true)
+        
         if (!executeRecaptcha) {
             return
         }
-
+        
+        let target = e.target;
         const captchaResult = await executeRecaptcha('contact');
         setReCaptchPublicKey(captchaResult);
-        console.log(captchaResult);
-        let score = 0;
-        let success = false;
         // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
-        async function postDataToCaptcha(url=".netlify/functions/serve-captcha") {
+        async function postDataToCaptcha(url=`${process.env.GATSBY_FUNCTION_URL}`) {
             const response = await fetch(url, {
                 method: 'POST',
                 cache: 'no-cache', 
@@ -184,6 +164,7 @@ const Contact = () => {
                         setConfirmDisp('none')
                         setErrorDisp('block')
                     }
+                    setBtnDisabled(false)
                 })
         }
         postDataToCaptcha();
@@ -210,19 +191,20 @@ const Contact = () => {
                         data-sitekey={process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY} 
                         data-callback='sendEmail'
                         data-action='submit'
+                        disabled={btnDisabled}
                     >Submit
-                    </Button>
+                    </Button>   
                 </ButtonField>
                 <Rectangle1 color='#0AFCD3'/>
                 <Rectangle2 color='#0AFCD3'/>
                 <Rectangle3 color='#0AFCD3'/>
+                {
+                    <>
+                        <p style={{display: confirmDisp, textAlign: 'left', color: "green"}}>Thank you. Your email has been send.</p>
+                        <p style={{display: errorDisp, textAlign: 'left', color: "red"}}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
+                    </>
+                }
             </ContactForm>
-            {
-                <>
-                    <p style={{display: confirmDisp}} ref={el => confirmEl = el}>Thank you. Your email has been send.</p>
-                    <p style={{display: errorDisp}} ref={el => errorEl = el}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
-                </>
-            }
         </ContactWrapper>
     )
 };
