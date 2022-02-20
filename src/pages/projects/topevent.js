@@ -80,6 +80,7 @@ const TopEventPage = () => {
                     leftText={true}
                     button
                     buttonTo='https://topevent.pl'
+                    header
                     // maxWidth='100'
                     imgSrc={topEventLogo}
                     // main

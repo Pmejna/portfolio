@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import ImageBoxAnimated from '../ImageBoxAnimated/ImageBoxAnimated';
 
 const HeaderWrapper = styled.div`
-    width: ${({main}) => main ? 'auto' : '100vw'};
+    width: ${({main}) => main ? 'auto' : '100%'};
     max-width: ${({maxWidth}) => maxWidth ? maxWidth : '100vw'};
     background-color: transparent;
     flex-basis: ${({main, maxWidth}) => main || maxWidth ? 'auto' : '100vw'};
@@ -16,7 +16,7 @@ const HeaderWrapper = styled.div`
         max-width: 180px;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
     max-width: ${({main}) => main ? '60vw' : '87vw'};
     flex-basis: auto;
     height: ${({main}) => main ? '60vh' : 'auto'};
@@ -29,7 +29,7 @@ const HeaderWrapper = styled.div`
         margin-bottom: 0.4rem;
     }
     button {
-        grid-area: 14 / 1 / 15 / 2;
+        grid-area: 17 / 1 / 18 / 2;
     }
     }
 `;
@@ -43,7 +43,7 @@ const Above = styled.p`
     margin-bottom: 0.3rem;
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         font-size: 1.2rem;
         text-align: left;
     }
@@ -56,7 +56,7 @@ const Title = styled.h1`
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
     grid-area: 2 / 1 / 3 / 2;
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         text-align: left;
         grid-area: ${({main}) => main ? '3 / 1 / 5 / 2' : '2 / 1 / 3 / 2'};
     }
@@ -69,7 +69,7 @@ const Title2 = styled.h2`
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
     grid-area: 2 / 1 / 3 / 2;
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         text-align: left;
         grid-area: 2 / 1 / 3 / 2;
     }
@@ -84,7 +84,7 @@ const SubTitle = styled.p`
     margin-bottom: 1.2rem;
     grid-area: ${({main}) => main ? '' : '4 / 1 / 8 / 2'};
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         margin-top: 2rem;
         font-size: 1.5rem;
         text-align: left;
@@ -106,9 +106,34 @@ const HeaderText = styled.div`
         width: 68vw;
         max-width: 68vw;
     }
+    @media (max-width: 550px) {
+        width: 100%;
+        max-width: 100%;
+    }
 `;
 
-const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, background, className, button, textColor, maxWidth, buttonTo, imgSrc, section}, ref) => {
+const MainHeader = React.forwardRef(({
+    above, 
+    background, 
+    button, 
+    buttonTo,
+    borderColor,
+    className, 
+    header,
+    imgSrc, 
+    linkButton, 
+    linkButtonText, 
+    leftText, 
+    main, 
+    maxWidth,
+    noAnimation, 
+    ref,
+    section,
+    subTitle, 
+    textColor, 
+    title
+    }
+    ) => {
 
     let aboveRef = useRef(null);
     let titleRef = useRef(null);
@@ -120,15 +145,26 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
     useEffect(() => {
         if (button && main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef, buttonRef]);
+            console.log('button & main')
         }
         if (button) {
             revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
+            console.log('button')
+        }
+        if (linkButton) {
+            revealSection([mainRef, aboveRef, subtitleRef, buttonRef]);
+            console.log('linkButton')
         }
         else if (main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
+            console.log('main')
         }
-        else {
+        else if (!button && !main && !linkButton && !noAnimation) {
             revealSection([aboveRef, title2Ref, subtitleRef]);
+            console.log('other')
+        }
+        else if (noAnimation) {
+
         }
       }, [])
     
@@ -152,8 +188,9 @@ const MainHeader = React.forwardRef(({above, title, subTitle, main, leftText, ba
                     {subTitle} 
                 </SubTitle>
                 {button ? <Button to={buttonTo} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>Live project</Button> : null}
+                {linkButton ? <Button borderColor={borderColor} to={linkButton} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>{linkButtonText}</Button> : null}
                 {
-                imgSrc ? <ImageBoxAnimated src={imgSrc} mainHeader/> : null
+                imgSrc ? <ImageBoxAnimated src={imgSrc} header={header} mainHeader/> : null
                 }           
             </HeaderText>
              

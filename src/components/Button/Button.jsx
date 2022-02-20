@@ -12,6 +12,7 @@ const ButtonWrapper = styled.button`
     font-size: 1rem;
     grid-area: ${({gridArea}) => gridArea ? gridArea : null};
     max-width: 200px;
+    border: ${({borderColor}) => borderColor ? '1px solid '+borderColor : 'none'};
     opacity: ${({disabled}) => disabled ? 0.4 : 1};
 
     @media (max-width: 760px) {
@@ -77,9 +78,9 @@ const FormStyled = styled.div`
         }
 `;
 
-const Button = ({children, to, type, value, formButton, gridArea, disabled}, ref) => {
+const Button = ({children, to, type, value, formButton, gridArea, borderColor}, ref) => {
     return (
-        <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea} disabled={disabled}>
+        <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea} borderColor={borderColor} disabled={disabled}>
             {
                 formButton ? 
                 <FormStyled>

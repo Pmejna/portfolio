@@ -128,6 +128,22 @@ const Contact = () => {
     
     const {executeRecaptcha} = useGoogleReCaptcha();
 
+    let errorEl = useRef(null);
+    let confirmEl = useRef(null);
+    
+    // useEffect(() => {
+    //     console.log()
+    //     async function result() {
+    //         await fetch(
+    //     `${process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY}/users`
+    //     ).then(res => res.json())
+    //     };
+    //     result();
+    //     setReCaptchPublicKey(result.reCaptchPublicKey)
+    // })
+
+
+
     const sendEmail = async (e) => {
         e.preventDefault();
         setBtnDisabled(true)

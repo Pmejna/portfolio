@@ -6,7 +6,7 @@ import {revealSectionImage} from '../../assets/animations/gsapAnimations';
 const ImageWrapper = styled.div`
     flex-basis: 50%;
     position: relative;
-    max-width: 410px;
+    max-width: 270px;
     grid-area: ${({gridArea}) => gridArea ? gridArea : null};
 
     img {
@@ -30,8 +30,8 @@ const ImageWrapper = styled.div`
             position: relative;
             display: block;
             left: unset;
-            height: 100%;
-            width:auto;
+            width: ${({header}) => header ? 'auto' : '100%'};
+            height: ${({header}) => header ? '100%' : 'auto'};
     }
         }
         
@@ -136,7 +136,7 @@ const Rectangle9 = styled(Rectangle)`
     }
 `;
 
-const ImageBoxAnimated = ({src, variant2, imgLeft, gridArea}) => {
+const ImageBoxAnimated = ({src, variant2, imgLeft, gridArea, header}) => {
     let imageRef = useRef(null);
     let rect1Ref = useRef(null);
     let rect2Ref = useRef(null);
@@ -159,7 +159,7 @@ const ImageBoxAnimated = ({src, variant2, imgLeft, gridArea}) => {
      }, [])
    
     return (
-        <ImageWrapper imgLeft={imgLeft}>           
+        <ImageWrapper imgLeft={imgLeft} header={header}>           
             <img src={src} ref={el => (imageRef = el)} />
             {
                 variant2 ? 

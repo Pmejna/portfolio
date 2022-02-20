@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from "gatsby";
+import seoImage from '../../assets/images/seo-image.png';
 
 function HelmetSeo({ description, lang, meta, title, image, author }) {
   const pathname = useLocation();
@@ -57,7 +58,7 @@ const seo = {
         },
         {
           property: `og:image`,
-          content: defaultImage,
+          content: image ? image : defaultImage,
         },
         {
           name: `twitter:card`,
