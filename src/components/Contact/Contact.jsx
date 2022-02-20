@@ -127,9 +127,6 @@ const Contact = () => {
     const [btnDisabled, setBtnDisabled] = useState(false);
     
     const {executeRecaptcha} = useGoogleReCaptcha();
-
-    let errorEl = useRef(null);
-    let confirmEl = useRef(null);
     
     // useEffect(() => {
     //     console.log()
@@ -218,8 +215,8 @@ const Contact = () => {
                 <Rectangle3 color='#0AFCD3'/>
                 {
                     <>
-                        <p style={{display: confirmDisp, textAlign: 'left', color: "green"}}>Thank you. Your email has been send.</p>
-                        <p style={{display: errorDisp, textAlign: 'left', color: "red"}}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
+                        <p  style={{display: confirmDisp, textAlign: 'left', color: "green"}}>Thank you. Your email has been send.</p>
+                        <p  style={{display: errorDisp, textAlign: 'left', color: "red"}}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
                     </>
                 }
             </ContactForm>

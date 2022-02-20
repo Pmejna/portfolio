@@ -78,7 +78,7 @@ const FormStyled = styled.div`
         }
 `;
 
-const Button = ({children, to, type, value, formButton, gridArea, borderColor}, ref) => {
+const Button = ({children, to, type, value, formButton, gridArea, borderColor, disabled}, ref) => {
     return (
         <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea} borderColor={borderColor} disabled={disabled}>
             {
