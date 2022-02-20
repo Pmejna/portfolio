@@ -1,8 +1,7 @@
 import  React from 'react';
-import {useRef, useState, useEffect} from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import Button from '../Button/Button';
@@ -122,10 +121,13 @@ const Rectangle3 = styled(Rectangle)`
 
 const Contact = () => {
 
-    const [reCaptchPublicKey, setReCaptchPublicKey] = useState()
-    const [errorDisp, setErrorDisp] = useState('none')
-    const [confirmDisp, setConfirmDisp] = useState('none')
+    const [reCaptchPublicKey, setReCaptchPublicKey] = useState();
+    const [errorDisp, setErrorDisp] = useState('none');
+    const [confirmDisp, setConfirmDisp] = useState('none');
+    const [btnDisabled, setBtnDisabled] = useState(false);
+    
     const {executeRecaptcha} = useGoogleReCaptcha();
+
     let errorEl = useRef(null);
     let confirmEl = useRef(null);
     
@@ -147,38 +149,28 @@ const Contact = () => {
         // handleSentMessage
 
         e.preventDefault();
-
+        setBtnDisabled(true)
+        
         if (!executeRecaptcha) {
             return
         }
-
+        
+        let target = e.target;
         const captchaResult = await executeRecaptcha('contact');
         setReCaptchPublicKey(captchaResult);
-        console.log(captchaResult);
-        // console.log(reCaptchaRef.current)
-        // let token = await reCaptchaRef.current.executeAsync()
-        // console.log(token)
-        // reCaptchaRef.current.reset();
-        let score = 0;
-        let success = false;
-        async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
+        // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
+        async function postDataToCaptcha(url=`.netlify/functions/serve-captcha`) {
             const response = await fetch(url, {
                 method: 'POST',
-                // mode: 'no-cors', 
                 cache: 'no-cache', 
                 credentials: 'same-origin', 
                 headers: {
                   'Content-Type': 'application/json'
-                  // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                // redirect: 'follow',
                 referrerPolicy: 'no-referrer',
                 body: reCaptchPublicKey 
               }).then((response) => response.json())
                 .then(data => {
-                    // score = data.score;
-                    // success = data.success;
-                //   setNotification(data.msg) //--> dynamically set your notification state via the server
                     if(data.success == true) {
                         emailjs.sendForm('service_yex31g5', 'template_0mxs28h', target, 'user_5yt5RMKkSTewoPnI9eroa')
                         .then((result) => {
@@ -191,6 +183,7 @@ const Contact = () => {
                         setConfirmDisp('none')
                         setErrorDisp('block')
                     }
+                    setBtnDisabled(false)
                 })
         }
         postDataToCaptcha();
@@ -217,19 +210,20 @@ const Contact = () => {
                         data-sitekey={process.env.GATSBY_PUBLIC_RECAPTCHA_SITE_KEY} 
                         data-callback='sendEmail'
                         data-action='submit'
+                        disabled={btnDisabled}
                     >Submit
-                    </Button>
+                    </Button>   
                 </ButtonField>
                 <Rectangle1 color='#0AFCD3'/>
                 <Rectangle2 color='#0AFCD3'/>
                 <Rectangle3 color='#0AFCD3'/>
+                {
+                    <>
+                        <p style={{display: confirmDisp, textAlign: 'left', color: "green"}}>Thank you. Your email has been send.</p>
+                        <p style={{display: errorDisp, textAlign: 'left', color: "red"}}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
+                    </>
+                }
             </ContactForm>
-            {
-                <>
-                    <p style={{display: confirmDisp}} ref={el => confirmEl = el}>Thank you. Your email has been send.</p>
-                    <p style={{display: errorDisp}} ref={el => errorEl = el}>Sending failed. Try Again. Remember that Robots aren't allowed here.</p>
-                </>
-            }
         </ContactWrapper>
     )
 };
