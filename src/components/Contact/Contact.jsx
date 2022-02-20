@@ -145,6 +145,9 @@ const Contact = () => {
 
 
     const sendEmail = async (e) => {
+        let target = e.target;
+        // handleSentMessage
+
         e.preventDefault();
         setBtnDisabled(true)
         

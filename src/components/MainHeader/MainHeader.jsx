@@ -145,23 +145,18 @@ const MainHeader = React.forwardRef(({
     useEffect(() => {
         if (button && main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef, buttonRef]);
-            console.log('button & main')
         }
         if (button) {
             revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
-            console.log('button')
         }
         if (linkButton) {
             revealSection([mainRef, aboveRef, subtitleRef, buttonRef]);
-            console.log('linkButton')
         }
         else if (main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
-            console.log('main')
         }
         else if (!button && !main && !linkButton && !noAnimation) {
             revealSection([aboveRef, title2Ref, subtitleRef]);
-            console.log('other')
         }
         else if (noAnimation) {
 
