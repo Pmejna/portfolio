@@ -6,7 +6,7 @@ import ProjectsBanner from "../components/ProjectsBanner/ProjectsBanner";
 import MainHeader from "../components/MainHeader/MainHeader";
 import SectionParagraph from "../components/SectionParagraph/SectionParagraph";
 import SectionImage from '../components/SectionParagraph/SectionImage/SectionImage';
-import TopEvent from "../assets/images/TopEventLogo.svg";
+import internettLogo from "../assets/images/SVG/internett-logo-white.svg";
 import HelmetSeo from "../components/Helmet/HelmetSeo";
 
 
@@ -74,12 +74,17 @@ const MainImage = styled.img`
     left: -38vh;
     height: 65vh;
   }
+    @media (max-width:450px) {
+    bottom: 17vh;
+    left: -36vh;
+    height: 61vh;
+  }
 `;
 
 const headerData = {
   author: 'Przemyslaw Mejna',
-  title: 'Great should be a new standard',
-  subTitle: `I believe that combining both of the above is a must for great online success. The 'regular' never will be enough.`
+  title: 'Software Developer with UI and Design Background',
+  subTitle: `I believe in clean, effective code, best UI/UX practices, and modern design. They are the key to successful modern applications and happy users. `
 }
 
 
@@ -99,7 +104,7 @@ const IndexPage = ({data}) => {
           main={true}
           leftText={true}
         />
-        <ProjectsBanner logoSrc={TopEvent} project="topevent"/>
+        <ProjectsBanner logoSrc={internettLogo} project="internett"/>
       </TextContent>
       <ImageContent>
         <MainImage src={data.file.publicURL}/>
@@ -107,10 +112,11 @@ const IndexPage = ({data}) => {
     </HeaderWrapper>
     <SectionParagraph 
       ref={el => (section1Ref = el)}
-      title='Lets improve your profits and brand recognition!' 
-      above='your brand' 
-      subTitle={`What was good enough few years ago might be outdated now. My solution is simple: be original, be truly yourself. If we add this to a great product, branding and web presence: 
-      you have a success. Great design is timeless.`} 
+      above='my workflow' 
+      title='I am a big fan of simple and effective solutions' 
+      subTitle={`In my opinion project starting with clear vision and well specified goals will provide the simple and great solution for all the challanges. 
+      From there you can deep dive into more specific problems and based on defined direction you can branch out the problems into smaller pieces to provide better
+      solution with the main project goals and direction in mind.`} 
       leftText={true}
       maxWidth='45vw'
     >
@@ -118,10 +124,12 @@ const IndexPage = ({data}) => {
     </SectionParagraph>
     <SectionParagraph 
       ref={el => (section2Ref = el)}
-      title='Branding, webdesign, illustration? All sorted!' 
-      above='services' 
-      subTitle={`I am skilled in illustration, design and front end web technologies. I love solving problems and creating solutions. Being multiskilled
-      gives me not only broad range of skills but what is the most important: completely different view and approach to design, UI/UX, or developement process.`} 
+      title='Hard work, passion and open mind' 
+      above='my values' 
+      subTitle={`I don't think that there is a passion without hard work, or neither the hard work without a passion. In the end life is about
+      hapiness and one of the core ingredients of hapiness is mentioned "passion". For me programming and developing software, making a new website, learning a new skills
+      is a pure Joy. I am really addicted to the technology and constant growth which is reflected in my work. My design experience helped me to keep an open mind and
+      be prepared for constructive criticism. I like to experiment with new tech stack and design solutions.`} 
       leftText={false}
       maxWidth='45vw'
     >
@@ -131,12 +139,15 @@ const IndexPage = ({data}) => {
       ref={section2Ref}
       title='Who am I?' 
       above='about me' 
-      subTitle={`In short: I am self-taught designer/developer. I am addicted to learning new skills.  
-      I am currently based in Norhamptonshire UK. Been working as a freelancer since 2017. `} 
+      subTitle={`In short: I am self-taught software developer with over one year of freelance experience and one year of full-time developer job experience as a junior full-stack dev/Ui designer.
+      I have as well background in design, illustration and animation working over 4 years as a freelancer in this field.`} 
       leftText={true}
       maxWidth='45vw'
       background='#000'
       textColor='#fff'
+      linkButton="about"
+      linkButtonText="more"
+      borderColor='#dedede'
     >
     </SectionParagraph>
   </>

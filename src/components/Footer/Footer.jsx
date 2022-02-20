@@ -13,7 +13,7 @@ const FooterWrapper = styled.footer`
     color: #fff;
     font-family: 'IntervogueAltLight';
 
-    @media (max-width: 900px) {
+    @media (max-width: 767px) {
         padding: 1.4rem 8vw 1.4rem 6vw;
     }
     

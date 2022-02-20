@@ -72,7 +72,7 @@ return (
             <MainHeader 
                 above='project'
                 title='Oprawa Muzyczna Wesel'
-                subTitle={`Work for a Warsaw based wedding's music company. Brand design needed to reflect modern feel and be easily connected to the industry. Webpage is stil Work in Progress`}
+                subTitle={`Work for a Warsaw based wedding's music company. Brand design needed to reflect modern feel and be easily connected to the industry. The deployment of live version has been postponed because of COVID-19 situation pushed-back the company plans.`}
                 leftText={true}
                 button
                 buttonTo='https://dazzling-mccarthy-78f0ae.netlify.app/'
@@ -109,9 +109,9 @@ return (
     />
     <SectionPresentation
         imageSrc={websitePresentationImage}
-        text1='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
-        text2='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
-        text3='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod '
+        text1='Pastel palette to reflect the industry colours.'
+        text2='Selected stock photos mixed with client photos'
+        text3='Lot of white space and "delicate" mood'
     />
     <OtherProjects logo1={TopEventLogo} logo2={ElPadoLogo} project1="topevent" project2="elpado" above/>
     </>)

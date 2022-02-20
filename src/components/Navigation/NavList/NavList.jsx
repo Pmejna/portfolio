@@ -37,7 +37,7 @@ const NavUl = styled.ul`
 `;
 
 const NavLi = styled.li`
-    padding: 0.2rem 0.4rem;
+    /* padding: 0.2rem 0.4rem; */
 
     a {
         font-family: inherit;
@@ -86,6 +86,17 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
             <NavUl responsive={responsive} ref={ref}> 
                 <NavLi ref={el => li1 = el} responsive={responsive}>
                     {responsive ? 
+                        <Link to="/" onClick={linkClicked}  onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)} >
+                            Home
+                        </Link>
+                    :
+                        <Link to="/">
+                            Home
+                        </Link>
+                    }
+                </NavLi>
+                <NavLi ref={el => li2 = el} responsive={responsive}>
+                    {responsive ? 
                         <Link to="/projects" onClick={linkClicked}  onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)} >
                             Projects
                         </Link>
@@ -96,7 +107,7 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
                     }
                     
                 </NavLi>
-                <NavLi  ref={el => li2 = el} responsive={responsive}>
+                <NavLi  ref={el => li3 = el} responsive={responsive}>
                     {responsive ? 
                         <Link to="/tech" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
                         Tech stack
@@ -106,18 +117,6 @@ const NavList = React.forwardRef(({responsive, clicked, linkClicked}, ref) => {
                         Tech stack
                         </Link>
                     }
-                </NavLi>
-                <NavLi  ref={el => li3 = el} responsive={responsive}>
-                    {responsive ? 
-                        <Link to="/approach" onClick={linkClicked} onMouseEnter={(e) => handleHover(e)} onMouseOut={(e) => handleOut(e)}>
-                        Approach
-                        </Link>
-                    :
-                        <Link to="/approach" >
-                        Approach
-                        </Link>
-                    }
-                    
                 </NavLi>
                 <NavLi  ref={el => li4 = el} responsive={responsive}>
                     {responsive ? 

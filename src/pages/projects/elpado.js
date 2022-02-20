@@ -12,7 +12,7 @@ import elPadoLogo from '../../assets/images/ElPadoLogo.svg';
 import stylescapes from '../../assets/images/StylescapeElPado.png';
 import businessCard from '../../assets/images/Wizytowki.jpg';
 import TopEventLogo from '../../assets/images/TopEventLogo.svg';
-import OprawaMuzycznaLogo from '../../assets/images/OprawaMuzycznaWhite.svg';
+import internettLogoWhite from '../../assets/images/SVG/internett-logo-white.svg';
 import OtherProjects from '../../components/OtherProjects/OtherProjects';
 import HelmetSeo from '../../components/Helmet/HelmetSeo';
 
@@ -100,7 +100,7 @@ return (
         justImage
         imageSrc={businessCard}
     />
-    <OtherProjects logo1={TopEventLogo} logo2={OprawaMuzycznaLogo} project1="topevent" project2="oprawamuzyczna"/>
+    <OtherProjects logo1={TopEventLogo} logo2={internettLogoWhite} project1="topevent" project2="internett"/>
     </>)
 };
 

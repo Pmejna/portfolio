@@ -16,20 +16,20 @@ const SectionParagraphWrapper = styled.section`
     } */
     
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         flex-direction: column;
-        padding-left: 8vw;
+        padding-left: 16vw;
         padding-right: 6vw;
     }
 `;
 
-const SectionParagraph = React.forwardRef(({leftText, children, background, textColor, maxWidth, ...restProps}, ref) => {
+const SectionParagraph = React.forwardRef(({leftText, children, background, borderColor, textColor, maxWidth, ...restProps}, ref) => {
 
     let ref1 = useRef(null);
 
     return (
         <SectionParagraphWrapper ref={ref} leftText={leftText} background={background}>
-            <MainHeader leftText={leftText} background={background} {...restProps} ref={el => (ref1 = el)} textColor={textColor} section maxWidth={maxWidth}/>
+            <MainHeader leftText={leftText} background={background} borderColor={borderColor} {...restProps} ref={el => (ref1 = el)} textColor={textColor} section maxWidth={maxWidth}/>
             {children}
         </SectionParagraphWrapper>
     )

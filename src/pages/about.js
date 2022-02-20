@@ -1,6 +1,7 @@
 import React from "react"
 import styled from 'styled-components';
 import HelmetSeo from "../components/Helmet/HelmetSeo";
+import rebelImage from "../assets/images/SVG/rebel-icon.svg"
 
 import MainHeader from '../components/MainHeader/MainHeader';
 
@@ -56,6 +57,7 @@ const AboutPage = () => (
           subTitle={`Appriciate your time to learn a bit more about who you might work with. One of my future goals is to found game developement studio.`}
           leftText={true}
           className='mainHeaderProjects'
+          imgSrc={rebelImage}
         />
     </HeaderWrapper>
   </>

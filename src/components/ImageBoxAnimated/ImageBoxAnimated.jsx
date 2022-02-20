@@ -30,8 +30,8 @@ const ImageWrapper = styled.div`
             position: relative;
             display: block;
             left: unset;
-            height: 100%;
-            width:auto;
+            width: 100%;
+            height: auto;
     }
         }
         

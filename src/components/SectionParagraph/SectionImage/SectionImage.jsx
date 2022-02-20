@@ -10,23 +10,23 @@ const SectionImageWrapper = styled.div`
 
     img {
         position: absolute;
-        width: auto;
-        height: 100%;
+        width: 100%;
+        height: auto;
         top: 0;
         left: ${({imgLeft}) => imgLeft ? '-2rem' : '3rem'};
         z-index: 2;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         display: flex;
-        flex-direction:
-        row;
+        flex-direction: row;
         justify-content: flex-start;
         img {
             position: relative;
             display: block;
             left: unset;
-            width: 80%;
+            height: 350px;
+            width: auto;
     }
         }
         
