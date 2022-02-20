@@ -29,7 +29,7 @@ const HeaderWrapper = styled.div`
         margin-bottom: 0.4rem;
     }
     button {
-        grid-area: 14 / 1 / 15 / 2;
+        grid-area: 17 / 1 / 18 / 2;
     }
     }
 `;
@@ -69,7 +69,7 @@ const Title2 = styled.h2`
     text-align: ${({leftText}) => leftText ? 'left' : 'right'};
     grid-area: 2 / 1 / 3 / 2;
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
         text-align: left;
         grid-area: 2 / 1 / 3 / 2;
     }
@@ -106,6 +106,10 @@ const HeaderText = styled.div`
         width: 68vw;
         max-width: 68vw;
     }
+    @media (max-width: 550px) {
+        width: 100%;
+        max-width: 100%;
+    }
 `;
 
 const MainHeader = React.forwardRef(({
@@ -114,13 +118,15 @@ const MainHeader = React.forwardRef(({
     button, 
     buttonTo,
     borderColor,
+    className, 
+    header,
+    imgSrc, 
     linkButton, 
     linkButtonText, 
-    className, 
-    imgSrc, 
     leftText, 
     main, 
-    maxWidth, 
+    maxWidth,
+    noAnimation, 
     ref,
     section,
     subTitle, 
@@ -139,18 +145,26 @@ const MainHeader = React.forwardRef(({
     useEffect(() => {
         if (button && main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef, buttonRef]);
+            console.log('button & main')
         }
         if (button) {
             revealSection2([mainRef, aboveRef, title2Ref, subtitleRef, buttonRef]);
+            console.log('button')
         }
         if (linkButton) {
             revealSection([mainRef, aboveRef, subtitleRef, buttonRef]);
+            console.log('linkButton')
         }
         else if (main) {
             revealSection2([mainRef, aboveRef, titleRef, subtitleRef]);
+            console.log('main')
         }
-        else {
+        else if (!button && !main && !linkButton && !noAnimation) {
             revealSection([aboveRef, title2Ref, subtitleRef]);
+            console.log('other')
+        }
+        else if (noAnimation) {
+
         }
       }, [])
     
@@ -176,7 +190,7 @@ const MainHeader = React.forwardRef(({
                 {button ? <Button to={buttonTo} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>Live project</Button> : null}
                 {linkButton ? <Button borderColor={borderColor} to={linkButton} ref={el => (buttonRef = el)} gridArea='9 / 1 / 10 / 2'>{linkButtonText}</Button> : null}
                 {
-                imgSrc ? <ImageBoxAnimated src={imgSrc} mainHeader/> : null
+                imgSrc ? <ImageBoxAnimated src={imgSrc} header={header} mainHeader/> : null
                 }           
             </HeaderText>
              

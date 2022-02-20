@@ -77,6 +77,7 @@ return (
                 button
                 buttonTo='https://dazzling-mccarthy-78f0ae.netlify.app/'
                 imgSrc={oprawaMuzycznaLogo}
+                header
                 // maxWidth='40vw'
                 // main
             />

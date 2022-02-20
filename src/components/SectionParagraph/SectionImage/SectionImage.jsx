@@ -25,7 +25,7 @@ const SectionImageWrapper = styled.div`
             position: relative;
             display: block;
             left: unset;
-            height: 350px;
+            height: 250px;
             width: auto;
     }
         }

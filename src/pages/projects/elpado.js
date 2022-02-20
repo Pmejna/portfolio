@@ -67,6 +67,7 @@ return (
                 subTitle={`Family business run by my highscool friend needed a "bang" and a modern touch. Enjoyed every bit of it`}
                 leftText={true}
                 imgSrc={elPadoLogo}
+                header
                 // main
             />
     </HeaderWrapper>

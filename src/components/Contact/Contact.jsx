@@ -128,8 +128,7 @@ const Contact = () => {
     const {executeRecaptcha} = useGoogleReCaptcha();
     let errorEl = useRef(null);
     let confirmEl = useRef(null);
-
-
+    
     // useEffect(() => {
     //     console.log()
     //     async function result() {

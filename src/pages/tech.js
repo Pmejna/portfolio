@@ -138,23 +138,28 @@ const TechPage = () => (
     </HeaderWrapper>
     <SkillsContainer>
           <SkillsList>
-              <SkillsItem>Javascript</SkillsItem>
-              <SkillsItem>React</SkillsItem>
-              <SkillsItem>GatsbyJS</SkillsItem>
-              <SkillsItem>GSAP Animation</SkillsItem>
+              <SkillsItem>Typescript/JS</SkillsItem>
+              <SkillsItem>React+Redux</SkillsItem>
+              <SkillsItem>Rest API</SkillsItem>
+              <SkillsItem>HTML</SkillsItem>
               <SkillsItem>CSS/SCSS</SkillsItem>
-              <SkillsItem>Typescript</SkillsItem>
-              <SkillsItem>sql</SkillsItem>
-              <SkillsItem>c#</SkillsItem>
-              <SkillsItem>Adobe CC</SkillsItem>
+              <SkillsItem>SQL</SkillsItem>
+              <SkillsItem>NodeJS</SkillsItem>
+              <SkillsItem>NestJS</SkillsItem>
+              <SkillsItem>Docker</SkillsItem>
+              <SkillsItem>PHP</SkillsItem>
+              <SkillsItem>PHP SLIM API</SkillsItem>
+              <SkillsItem>Graph QL</SkillsItem>
           </SkillsList>
           <SkillsOther>
             <h2>Other skills</h2>
             <ul>
-              <li>graphic design</li>
-              <li>illustration</li>
-              <li>animation</li>
+              <li>Adobe CC</li>
+              <li>Graphic Design</li>
+              <li>Illustration</li>
+              <li>Animation</li>
               <li>3d design</li>
+              <li>Soft Skills</li>
             </ul>
           </SkillsOther>
     </SkillsContainer>

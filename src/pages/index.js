@@ -139,7 +139,7 @@ const IndexPage = ({data}) => {
       ref={section2Ref}
       title='Who am I?' 
       above='about me' 
-      subTitle={`In short: I am self-taught software developer with over one year of freelance experience and one year of full-time developer job experience as a junior full-stack dev/Ui designer.
+      subTitle={`In short: I am self-taught software developer with over one year of freelance experience and one year of full-time developer job experience as a junior full-stack dev/UI designer.
       I have as well background in design, illustration and animation working over 4 years as a freelancer in this field.`} 
       leftText={true}
       maxWidth='45vw'

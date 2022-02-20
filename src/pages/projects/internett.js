@@ -82,6 +82,7 @@ const InternettPage = () => {
                 leftText={true}
                 button
                 buttonTo='https://www.internett.pl'
+                header={true}
                 // maxWidth='100'
                 imgSrc={internettLogo}
                 // main
@@ -101,6 +102,7 @@ const InternettPage = () => {
             title={processSection.title}
             subTitle={processSection.subTitle}
             image
+            leftText={false}
             imgSrc={processSectionImage}
         />
         <SectionDefault 
@@ -110,7 +112,7 @@ const InternettPage = () => {
             background='#000' 
             className
             textColor='#fff'
-            leftText
+            leftText={true}
             maxWidth='1800px'
         />
         <SectionPresentation

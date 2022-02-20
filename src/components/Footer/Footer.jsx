@@ -59,7 +59,7 @@ const Footer = () => {
             <FooterData>
                 <FooterItem>
                     <p>PHONE NUMBER:  </p>
-                    <a href="+447423465591">07423465591</a>                 
+                    <a href="+447423465591">+44 7423 465 591</a>                 
                 </FooterItem>
                 <FooterItem>
                     <p>EMAIL ADDRESS:</p> <span>pmejna@gmail.com</span>

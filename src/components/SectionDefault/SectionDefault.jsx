@@ -56,18 +56,19 @@ const MainHeaderStyled = styled(MainHeader)`
     }
 `;
 
-const SectionDefault = ({imgSrc, imgAlt, image, leftText, background, maxWidth, ...otherProps}) => {
+const SectionDefault = ({imgSrc, imgAlt, image, leftText, background, maxWidth, noAnimation, ...otherProps}) => {
     let imgRef = useRef(null);
     useEffect(() => {
         const direction = leftText ? '100' : '-100';
-        if (image) {
+        if (image && !noAnimation) {
+            console.log(noAnimation)
             sectionImageAnimation(imgRef, direction);
         }
 
     }, [])
     return (
         <SectionWrapper leftText={leftText} background={background}>
-            <MainHeaderStyled leftText={leftText} background={background} maxWidth={maxWidth} {...otherProps} section/>
+            <MainHeaderStyled leftText={leftText} background={background} maxWidth={maxWidth} noAnimation={noAnimation} {...otherProps} section/>
             {
                 image ? <figure ref={el => imgRef=el}>
                             <img src={imgSrc} alt={imgAlt}/>

@@ -21,6 +21,11 @@ const SectionParagraphWrapper = styled.section`
         padding-left: 16vw;
         padding-right: 6vw;
     }
+    @media (max-width: 560px) {
+        flex-direction: column;
+        padding-left: 8vw;
+        padding-right: 6vw;
+    }
 `;
 
 const SectionParagraph = React.forwardRef(({leftText, children, background, borderColor, textColor, maxWidth, ...restProps}, ref) => {
