@@ -80,7 +80,7 @@ const InputWrapper = styled.div`
     }
 `;
 
-const Input = ({textArea, labelText, name, type, nameOfClass, id, required, placeholder }) => {
+const Input = ({textArea, labelText, name, type, nameOfClass, id, required, placeholder, refVariable }) => {
     return (
         <>
             {

@@ -13,6 +13,7 @@ const ButtonWrapper = styled.button`
     grid-area: ${({gridArea}) => gridArea ? gridArea : null};
     max-width: 200px;
     border: ${({borderColor}) => borderColor ? '1px solid '+borderColor : 'none'};
+    opacity: ${({disabled}) => disabled ? 0.4 : 1};
 
     @media (max-width: 760px) {
         min-height: 40px;
@@ -79,7 +80,7 @@ const FormStyled = styled.div`
 
 const Button = ({children, to, type, value, formButton, gridArea, borderColor}, ref) => {
     return (
-        <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea} borderColor={borderColor}>
+        <ButtonWrapper type={type} value={value} ref={ref} gridArea={gridArea} borderColor={borderColor} disabled={disabled}>
             {
                 formButton ? 
                 <FormStyled>
@@ -87,7 +88,7 @@ const Button = ({children, to, type, value, formButton, gridArea, borderColor}, 
                     <div><img src={Arrow}></img></div>
                 </FormStyled>
                 :
-            <LinkStyled to={to} target='_blank'>
+            <LinkStyled to={to} target='_blank' >
                 {children}
                 <div><img src={Arrow}></img></div>
             </LinkStyled>
