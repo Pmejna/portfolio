@@ -155,7 +155,6 @@ const Contact = () => {
             return
         }
         
-        let target = e.target;
         const captchaResult = await executeRecaptcha('contact');
         setReCaptchPublicKey(captchaResult);
         // async function postDataToCaptcha(url="http://localhost:9000/serve-captcha") {
