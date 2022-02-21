@@ -30,7 +30,11 @@ const HeaderWrapper = styled.div`
     }
     button {
         grid-area: 17 / 1 / 18 / 2;
+        }
     }
+
+    @media (max-width: 370px) {
+        max-width: ${({main}) => main ? '80vw' : '87vw'};
     }
 `;
 
@@ -88,7 +92,7 @@ const SubTitle = styled.p`
         margin-top: 2rem;
         font-size: 1.5rem;
         text-align: left;
-        grid-area: ${({main}) => main ? '6 / 1 /8 / 2' : '10 / 1 / 14 /2'} ;
+        grid-area: ${({main}) => main ? '7 / 1 /9 / 2' : '10 / 1 / 14 /2'} ;
     }
 `;
 
@@ -105,6 +109,10 @@ const HeaderText = styled.div`
         grid-template-rows: 1.4rem 2rem repeat(13, 3rem);
         width: 68vw;
         max-width: 68vw;
+    }
+    @media (max-width: 550px) {
+        width: 100%;
+        max-width: 100%;
     }
     @media (max-width: 550px) {
         width: 100%;

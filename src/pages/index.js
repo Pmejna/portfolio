@@ -52,32 +52,45 @@ const MainImage = styled.img`
     height: 90vh;
     width: auto;
     bottom: 0;
-    right: 0;
+    right: 0; 
 
     @media (max-width: 1240px) {
     /* bottom: 20vh;
     right: unset;
     left: 0; */
-    right: -12rem;
-    height: 90vh;
-  }
+      right: -12rem;
+      height: 90vh;
+    }
 
-  @media screen
-    and (max-width: 1024px)
-    and (orientation: portrait) {
-      left: -12vw;
+    @media screen
+      and (max-width: 1024px)
+      and (orientation: portrait) {
+        left: -12vw;
+    }
+
+    @media (max-width: 768px) and (orientation: landscape) {
+      bottom: 20vh;
+      left: -14vh;
+      height: 70vh;
     }
 
     @media (max-width:760px) {
-    bottom: 20vh;
-    left: -38vh;
-    height: 65vh;
-  }
+      bottom: 20vh;
+      left: -38vh;
+      height: 65vh;
+    }
     @media (max-width:450px) {
-    bottom: 17vh;
-    left: -36vh;
-    height: 61vh;
-  }
+      bottom: 20vh;
+      left: -34vh;
+      height: 61vh;
+    }
+    @media (max-width: 375px) {
+      left: -30vh;
+    }
+
+    @media (max-width: 370px) {
+      display: none;
+    }
 `;
 
 const headerData = {
