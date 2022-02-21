@@ -32,8 +32,8 @@ const ImageWrapper = styled.div`
             left: unset;
             width: ${({header}) => header ? 'auto' : '100%'};
             height: ${({header}) => header ? '100%' : 'auto'};
-    }
         }
+    }
         
 `;
 
