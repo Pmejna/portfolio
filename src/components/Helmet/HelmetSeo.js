@@ -58,7 +58,7 @@ const seo = {
         },
         {
           property: `og:image`,
-          content: image ? image : defaultImage,
+          content: seoImage,
         },
         {
           name: `twitter:card`,
